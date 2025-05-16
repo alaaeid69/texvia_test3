@@ -1,0 +1,115 @@
+@use '../../shared/scss-Styles/colors.scss' as *;
+#login {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+    padding-top: 5rem;
+    margin-top: 6rem;
+    width: 100%;
+    box-sizing: border-box;
+    height: 100vh;
+  }
+  
+  #login .container-fluid {
+    width: 100%;
+    padding: 0;
+  }
+  
+  #login .container {
+    width: 40%;
+    margin: 0 auto;
+    padding-bottom: 3rem;
+  }
+  
+  #login .form-card {
+    background-color: $white-color;
+    border-radius: 0.6rem;
+    padding: 1.8rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 50%;
+    box-sizing: border-box;
+  }
+  
+  #login .input-container {
+    position: relative;
+    margin-bottom: 1.7rem;
+  }
+  
+  #login .form-input {
+    width: 100%;
+    padding: 0.6rem;
+    padding-top: 1.5rem;
+    border: 0.0625rem solid #ddd;
+    border-radius: 0.3125rem;
+    outline: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    border-color: #ced4da;
+    box-sizing: border-box;
+  }
+  
+  #login .form-input:focus {
+    border-color: $main-color;
+    box-shadow: 0 0 0 0.1875rem rgba(0, 123, 255, 0.1);
+  }
+  
+  #login .form-input::placeholder {
+    color: transparent;
+  }
+  
+  #login .form-label {
+    position: absolute;
+    left: 0.625rem;
+    top: 0.625rem;
+    font-size: 1rem;
+    color: #888;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    background-color:$white-color;
+    padding: 0 0.3125rem;
+  }
+  
+  #login .form-input:focus + .form-label,
+  #login .form-input:not(:placeholder-shown) + .form-label {
+    top: -0.625rem;
+    font-size: 0.8rem;
+    color: $main-color;
+  }
+  
+  #login .btn-submit {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.3125rem;
+    background-color: $btn-color;
+    color:$white-color;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+  }
+  
+  #login .btn-submit:hover {
+    background-color: $btn-hover;
+  }
+  
+  #login #loginResponseMessage {
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  @media (max-width: 576px) {
+    #login .container {
+      width: 100%;
+
+    }
+  
+    #login .form-card {
+      padding: 1.25rem;
+      width: 100%;
+      height: 70%;
+    }
+  
+    #login .input-container {
+      margin-bottom: 1.25rem;
+    }
+  }

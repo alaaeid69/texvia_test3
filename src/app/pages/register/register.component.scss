@@ -1,0 +1,139 @@
+
+@use '../../shared/scss-Styles/colors.scss' as *;
+#register {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+    padding-top: 5rem;
+    margin-top: 6rem;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 100vh;
+  }
+
+  #register .container-fluid {
+    width: 100%;
+    padding: 0;
+  }
+
+  #register .container {
+    width: 40%;
+    margin: 0 auto;
+    padding-bottom: 3rem;
+  }
+
+  #register .form-card {
+    background-color: $white-color;
+    border-radius: 0.6rem;
+    padding: 1.8rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #register .input-container {
+    position: relative;
+    margin-bottom: 1.7rem;
+  }
+
+  #register .form-input {
+    width: 100%;
+    padding: 0.6rem;
+    padding-top: 1.5rem;
+    border: 0.0625rem solid #ddd;
+    border-radius: 0.3125rem;
+    outline: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    border-color: #ced4da;
+    box-sizing: border-box;
+  }
+
+  #register .form-input:focus {
+    border-color:$main-color;
+    box-shadow: 0 0 0 0.1875rem rgba(0, 123, 255, 0.1);
+  }
+
+  #register .form-input::placeholder {
+    color: transparent;
+  }
+
+  #register .form-label {
+    position: absolute;
+    left: 0.625rem;
+    top: 0.625rem;
+    font-size: 1rem;
+    color: #888;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    background-color:$white-color;
+    padding: 0 0.3125rem;
+  }
+
+  #register .form-input:focus + .form-label,
+  #register .form-input:not(:placeholder-shown) + .form-label {
+    top: -0.625rem;
+    font-size: 0.8rem;
+    color: $main-color;
+  }
+
+  #register .btn-submit {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.3125rem;
+    background-color: $btn-color;
+    color: $white-color;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+  }
+
+  #register .btn-submit:hover {
+    background-color:$btn-hover ;
+  }
+
+  #register #registerResponseMessage {
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  .error-message {
+    margin-top: 8px;
+  
+    p {
+      font-size: 0.85rem;
+      color: #dc3545;
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 576px) {
+    #register .container {
+      width: 100%;
+    }
+
+    #register .form-card {
+      padding: 1.25rem;
+      width: 100%;
+    }
+
+    #register .input-container {
+      margin-bottom: 1.25rem;
+    }
+  }
+
+  .alert {
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+  }
+
+  .alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+  }
+
+  .alert-danger p {
+    margin-bottom: 0;
+  }

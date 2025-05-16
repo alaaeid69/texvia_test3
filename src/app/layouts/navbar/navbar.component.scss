@@ -1,0 +1,97 @@
+@use '../../shared/scss-Styles/sections-Header-styles' as *;
+@use "../../shared/scss-Styles/colors" as *;
+.navbar {
+  background-color: $white-color;
+  transition: background-color 0.3s ease;
+  height: 3rem !important;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+  .container-fluid {
+    background-color: $white-color;
+    @extend %container-style;
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 800;
+      padding-left: 20px;
+      color: $main-color;
+    }
+    .navbar-nav {
+      --bs-nav-link-padding-y: 0.2rem;
+      .nav-item {
+        margin-left: 1.5rem;
+
+        a.nav-link {
+          font-size: 1rem;
+          color: black;
+          text-transform: capitalize;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: $secend-main-color;
+          }
+        }
+
+        &.active a {
+          color: $secend-main-color;
+          font-weight: 600;
+        }
+
+        &.dropdown {
+          .dropdown-toggle {
+            color: black;
+
+            &:hover {
+              color: $secend-main-color;
+            }
+
+            &.show {
+              color: $black-color;
+            }
+          }
+
+          .dropdown-menu {
+            display: none;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 0.25rem;
+            min-width: 120px;
+
+            &.show {
+              display: block;
+            }
+
+            .dropdown-item {
+              font-size: 0.9rem;
+              color: $black-color;
+              padding: 0.5rem 1rem;
+              transition: background-color 0.3s ease;
+
+              &:hover {
+                background-color: #e9f1ff;
+
+                color: $secend-main-color;
+              }
+
+              &.active {
+                background-color: #e9f1ff;
+                color: $white-color;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 576px) {
+      .container-fluid {
+        width: 100%;
+      }
+      .navbar-brand {
+        font-size: 1.25rem;
+      }
+
+      .navbar-toggler {
+        padding: 0.25rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+<section class="navbar navbar-expand-lg fixed-top z-10 mb-2">
+  <div class="container-fluid">
+    <a
+      class="logo text-decoration-none"
+     routerLink="./home"
+     routerLinkActive=""
+      >TEXVIA</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-lg-0">
+        <!-- @for (link of navLinks; track link.route) {
+        <li [class.active]="isActive(link.route)" class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="link.route"
+            (click)="navigate(link.route)"
+            >{{ link.label }}</a
+          >
+        </li>
+        } -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="./home">home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="./solutions">solutions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="./industries">industries</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="./services">services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="./about">about us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="./courses">courses</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Account
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="navbarDropdown"
+          >
+            <li class="nav-item">
+              <a class="nav-link" routerLink="./login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class=" nav-link" routerLink="./register">Register</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

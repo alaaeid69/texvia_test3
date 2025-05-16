@@ -1,0 +1,113 @@
+@use "../../shared/scss-Styles/sections-Header-styles" as *;
+@use "../../shared/scss-Styles/colors" as *;
+
+$section-padding: 2rem 0;
+$card-border-radius: 10px;
+$transition-duration: 0.3s;
+$text-muted: #666;
+$div-icon-bg: rgb(219 234 255);
+$form-control-bg: #f8f9fa;
+
+.solutions {
+  .container-fluid {
+    background-image: linear-gradient(
+        110deg,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.4) 40%,
+        rgba(0, 0, 0, 0) 60%
+      ),
+      url("/images/W001-Industries-Page-22-06.jpg");
+    background-position: center center;
+    background-size: cover;
+    height: 70vh;
+    background-color: linear;
+    .col-md-8 {
+      .line {
+        width: 10%;
+        height: 0.2rem;
+        margin: 1.5rem 0;
+        background-color: $main-color;
+      }
+      .btn {
+        background-color: $btn-color;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.details {
+  .container {
+    @extend %container-style;
+    margin-top: 0;
+    .navs {
+      position: sticky;
+      top: 5%;
+      background-color: white;
+      z-index: 1000;
+      .nav-link{
+        font: {
+          size: .9rem;
+          weight:600;
+        };
+        line-height: 1.3rem;
+        color: rgb(102, 108, 112);
+      }
+    }
+    .solutions-cards {
+      margin: 5rem 0 ;
+ h4{
+  color: $main-color;
+ }
+
+      .image-card {
+        height: 65vh;
+        overflow: hidden;
+        position: relative;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+          transition: transform 0.5s;
+        }
+        .layer {
+          position: absolute;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.3);
+          z-index: 1;
+          transition: all 0.5s;
+        }
+        &:hover {
+          img {
+            transform: scale(1.05);
+          }
+          .layer {
+            background: rgba(0, 0, 0, 0.5);
+          }
+        }
+      }
+    }
+  }
+
+
+
+  @media (max-width:765px) {
+    .container{
+    .navs{
+      position: relative;
+      .nav-link{
+        font: {
+          size: .8rem;
+          weight:600;
+        };
+        line-height: 1rem;
+        color: rgb(102, 108, 112);
+      }
+    }
+    }
+    
+  }
+}
