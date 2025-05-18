@@ -1,6 +1,6 @@
 
-import { Component, OnInit, AfterViewInit, OnDestroy, Renderer2, ElementRef, Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Component, OnInit, AfterViewInit, OnDestroy, Renderer2, ElementRef, Inject, ViewChild } from '@angular/core';
+import { DOCUMENT, NgClass } from '@angular/common';
 
 declare global {
   interface Window {
@@ -18,13 +18,22 @@ interface home{
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [NgClass],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private particlesScriptElement: HTMLScriptElement | null = null;
   private tooltipInstances: any[] = [];
+  @ViewChild('flowTrack') flowTrack!: ElementRef;
+  currentInd = 0;
+  visibleItems = 3;
+  private autoSlideInterval: any;
+  private isPaused = false;
+  private readonly slideInterval = 3000; // 2 seconds
+  private readonly pauseDuration = 10000; // 5 seconds pause after interaction
+
+
 
   homeCaption: home[] = [
     {top:'💡 Your Digital Transformation Partner' , header:'From Data to Decisions — Smarter Industry Starts Here', description:'We help industrial enterprises improve efficiency, gain real-time visibility, and future-proof their operations through digital transformation, automation, and connected technologies'},
@@ -48,13 +57,20 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     this.setupTooltips();
+   this.updateVisibleItems();
+    this.startAutoSlide();
+    window.addEventListener('resize', () => this.updateVisibleItems());
   }
 
   ngOnDestroy(): void {
     this.cleanupParticles();
     this.cleanupTooltips();
     this.removeParticlesScriptElement();
+        this.stopAutoSlide();
+    window.removeEventListener('resize', () => this.updateVisibleItems());
   }
+
+  // all of this for particles in first screen in home code 
 
   private loadParticlesScript(): void {
     const existingScript = this.document.querySelector('script[src*="particles.min.js"]') as HTMLScriptElement;
@@ -201,12 +217,83 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         this.tooltipInstances = [];
       }
   }
-
-
+// end of particles   
+ //home dynamic for first screen in home 
   homePageCaption():void{
   setInterval(() => {
     this.currentIndex =(this.currentIndex + 1) % this.homeCaption.length;
     this.currentHomeCaption = (this.homeCaption[this.currentIndex])
   }, 3000);
+  }
+
+  //how we do code 
+   updateVisibleItems() {
+    const width = window.innerWidth;
+    if (width < 768) {
+      this.visibleItems = 1;
+    } else if (width < 992) {
+      this.visibleItems = 2;
+    } else {
+      this.visibleItems = 3;
+    }
+    this.updateTrackPosition();
+  }
+
+  moveLeft() {
+    if (this.currentInd > 0) {
+      this.currentInd--;
+      this.updateTrackPosition();
+      this.pauseAutoSlide();
+    }
+  }
+
+  moveRight() {
+    if (this.currentInd < 5 - this.visibleItems) {
+      this.currentInd++;
+      this.updateTrackPosition();
+      this.pauseAutoSlide();
+    }
+  }
+
+  goToItem(index: number) {
+    if (index >= 0 && index <= 5 - this.visibleItems) {
+      this.currentInd = index;
+      this.updateTrackPosition();
+      this.pauseAutoSlide();
+    }
+  }
+
+  private updateTrackPosition() {
+    const track = this.flowTrack.nativeElement as HTMLElement;
+    const itemWidth = 300 + 24; 
+    track.style.transform = `translateX(-${this.currentInd * itemWidth}px)`;
+  }
+
+  private startAutoSlide() {
+    this.stopAutoSlide(); // Clear any existing interval
+    this.autoSlideInterval = setInterval(() => {
+      if (!this.isPaused) {
+        if (this.currentInd < 5 - this.visibleItems) {
+          this.currentInd++;
+        } else {
+          this.currentInd = 0; // Loop back to start
+        }
+        this.updateTrackPosition();
+      }
+    }, this.slideInterval);
+  }
+
+  private pauseAutoSlide() {
+    this.isPaused = true;
+    setTimeout(() => {
+      this.isPaused = false;
+    }, this.pauseDuration);
+  }
+
+  private stopAutoSlide() {
+    if (this.autoSlideInterval) {
+      clearInterval(this.autoSlideInterval);
+      this.autoSlideInterval = null;
+    }
   }
 }
