@@ -1,21 +1,14 @@
-<section class="industries">
+<section class="industry ">
   <div class="container-fluid">
-    <div class="row mt-1 h-100">
-      <div class="col-md-7 d-flex align-items-center justify-content-start">
+    <div class="row mt-1 h-100 ">
+      <div
+        class="col-md-8 d-flex align-items-center justify-content-start p-md-5"
+      >
         <div class="text-white">
-          <div class="heading">
-            <h2>Lorem ipsum dolor sit amet.</h2>
-          </div>
-          <div class="line"></div>
-          <div class="description w-100">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus,
-              ratione. Nesciunt libero quis illo deserunt sapiente? Ducimus
-              nihil ab nam, quibusdam mollitia laboriosam error doloribus?
-              Deserunt amet esse possimus beatae!
-            </p>
-          </div>
-          <button class="btn">our industries</button>
+          <header>
+            <h2 class="mb-1">TEXVIA industries</h2>
+          </header>
+          <div class="line rounded-3"></div>
         </div>
       </div>
     </div>
@@ -26,51 +19,80 @@
   <div class="container">
     <!-- navs and tabs ------- -->
     <div class="navs pt-2">
-      <ul class="nav py-2  shadow-sm " id="myTab" role="tablist">
-        <li class="nav-item" >
+      <ul class="nav py-2 shadow-sm" id="myTab" role="tablist">
+        <li class="nav-item">
           <a
             class="nav-link"
-            id="food-tap"
+            id="Food-Beverage-tab"
             data-bs-toggle="tab"
-            data-bs-target="#food"
+            data-bs-target="#Food-Beverage"
             type="button"
             role="tab"
-            (click)="scrollToSection('food')"
-            >Food ,Beverage</a
+            (click)="scrollToSection('Food-Beverage')"
+            >Food & Beverage</a
           >
         </li>
-        <li class="nav-item" >
+        <li class="nav-item">
           <a
             class="nav-link"
-            data-bs-toggle="tab"
-            data-bs-target="#Menfactureing"
+            data-bs-toggle="LifeSciences-Pharmaceuticals-tab"
+            data-bs-target="#LifeSciences-Pharmaceuticals"
             type="button"
             role="tab"
-            (click)="scrollToSection('Menfactureing')"
-            >Menfactureing</a
+            (click)="scrollToSection('LifeSciences-Pharmaceuticals')"
+            >Life Sciences & Pharmaceuticals</a
           >
         </li>
-        <li class="nav-item" >
+        <li class="nav-item">
           <a
             class="nav-link"
-            data-bs-toggle="tab"
-            data-bs-target="#gas"
+            data-bs-toggle="Water-Wastewater-tab"
+            data-bs-target="#Water-Wastewater"
             type="button"
             role="tab"
-            (click)="scrollToSection('gas')"
-            >gas,oil
+            (click)="scrollToSection('Water-Wastewater')"
+          >
+            Water & Wastewater
           </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            id="Smart Cities-tap"
+            data-bs-toggle="tab"
+            data-bs-target="#Smart Cities"
+            type="button"
+            role="tab"
+            (click)="scrollToSection('Smart Cities')"
+            >Smart Cities</a
+          >
         </li>
       </ul>
     </div>
 
-    <div class="row industries-cards py-5 "  id="food">
-      <div class="col-md-6 description-col ">
-        <div class="h-100 ">
+    <div class="row solutions-cards" id="Food-Beverage">
+      <div class="col-md-6 description-col">
+        <div class="h-100">
           <div>
-            <h3 class="fw-bold lh-1 mb-3">Food and Beverage</h3>
-            <p class="text-muted mt-4 description-text">
-              Ensure freshness on all deliveries with full traceability.
+            <h4 class="fw-semibold lh-1 mb-3">Food & Beverage</h4>
+            <p class="text-muted my-3 small">
+              <span class="fw-bold d-block"
+                >In today’s competitive Food & Beverage industry :</span
+              >
+              manufacturers need seamless control over their entire production
+              process—from automated machinery to enterprise-level software—to
+              ensure quality, traceability, and agility. Texvia delivers
+              end-to-end solutions starting from tailored automation packages
+              that control individual machines, through intuitive Human-Machine
+              Interfaces (HMI) and powerful SCADA systems for plant-wide
+              monitoring and control, all the way up to fully integrated
+              Manufacturing Execution Systems (MES) that orchestrate batch
+              management, recipe control, and electronic batch records. Combined
+              with industrial software platforms enabling real-time analytics
+              and process optimization, our solutions provide full visibility
+              and control over your operations. Beyond technology, our expert
+              consulting ensures your digital transformation journey maximizes
+              operational efficiency, compliance, and sustainable growth
             </p>
           </div>
         </div>
@@ -89,13 +111,31 @@
         </div>
       </div>
     </div>
-    <div class="row industries-cards py-5 " id="Menfactureing">
+
+    <div class="row solutions-cards" id="LifeSciences-Pharmaceuticals">
       <div class="col-md-6 description-col">
-        <div class="h-100 pt-5">
+        <div class="h-100">
           <div>
-            <h3 class="fw-bold lh-1 mb-3">Food and Beverage</h3>
-            <p class="text-muted mt-4 description-text">
-              Ensure freshness on all deliveries with full traceability.
+            <h4 class="fw-semibold lh-1 mb-3">
+              Life Sciences & Pharmaceuticals
+            </h4>
+            <p class="text-muted my-3 small">
+              <span class="fw-bold d-block"
+                >Life Sciences & Pharmaceuticals require :</span
+              >
+              a robust, validated automation stack to meet rigorous compliance
+              and quality standards. Texvia offers a comprehensive portfolio of
+              solutions—from automation packages that govern critical
+              manufacturing equipment, through advanced HMIs and SCADA systems
+              ensuring secure, real-time process control, to ISA-95-aligned MES
+              platforms that deliver electronic batch records, deviation
+              tracking, and material genealogy. Our industrial software layers
+              provide contextualized data analytics and integration across
+              manufacturing and business systems. Paired with deep consulting
+              expertise in regulatory compliance and digital validation, we
+              empower clients to build future-proof production environments that
+              accelerate time-to-market while ensuring data integrity and audit
+              readiness.
             </p>
           </div>
         </div>
@@ -109,27 +149,33 @@
           <div
             class="layer d-flex justify-content-center align-items-center text-white"
           >
-            <h3 class="fw-bold">Food and Beverage</h3>
+            <h3 class="fw-bold">Life Sciences & Pharmaceuticals</h3>
           </div>
         </div>
       </div>
     </div>
-    <div class="row industries-cards py-5 " id="gas">
+
+    <div class="row solutions-cards" id="Water-Wastewater">
       <div class="col-md-6 description-col">
-        <div class="h-100 pt-5">
+        <div class="h-100">
           <div>
-            <h3 class="fw-bold lh-1 mb-3">Food and Beverage</h3>
-            <p class="text-muted mt-4 description-text">
-              Ensure freshness on all deliveries with full traceability.
+            <h4 class="fw-semibold lh-1 mb-3">Water & Wastewater</h4>
+            <p class="text-muted my-3 small">
+              <span class="fw-bold d-block"
+                >Water and wastewater utilities demand :</span
+              >
+              reliable automation solutions covering every layer of their
+              operations. Texvia provides tailored automation packages for field
+              devices and pump stations, combined with user-friendly HMI and
+              SCADA systems for centralized monitoring and control of treatment
+              plants and distribution networks. Our industrial software
+              solutions extend to advanced data management platforms that enable
+              regulatory reporting, predictive maintenance, and operational
+              analytics. With consulting services spanning system modernization,
+              cybersecurity, and energy optimization, Texvia delivers fully
+              integrated solutions that improve asset performance, reduce
+              operational risks, and support sustainable utility management.
             </p>
-          </div>
-          <div>
-            <a
-              href="#contact"
-              class="btn btn-custom-green btn-md rounded-pill text-white"
-            >
-              Learn More
-            </a>
           </div>
         </div>
       </div>
@@ -142,7 +188,46 @@
           <div
             class="layer d-flex justify-content-center align-items-center text-white"
           >
-            <h3 class="fw-bold">Food and Beverage</h3>
+            <h3 class="fw-bold">Water & Wastewater</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row solutions-cards" id="Smart Cities">
+      <div class="col-md-6 description-col">
+        <div class="h-100">
+          <div>
+            <h4 class="fw-semibold lh-1 mb-3">Smart Cities</h4>
+            <p class="text-muted my-3 small">
+              <span class="fw-bold d-block">Smart Cities :</span>
+              integrated automation and software solutions that connect diverse
+              infrastructure components. Texvia offers a broad range of
+              solutions, from automation packages controlling building systems
+              and utility assets, through sophisticated HMI and SCADA platforms
+              for centralized monitoring, to industrial software suites that
+              unify data streams and provide actionable insights via dashboards
+              and analytics. Our consulting services help city planners and
+              operators design scalable, secure digital architectures that
+              support energy efficiency, environmental monitoring, and
+              citizen-centric services. By providing this complete
+              automation-to-software stack, Texvia empowers smart cities to
+              optimize resources, enhance resilience, and deliver improved
+              quality of life for their residents.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 image-col">
+        <div class="card image-card">
+          <img
+            src="/images/Food ana beverage/Food and Beverage.png"
+            alt="Food and Beverage"
+          />
+          <div
+            class="layer d-flex justify-content-center align-items-center text-white"
+          >
+            <h3 class="fw-bold">Smart Cities</h3>
           </div>
         </div>
       </div>

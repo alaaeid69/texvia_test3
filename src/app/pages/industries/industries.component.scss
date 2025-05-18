@@ -1,127 +1,3 @@
-// @use "../../shared/scss-Styles/sections-Header-styles";
-// @use "../../shared/scss-Styles/colors" as *;
-// $section-padding: 2rem 0;
-// $card-border-radius: 10px;
-// $transition-duration: 0.3s;
-// $text-muted: #666;
-// $div-icon-bg: rgb(219 234 255);
-// $form-control-bg: #f8f9fa;
-// .industries {
-//   .container-fluid {
-//     background-image: linear-gradient(
-//         110deg,
-//         rgba(0, 0, 0, 0.7) 0%,
-//         rgba(0, 0, 0, 0.4) 40%,
-//         rgba(0, 0, 0, 0) 60%
-//       ),
-//       url("/images/W001-Industries-Page-22-06.jpg");
-//     background-position: center center;
-//     background-size: cover;
-//     height: 70vh;
-//     background-color: linear;
-//     .col-md-6 {
-//       padding-left: 5rem;
-//       .heading {
-//         h2 {
-//           font : {
-//             size: 2.799rem;
-//             weight: 300;
-//           }
-//           line-height: 3rem;
-//         }
-//       }
-//       .line {
-//         width: 30%;
-//         height: 0.5rem;
-//         margin: 1.5rem;
-//         background-color: $main-color;
-//       }
-//       .description {
-//         p {
-//           font: {
-//             size: 1rem;
-//             weight: 400;
-//           }
-//           line-height: 1.7rem;
-//         }
-//       }
-
-//       .btn {
-//         background-color: $btn-color;
-//         color: white;
-//       }
-//     }
-//   }
-// }
-
-// .details {
-//   .container {
-//     @extend %container-style;
-//     margin-top: 0;
-//     height: fit-content; 
-//   overflow-y: auto;
-//     .navs {
-//       position: sticky;
-//       top: 0;
-//       background-color: white;
-//       z-index: 20;
-// .nav-link{
-//         font: {
-//           size: 1.1rem;
-//           weight:400;
-//         };
-//         line-height: 1.3rem;
-//         color: rgb(102, 108, 112);
-//       }
-//     }
-
-//     .industries-cards {
-
-//       .image-card {
-//         height: 40vh;
-//         overflow: hidden;
-//         position: relative;
-
-//         img {
-//           width: 100%;
-//           height: 100%;
-//           object-fit: cover;
-//           object-position: center;
-//           transition: transform 0.5s;
-//         }
-
-//         .layer {
-//           position: absolute;
-//           inset: 0;
-//           background: rgba(0, 0, 0, 0.3);
-//           z-index: 1;
-//           transition: all 0.5s;
-//         }
-
-//         &:hover {
-//           img {
-//             transform: scale(1.05);
-//           }
-
-//           .layer {
-//             background: rgba(0, 0, 0, 0.5);
-//           }
-//         }
-//       }
-
-//       .description-card {
-//         border-radius: $card-border-radius;
-//         height: 100%;
-//       }
-
-//       .description-text {
-//         font-size: 1.3rem;
-//         line-height: 1.4rem;
-//         color: $text-muted;
-//       }
-//     }
-//   }
-// }
 @use "../../shared/scss-Styles/sections-Header-styles" as *;
 @use "../../shared/scss-Styles/colors" as *;
 
@@ -132,7 +8,7 @@ $text-muted: #666;
 $div-icon-bg: rgb(219 234 255);
 $form-control-bg: #f8f9fa;
 
-.industries {
+.industry {
   .container-fluid {
     background-image: linear-gradient(
         110deg,
@@ -145,34 +21,12 @@ $form-control-bg: #f8f9fa;
     background-size: cover;
     height: 70vh;
     background-color: linear;
-    .col-md-7 {
-      padding-left: 5rem;
-      .heading {
-        h2 {
-          font-size: 2.799rem;
-          font-weight: 300;
-          line-height: 3rem;
-        }
-      }
+    .col-md-8 {
       .line {
-        width: 30%;
-        height: 0.5rem;
-        margin: 1.5rem 0;
+        width: 20%;
+        height: 0.2rem;
+        margin: 1rem 0;
         background-color: $main-color;
-      }
-      .description {
-        p {
-          font-size: 1rem;
-          font-weight: 400;
-          line-height: 1.7rem;
-        }
-         margin-bottom: 2rem;
-      }
-      .btn {
-        background-color: $btn-color;
-        color: white;
-        padding: 0.75rem 1.5rem;
-        font-size: 1rem;
       }
     }
   }
@@ -189,16 +43,21 @@ $form-control-bg: #f8f9fa;
       z-index: 1000;
       .nav-link{
         font: {
-          size: 1.1rem;
-          weight:400;
+          size: .9rem;
+          weight:600;
         };
         line-height: 1.3rem;
         color: rgb(102, 108, 112);
       }
     }
-    .industries-cards {
+    .solutions-cards {
+      margin: 5rem 0 ;
+ h4{
+  color: $main-color;
+ }
+
       .image-card {
-        height: 40vh;
+        height: 65vh;
         overflow: hidden;
         position: relative;
         img {
@@ -224,242 +83,25 @@ $form-control-bg: #f8f9fa;
           }
         }
       }
-      .description-text {
-        font-size: 1.3rem;
-        line-height: 1.4rem;
-        color: $text-muted;
-      }
     }
   }
+
+
+
+  @media (max-width:765px) {
+    .container{
+    .navs{
+      position: relative;
+      .nav-link{
+        font: {
+          size: .8rem;
+          weight:600;
+        };
+        line-height: 1rem;
+        color: rgb(102, 108, 112);
+      }
+    }
+    }
+    
+  }
 }
-
-/* Small devices (landscape phones, 576px and up) */
-// @media (max-width: 576px) {
-//   .industries {
-//     .container-fluid {
-//       height: 60vh;
-//       .col-md-7 {
-//         padding-left:1rem;
-//         .heading {
-//           h2 {
-//             font-size: 2.2rem;
-//             line-height: 2.8rem;
-//           }
-//         }
-//         .line {
-//           width: 25%;
-//           height: 0.3rem;
-//           margin: 1.2rem 0;
-//         }
-//         .description {
-//           p {
-//             font-size: 0.95rem;
-//             line-height: 1.5rem;
-//           }
-//         }
-//         .btn {
-//           padding: 0.65rem 1.3rem;
-//           font-size: 0.95rem;
-//         }
-//       }
-//     }
-//   }
-//   .details {
-//     .container {
-//       .industries-cards {
-//         .image-card {
-//           height: 35vh;
-//         }
-//         .description-text {
-//           font-size: 1.2rem;
-//           line-height: 1.3rem;
-//         }
-//       }
-//     }
-//   }
-// }
-
-/* Medium devices (tablets, 768px and up) */
-// @media (min-width: 768px ) {
-//   .industries {
-//     .container-fluid {
-//       height: 60vh;
-//       background-size: auto 100%;
-//       background-repeat: no-repeat;
-//       .col-md-7 {
-//         padding-left: 2rem;
-//         .heading {
-//           h2 {
-//             font-size: 2.7rem;
-//             line-height: 3rem;
-//           }
-//         }
-//         .line {
-//           width: 28%;
-//           height: .3rem;
-//           margin: 1.3rem 0;
-//         }
-//         .description {
-//           p {
-//             font-size: 1rem;
-//             line-height: 1.6rem;
-//           }
-//            margin-bottom: 1.6rem;
-//         }
-//         .btn {
-//           padding: 0.7rem 1.4rem;
-//           font-size: 1rem;
-//         }
-//       }
-//     }
-//   }
-//   .details {
-//     .container {
-//       .industries-cards {
-//         margin-top: 5rem;
-//         .image-card {
-//           height: 30vh;
-//         }
-//         .description-text {
-//           font-size: 1.25rem;
-//           line-height: 1.35rem;
-//         }
-//       }
-//     }
-//   }
-// }
-
-// /* Large devices (desktops, 992px and up) */
-// @media (min-width: 992px) {
-//   .industries {
-//     .container-fluid {
-//       height: 70vh;
-//       .col-md-6 {
-//         padding-left: 5rem;
-//         .heading {
-//           h2 {
-//             font-size: 2.799rem;
-//             line-height: 3rem;
-//           }
-//         }
-//         .line {
-//           width: 30%;
-//           margin: 1.5rem 0;
-//         }
-//         .description {
-//           p {
-//             font-size: 1rem;
-//             line-height: 1.7rem;
-//           }
-//         }
-//         .btn {
-//           padding: 0.75rem 1.5rem;
-//           font-size: 1rem;
-//         }
-//       }
-//     }
-//   }
-//   .details {
-//     .container {
-//       .industries-cards {
-//         .image-card {
-//           height: 40vh;
-//         }
-//         .description-text {
-//           font-size: 1.3rem;
-//           line-height: 1.4rem;
-//         }
-//       }
-//     }
-//   }
-// }
-
-/* X-Large devices (large desktops, 1200px and up) */
-// @media (min-width: 1200px) {
-//   .industries {
-//     .container-fluid {
-//       height: 75vh;
-//       .col-md-6 {
-//         padding-left: 6rem;
-//         .heading {
-//           h2 {
-//             font-size: 3rem;
-//             line-height: 3.2rem;
-//           }
-//         }
-//         .line {
-//           width: 35%;
-//           margin: 1.7rem 0;
-//         }
-//         .description {
-//           p {
-//             font-size: 1.1rem;
-//             line-height: 1.8rem;
-//           }
-//         }
-//         .btn {
-//           padding: 0.8rem 1.6rem;
-//           font-size: 1.1rem;
-//         }
-//       }
-//     }
-//   }
-//   .details {
-//     .container {
-//       .industries-cards {
-//         .image-card {
-//           height: 45vh;
-//         }
-//         .description-text {
-//           font-size: 1.4rem;
-//           line-height: 1.5rem;
-//         }
-//       }
-//     }
-//   }
-// }
-
-/* XX-Large devices (larger desktops, 1400px and up) */
-// @media (min-width: 1400px) {
-//   .industries {
-//     .container-fluid {
-//       height: 80vh;
-//       .col-md-6 {
-//         padding-left: 7rem;
-//         .heading {
-//           h2 {
-//             font-size: 3.2rem;
-//             line-height: 3.4rem;
-//           }
-//         }
-//         .line {
-//           width: 40%;
-//           margin: 2rem 0;
-//         }
-//         .description {
-//           p {
-//             font-size: 1.2rem;
-//             line-height: 1.9rem;
-//           }
-//         }
-//         .btn {
-//           padding: 0.85rem 1.7rem;
-//           font-size: 1.2rem;
-//         }
-//       }
-//     }
-//   }
-//   .details {
-//     .container {
-//       .industries-cards {
-//         .image-card {
-//           height: 50vh;
-//         }
-//         .description-text {
-//           font-size: 1.5rem;
-//           line-height: 1.6rem;
-//         }
-//       }
-//     }
-//   }
-// }
