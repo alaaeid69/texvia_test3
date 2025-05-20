@@ -102,8 +102,9 @@ $custom-xl-radius: 1.5rem;
   color: inherit;
   margin-bottom: 1rem;
   font-size: .9rem;
-  @media (min-width: 768px) { font-size: 1rem; }
+  @media (min-width: 768px) { font-size: .95rem; }
   @media (min-width: 992px) { font-size: 1.1rem; }
+  @media (min-width: 1200px) { font-size: 1.1rem; }
 }
 
 // Global Typography
@@ -123,3 +124,10 @@ p { @extend %paragraph; }
   }
 
 
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);

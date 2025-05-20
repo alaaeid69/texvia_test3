@@ -1,14 +1,10 @@
 
-import { Component, OnInit, AfterViewInit, OnDestroy, Renderer2, ElementRef, Inject, ViewChild } from '@angular/core';
-import { DOCUMENT, NgClass } from '@angular/common';
+import { Component, OnInit, AfterViewInit, OnDestroy, ElementRef,ViewChild, inject } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { NgParticlesService, NgxParticlesModule} from '@tsparticles/angular';
+import { loadSlim } from '@tsparticles/slim';
+import {  Background, Engine, Size } from '@tsparticles/engine';
 
-declare global {
-  interface Window {
-    particlesJS: any;
-    bootstrap: any;
-    pJSDom: any[];
-  }
-}
 interface home{
   top:string,
   header:string,
@@ -18,23 +14,34 @@ interface home{
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass ,NgxParticlesModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
-  private particlesScriptElement: HTMLScriptElement | null = null;
-  private tooltipInstances: any[] = [];
-  @ViewChild('flowTrack') flowTrack!: ElementRef;
-  currentInd = 0;
-  visibleItems = 3;
-  private autoSlideInterval: any;
-  private isPaused = false;
-  private readonly slideInterval = 3000; // 2 seconds
-  private readonly pauseDuration = 10000; // 5 seconds pause after interaction
+  // particles seervices 
+  private readonly ngParticlesService = inject(NgParticlesService)
+  particlesOptions:any = {
+    Background:{postion:{value:'absolute'} , resizeTo : true },
+    fpsLimit: 120,
+    interactivity: {
+      events: { onClick: { enable: true, mode: 'push' }, onHover: { enable: true, mode: 'repulse' }, resize: { enable: true} },
+      modes: { push: { quantity: 4 }, repulse: { distance: 200, duration: 0.4 } },
+    },
+    particles: {
+      color: { value: '#ffffff' },
+      links: { color: '#ffffff', distance: 150, enable: true, opacity: 0.5, width: .5 },
+      move: { direction: 'none', enable: true, outModes: { default: 'bounce' }, random: false, speed: 2, straight: false },
+      number: { density: { enable: true, area: 800 }, value: 80 },
+      opacity: { value: 0.5 },
+      shape: { type: 'circle' },
+      size: { value: { min: 1, max: 3 } },
+    },
+    detectRetina: true,
+  };
 
 
-
+  //first screen home text
   homeCaption: home[] = [
     {top:'💡 Your Digital Transformation Partner' , header:'From Data to Decisions — Smarter Industry Starts Here', description:'We help industrial enterprises improve efficiency, gain real-time visibility, and future-proof their operations through digital transformation, automation, and connected technologies'},
     {top:'🚀 Operational Intelligence Delivered' ,  header:'Digitize. Connect. Transform', description:'Empower your operations with integrated platforms for automation, real-time monitoring, and industrial analytics—designed to scale with your digital innovation goals.'},
@@ -44,188 +51,53 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   ];
   currentHomeCaption:home= this.homeCaption[0];
   currentIndex:number =0;
-  constructor(
-    private renderer: Renderer2,
-    private el: ElementRef,
-    @Inject(DOCUMENT) private document: Document
-  ) { }
+ 
 
-  ngOnInit(): void {
-    this.loadParticlesScript();
-    this.homePageCaption(); 
+
+  @ViewChild('flowTrack') flowTrack!: ElementRef;
+  currentInd = 0;
+  visibleItems = 3;
+  private autoSlideInterval: any;
+  private isPaused = false;
+  private readonly slideInterval = 3000; // 2 seconds
+  private readonly pauseDuration = 10000; // 5 seconds pause after interaction
+  
+  
+
+    ngOnInit(): void {
+    this.ngParticlesService.init(
+           async (engine: Engine) => {
+      await loadSlim(engine);
+      console.log('tsParticles initialized');
+    });
+      this.homePageCaption(); 
+
   }
-
   ngAfterViewInit(): void {
-    this.setupTooltips();
+   
    this.updateVisibleItems();
     this.startAutoSlide();
     window.addEventListener('resize', () => this.updateVisibleItems());
   }
 
   ngOnDestroy(): void {
-    this.cleanupParticles();
-    this.cleanupTooltips();
-    this.removeParticlesScriptElement();
+
         this.stopAutoSlide();
     window.removeEventListener('resize', () => this.updateVisibleItems());
   }
 
-  // all of this for particles in first screen in home code 
 
-  private loadParticlesScript(): void {
-    const existingScript = this.document.querySelector('script[src*="particles.min.js"]') as HTMLScriptElement;
-
-    if (existingScript) {
-      if (typeof window.particlesJS !== 'undefined') {
-        this.initializeAllParticles();
-      } else {
-        existingScript.onload = () => this.initializeAllParticles();
-        existingScript.addEventListener('load', () => this.initializeAllParticles());
-      }
-      this.particlesScriptElement = existingScript;
-      return;
-    }
-
-    this.particlesScriptElement = this.renderer.createElement('script');
-    this.particlesScriptElement !.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
-    this.particlesScriptElement !.async = true;
-    this.particlesScriptElement !.onload = () => this.initializeAllParticles();
-    this.particlesScriptElement !.addEventListener('load', () => this.initializeAllParticles());
-    this.particlesScriptElement !.onerror = (error) => {
-         console.error('Failed to load particles.js script', error);
-    };
-    this.renderer.appendChild(this.document.body, this.particlesScriptElement);
-  }
-
-  private initializeAllParticles(): void {
-    if (typeof window.particlesJS !== 'undefined') {
-
-      const element1Exists = this.document.getElementById('particles-js-1');
-      const element2Exists = this.document.getElementById('particles-js-2');
-
-      if (!element1Exists || !element2Exists) {
-          console.warn('One or both particle container elements not found. Cannot initialize particles.');
-          return;
-      }
-
-      const commonParticlesConfig = {
-        particles: {
-          number: { value: 50, density: { enable: true, value_area: 800 } },
-          color: { value: '#ffffff' },
-          shape: { type: 'circle', stroke: { width: 0, color: '#000000' } },
-          opacity: { value: 0.5, random: false, anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false } },
-          size: { value: 3, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } },
-          line_linked: { enable: true, distance: 150, color: '#ffffff', opacity: 0.4, width: 1 },
-          move: {
-            enable: true, speed: 2, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false,
-            attract: { enable: true, rotateX: 600, rotateY: 1200 }
-          }
-        },
-        interactivity: {
-          detect_on: 'canvas',
-          events: {
-            onhover: { enable: true, mode: 'grab' },
-            onclick: { enable: true, mode: 'push' },
-            resize: true
-          },
-          modes: {
-            grab: { distance: 140, line_linked: { opacity: 1 } },
-            push: { particles_nb: 4 }
-          }
-        },
-        retina_detect: true
-      };
-
-      // Initialize the first instance
-      window.particlesJS('particles-js-1', commonParticlesConfig);
-
-      // Initialize the second instance (can use a different config if needed)
-      window.particlesJS('particles-js-2', commonParticlesConfig);
+  
+  
 
 
-    } else {
-      console.error('particles.js library not available. Cannot initialize.');
-    }
-  }
-
-  private cleanupParticles(): void {
-      if (window.pJSDom && Array.isArray(window.pJSDom)) {
-          for (let i = window.pJSDom.length - 1; i >= 0; i--) {
-              const instance = window.pJSDom[i];
-              if (instance?.pJS?.fn?.vendors?.destroypJS) {
-                  try {
-                       instance.pJS.fn.vendors.destroypJS();
-                       window.pJSDom.splice(i, 1);
-                  } catch (e) {
-                      console.error('Error destroying particle instance:', e);
-                  }
-              }
-          }
-           if (window.pJSDom.length > 0) {
-             window.pJSDom = [];
-           }
-      } else {
-          const element1 = this.document.getElementById('particles-js-1');
-          if(element1?.parentNode) {
-             this.renderer.removeChild(element1.parentNode, element1);
-          }
-          const element2 = this.document.getElementById('particles-js-2');
-           if(element2?.parentNode) {
-              this.renderer.removeChild(element2.parentNode, element2);
-          }
-      }
-  }
-
-  private removeParticlesScriptElement(): void {
-     if (this.particlesScriptElement?.parentNode) {
-        this.renderer.removeChild(this.document.body, this.particlesScriptElement);
-        this.particlesScriptElement = null;
-     }
-  }
-
-
-  private setupTooltips(): void {
-     if (typeof window.bootstrap !== 'undefined' && typeof window.bootstrap.Tooltip === 'function') {
-       const tooltipTriggerList = [].slice.call(this.el.nativeElement.querySelectorAll('[data-bs-toggle="tooltip"]'));
-       this.tooltipInstances = tooltipTriggerList.map((tooltipTriggerEl: HTMLElement) => {
-         if (tooltipTriggerEl) {
-            try {
-                return new window.bootstrap.Tooltip(tooltipTriggerEl);
-            } catch (e) {
-                console.error('Error creating tooltip instance:', e);
-                return null;
-            }
-         }
-         return null;
-       }).filter(instance => instance !== null);
-     } else {
-       console.warn('Bootstrap Tooltip library not found.');
-     }
-  }
-
-  private cleanupTooltips(): void {
-      if (this.tooltipInstances) {
-        this.tooltipInstances.forEach(tooltip => {
-           try {
-             if (tooltip && typeof tooltip.dispose === 'function') {
-               tooltip.dispose();
-             }
-           } catch (e) {
-             console.error('Error disposing tooltip instance:', e);
-           }
-        });
-        this.tooltipInstances = [];
-      }
-  }
-// end of particles   
- //home dynamic for first screen in home 
+  //home dynamic for first screen in home 
   homePageCaption():void{
   setInterval(() => {
     this.currentIndex =(this.currentIndex + 1) % this.homeCaption.length;
     this.currentHomeCaption = (this.homeCaption[this.currentIndex])
   }, 3000);
   }
-
   //how we do code 
    updateVisibleItems() {
     const width = window.innerWidth;
