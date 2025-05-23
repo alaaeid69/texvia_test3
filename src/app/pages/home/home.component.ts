@@ -3,7 +3,7 @@ import { Component, OnInit, AfterViewInit, OnDestroy, ElementRef,ViewChild, inje
 import { NgClass } from '@angular/common';
 import { NgParticlesService, NgxParticlesModule} from '@tsparticles/angular';
 import { loadSlim } from '@tsparticles/slim';
-import {  Background, Engine, Size } from '@tsparticles/engine';
+import {  Background, Engine, Size, ZIndex } from '@tsparticles/engine';
 
 interface home{
   top:string,
@@ -21,25 +21,42 @@ interface home{
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   // particles seervices 
   private readonly ngParticlesService = inject(NgParticlesService)
-  particlesOptions:any = {
-    Background:{postion:{value:'absolute'} , resizeTo : true },
+  particlesOptions1:any = {
+    Background:{position:{value:'absolute'} , resizeTo : true },
     fpsLimit: 120,
-    interactivity: {
-      events: { onClick: { enable: true, mode: 'push' }, onHover: { enable: true, mode: 'repulse' }, resize: { enable: true} },
-      modes: { push: { quantity: 4 }, repulse: { distance: 200, duration: 0.4 } },
-    },
+    // interactivity: {
+    //   //events: { ondblclick: { enable: true, mode: 'push' }, onHover: { enable: true, mode: 'repulse' }, resize: { enable: true}  },
+    //   //modes: { push: { quantity: 4 }, repulse: { distance: 200, duration: 0.4 } },
+    // },
     particles: {
       color: { value: '#ffffff' },
       links: { color: '#ffffff', distance: 150, enable: true, opacity: 0.5, width: .5 },
       move: { direction: 'none', enable: true, outModes: { default: 'bounce' }, random: false, speed: 2, straight: false },
-      number: { density: { enable: true, area: 800 }, value: 80 },
+      number: { density: { enable: true, area: 800 }, value: 70 },
       opacity: { value: 0.5 },
       shape: { type: 'circle' },
       size: { value: { min: 1, max: 3 } },
     },
     detectRetina: true,
   };
-
+  particlesOptions2:any = {
+    Background:{position:{value:'absolute'} , resizeTo : true },
+    fpsLimit: 120,
+    interactivity: {
+       events: { onClick: { enable: true, mode: 'push' }, onHover: { enable: true, mode: 'repulse' }, resize: { enable: true} },
+      modes: { push: { quantity: 4 }, repulse: { distance: 200, duration: 0.4 } },
+    },
+    particles: {
+      color: { value: '#ffffff' },
+      links: { color: '#ffffff', distance: 150, enable: true, opacity: 0.5, width: .5 },
+      move: { direction: 'none', enable: true, outModes: { default: 'bounce' }, random: false, speed: 2, straight: false },
+      number: { density: { enable: true, area: 800 }, value: 50 },
+      opacity: { value: 0.5 },
+      shape: { type: 'circle' },
+      size: { value: { min: 1, max: 2 } },
+    },
+    detectRetina: true,
+  };
 
   //first screen home text
   homeCaption: home[] = [
@@ -67,8 +84,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     ngOnInit(): void {
     this.ngParticlesService.init(
            async (engine: Engine) => {
-      await loadSlim(engine);
-      console.log('tsParticles initialized');
+      await loadSlim(engine);   
     });
       this.homePageCaption(); 
 
@@ -105,8 +121,11 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       this.visibleItems = 1;
     } else if (width < 992) {
       this.visibleItems = 2;
-    } else {
+    } else if (width<1200)  {
       this.visibleItems = 3;
+    }
+    else {
+      this.visibleItems =4;
     }
     this.updateTrackPosition();
   }
@@ -137,7 +156,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private updateTrackPosition() {
     const track = this.flowTrack.nativeElement as HTMLElement;
-    const itemWidth = 300 + 24; 
+    const itemWidth = 300 ; 
     track.style.transform = `translateX(-${this.currentInd * itemWidth}px)`;
   }
 

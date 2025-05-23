@@ -97,7 +97,7 @@ $custom-xl-radius: 1.5rem;
 
 %paragraph {
   font-family: inherit;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.6;
   color: inherit;
   margin-bottom: 1rem;
@@ -123,6 +123,14 @@ p { @extend %paragraph; }
     background-color: $main-color;
   }
 
+// SCSS Variables
+$grid-breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
 
 $container-max-widths: (
   sm: 540px,
@@ -131,3 +139,56 @@ $container-max-widths: (
   xl: 1140px,
   xxl: 1320px
 );
+
+$container-padding-x: 15px;
+
+// SCSS for .container class
+.container {
+  width: 100%;
+  padding-right: $container-padding-x;
+  padding-left: $container-padding-x;
+  margin-right: auto;
+  margin-left: auto;
+
+  @each $breakpoint-name, $breakpoint-min-width in $grid-breakpoints {
+    @if map-has-key($container-max-widths, $breakpoint-name) {
+      $container-max-width-for-bp: map-get($container-max-widths, $breakpoint-name);
+
+      @media (min-width: $breakpoint-min-width) {
+        max-width: $container-max-width-for-bp;
+      }
+    }
+  }
+}
+
+
+
+// banners //
+%banner{
+min-height: 250px ;
+}
+
+
+%cta-button {
+    .cta-button-text {
+      color: $main-color;
+    }
+    .cta-button-arrow {
+      stroke: $main-color;
+    }
+    &:hover {
+        background-color: linear-gradient($white-color, $main-color, 90%) !important;
+        border-color: linear-gradient($white-color, $main-color, 85%) !important;
+    }
+  }
+.banner{
+@extend %banner;
+  .banners-btn{
+    
+    @extend %cta-button
+  }
+
+  p{
+     color: rgba($white-color, 0.75) !important;
+  }
+}

@@ -1,9 +1,9 @@
 <!-- Home Section -->
-<section class="home-section min-vh-100">
-  <ngx-particles [options]="particlesOptions"></ngx-particles>
-  <div class="container py-3 py-md-4 py-lg-5">
+<section class="home-section">
+  <ngx-particles id="particles1" [options]="particlesOptions1"></ngx-particles>
+  <div class="container  py-3 py-md-4 py-lg-5">
     <div class="row align-items-center">
-      <div class="col-12 mb-4 home-caption ">
+      <div class="col-12  home-caption ">
         <span
           class="hero-caption bg-white bg-opacity-25 text-white rounded-pill fw-medium px-2 py-1 mb-3 d-inline-block"
         >
@@ -12,19 +12,19 @@
         <h1 class="hero-title text-white fw-bold mb-4">
           {{ currentHomeCaption.header }}
         </h1>
-        <p class="hero-description text-white mb-4">
+        <h5 class="hero-description  fw-light  mb-4">
           {{ currentHomeCaption.description }}
-        </p>
+        </h5>
       </div>
-      <div class="hero-actions d-flex flex-wrap gap-2 gap-md-3 mb-5">
+      <div class="hero-actions d-flex flex-wrap gap-2 gap-md-3 mb-5 ">
         <button
-          class="btn cta-button btn-start text-aveva-dark fw-medium py-2 py-md-3 px-3 px-md-4 rounded shadow-lg"
+          class="btn cta-button btn-start text-aveva-dark fw-medium py-2 py-md-3 px-3 px-md-4 rounded shadow-lg "
           aria-label="Get Started"
         >
           Get Started
         </button>
         <button
-          class="btn cta-button btn-outline-light fw-medium py-2 py-md-3 px-3 px-md-4 rounded shadow"
+          class="btn cta-button btn-outline-light fw-medium py-2 py-md-3 px-3 px-md-4 rounded shadow-lg "
           aria-label="Watch Demo"
         >
           Watch Demo
@@ -35,8 +35,7 @@
     <div
       class="all-services-card row g-3 row-cols-1 row-cols-md-2 align-items-stretch"
     >
-      <!-- Service cards unchanged as per requirement -->
-      <div class="col-md-3">
+      <div class="col-lg-3 col-md-6">
         <div
           class="service-card rounded p-4 shadow float-animation h-100 d-flex flex-column"
         >
@@ -49,7 +48,7 @@
           </p>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-lg-3 col-md-6">
         <div
           class="service-card rounded p-4 shadow float-animation h-100 d-flex flex-column"
         >
@@ -63,7 +62,7 @@
           </p>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-lg-3 col-md-6">
         <div
           class="service-card rounded p-4 shadow float-animation h-100 d-flex flex-column"
         >
@@ -76,7 +75,7 @@
           </p>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-lg-3 col-md-6">
         <div
           class="service-card rounded p-4 shadow float-animation h-100 d-flex flex-column"
         >
@@ -94,17 +93,17 @@
 </section>
 
 <!-- Who We Are Section -->
-<section class="section-gradient py-5 px-3">
-  <div class="container mx-auto">
+<section class="section-gradient py-5 ">
+  <div class="container mx-auto ">
     <!-- Headers -->
     <header class="text-center mb-2">
       <h2 class="fw-bold mb-2 text-black">Who we are</h2>
       <div class="underline mx-auto"></div>
     </header>
     <header class="text-center mb-5">
-      <h3 class="fw-bold mb-3 text-black">
+      <h4 class="fw-bold mb-3 text-black">
         Driving the Future of <span class="highlight-text">Industry 4.0</span>
-      </h3>
+      </h4>
       <div class="underline-base mx-auto"></div>
     </header>
 
@@ -261,14 +260,14 @@
   </div>
 
   <!-- -----Industries------- -->
-  <div class="industries bg-white w-100 pt-2 mt-4">
+  <div class="industries bg-white w-100 py-3 mt-5">
     <div class="container mx-auto">
       <div class="row bg-white text-center p-4 rounded-3">
         <div class="col-12 mb-5">
           <div>
-            <h3 class="text-black fw-semibold">
+            <h4 class="text-black fw-bold">
               Tailored Solutions for Your Sector
-            </h3>
+            </h4>
             <p class="fw-normal w-md-50 mx-auto">
               Our expertise spans across multiple industries, with specialized
               solutions for each sector's unique challenges.
@@ -450,12 +449,12 @@
       </div>
     </div>
   </div>
-
   <!-- Mession -->
-  <div class="container mx-auto">
-    <div class="mt-5 card p-4 rounded-3 border-0">
-      <div class="row align-items-center">
-        <div class="col-md-3 text-center mb-4 mb-md-0">
+   <section class="mession bg-white  shadow-sm">
+     <div class="container mt-5 pb-3">
+    <!-- <div class="mt-5 card p-4 rounded-3 border-0"> -->
+      <div class="row  mt-5 py-4 rounded-3 border-0">
+        <div class="col-md-3  mb-4 mb-md-0 d-flex align-items-end justify-content-center">
           <svg
             viewBox="0 0 100 100"
             xmlns="http://www.w3.org/2000/svg"
@@ -492,20 +491,21 @@
             </text>
           </svg>
         </div>
-        <div class="col-md-9">
-          <h4 class="fw-semibold mb-3 text-black">Our Mission</h4>
-          <p class="text-secondary">
+        <div class="col-md-9 ">
+          <div>
+            <h4 class="fw-semibold mb-3 text-center text-black">Our Mission</h4>
+          <p class="text-secondary text-center">
             To deliver the next generation of
             <span class="fw-semibold text-main-color"
               >Industry 4.0 solutions</span
             >—bridging data, systems, and human insight to improve performance,
             resilience, and sustainability.
           </p>
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="mt-5 d-flex flex-wrap justify-content-center gap-2">
+         <div class="py-2 d-flex flex-wrap justify-content-center gap-2">
       <span class="badge rounded-pill px-3 py-2 fw-medium">#Industry4.0</span>
       <span class="badge rounded-pill px-3 py-2 fw-medium"
         >#IndustrialAutomation</span
@@ -520,46 +520,86 @@
       <span class="badge rounded-pill px-3 py-2 fw-medium">#UK</span>
       <span class="badge rounded-pill px-3 py-2 fw-medium">#Egypt</span>
     </div>
-  </div>
+   
+  <!-- </div> -->
+   </section>
+
+
 </section>
+
 
 <!-- bannger -->
 <div
   class="banner d-flex flex-column justify-content-center align-items-center py-md-5 py-3"
+
 >
-  <h2 class="text-white">
+  <h4 class="text-white text-center">
     Ready to Lead Industry 4.0? Let's Build Your Digital Roadmap.
-  </h2>
+  </h4>
   <div class="mt-2 btns d-flex flex-md-row flex-column">
-    <button class="btn bg-white px-3 py-2 fs-6 me-md-2 m-0">
-      Talk to an Expert ↗
-    </button>
-    <button
-      class="btn btn-download text-white px-3 py-2 fs-6 ms-md-2 mx-0 my-md-0 my-3"
+ <button class="btn btn-light banners-btn d-inline-flex align-items-center">
+        <span class="cta-button-text me-2">Talk to an Expert   </span>
+        <svg
+          class="cta-button-arrow"
+          width="20"
+          height="20"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M14 5l7 7m0 0l-7 7m7-7H3"
+          ></path>
+        </svg>
+      </button>
+
+      <button class="btn btn-download btn-light banners-btn d-inline-flex align-items-center ms-md-3 ms-0 mt-3 mt-md-0">
+        <span class="cta-button-text me-2">Download ROI Calculator</span>
+        <svg
+          class="cta-button-arrow"
+          width="20"
+          height="20"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M14 5l7 7m0 0l-7 7m7-7H3"
+          ></path>
+        </svg>
+      </button>
+    <!-- <button
+      class="btn btn-download banners-btn text-white px-3 py-2 fs-6 ms-md-2 mx-0 my-md-0 my-3"
     >
       Download ROI Calculator ↘
-    </button>
+    </button> -->
   </div>
 </div>
 
 <!-- -----------what we do section----------------------->
-<section class="solutions py-5 px-5 position-relative">
-  <div class="container-xxl">
-    <header class="text-center mb-4">
+<section class="solutions py-5  position-relative">
+   <header class="text-center mb-4">
       <h2 class="fw-bold mb-2 text-black">what we do</h2>
       <div class="underline mx-auto"></div>
     </header>
-    <div
-      class="gradient-bg rounded-custom-xl p-4 p-md-5 mb-5 text-center"
-      style="min-height: 250px"
+     <div 
+      class="banner gradient-bg p-4 p-md-5 mb-5 text-center d-flex justify-content-center align-items-center"
     >
-       <ngx-particles [options]="particlesOptions"></ngx-particles>
+       <ngx-particles id="particles2" [options]="particlesOptions2"></ngx-particles>
       <div class="position-relative">
-        <h2 class="display-5 fw-bold text-white mb-4">
+        <h3 class="fw-bold text-white mb-4">
           Smart Solutions for Critical Industries
-        </h2>
+        </h3>
         <p
-          class="fs-5 text-white-75 intro-text mx-auto"
+          class="intro-text mx-auto"
           style="max-width: 768px"
         >
           Connecting data, people, and processes through intelligent
@@ -567,7 +607,7 @@
         </p>
       </div>
     </div>
-
+  <div class="container">
     <div class="mb-5">
       <div class="row g-4 solutions-container">
         <div class="col-12 col-sm-6 col-lg-4 d-flex">
@@ -990,16 +1030,18 @@
       </div>
     </div>
 
-    <div
-      class="closing-cta-block rounded-custom-xl p-4 p-md-5 text-center shadow-lg"
+  </div>
+
+   <div
+      class= "banner closing-cta-block rounded-custom-xl p-4 p-md-5 text-center shadow-lg"
     >
-      <h3 class="display-6 fw-bold text-white mb-3">
+      <h3 class=" fw-bold text-white mb-3">
         Want to see how these solutions come together in your environment?
       </h3>
-      <p class="fs-5 mb-4 cta-text mx-auto text-white" style="max-width: 768px">
+      <p class=" mb-4 cta-text mx-auto text-white" style="max-width: 768px">
         Discover our industry use cases and see Texvia in action.
       </p>
-      <button class="btn btn-light cta-button d-inline-flex align-items-center">
+      <button class="btn btn-light banners-btn d-inline-flex align-items-center">
         <span class="cta-button-text me-2">Explore Our Solutions</span>
         <svg
           class="cta-button-arrow"
@@ -1019,12 +1061,11 @@
         </svg>
       </button>
     </div>
-  </div>
 </section>
 
 <!-- ------------How We Do------------------- -->
 <div class="how-We-Do">
-  <div class="container-fluid process-flow-container">
+  <div class="container process-flow-container">
     <div class="text-center mb-5">
       <header class="mb-4">
         <h2 class="fw-bold mb-1 text-black">How we do</h2>
@@ -1042,7 +1083,7 @@
           class="flow-item card mx-3"
           [ngClass]="{ active: currentInd === 0 }"
         >
-          <div class="card-body d-flex flex-column h-100">
+          <div class="card-body  d-flex flex-column h-100 shadow-sm">
             <div class="flow-number">01</div>
             <h5 class="flow-title card-title">Discover</h5>
             <p class="flow-description card-text flex-grow-1">
@@ -1067,7 +1108,7 @@
           class="flow-item card mx-3"
           [ngClass]="{ active: currentInd === 1 }"
         >
-          <div class="card-body d-flex flex-column h-100">
+          <div class="card-body d-flex flex-column h-100 shadow-sm">
             <div class="flow-number">02</div>
             <h5 class="flow-title card-title">Plan</h5>
             <p class="flow-description card-text flex-grow-1">
@@ -1092,7 +1133,7 @@
           class="flow-item card mx-3"
           [ngClass]="{ active: currentInd === 2 }"
         >
-          <div class="card-body d-flex flex-column h-100">
+          <div class="card-body d-flex flex-column h-100 shadow-sm">
             <div class="flow-number">03</div>
 
             <h5 class="flow-title card-title">Create</h5>
@@ -1118,7 +1159,7 @@
           class="flow-item card mx-3"
           [ngClass]="{ active: currentInd === 3 }"
         >
-          <div class="card-body d-flex flex-column h-100">
+          <div class="card-body d-flex flex-column h-100 shadow-sm">
             <div class="flow-number">04</div>
             <h5 class="flow-title card-title">Validate</h5>
             <p class="flow-description card-text flex-grow-1">
@@ -1142,7 +1183,7 @@
           class="flow-item card mx-3"
           [ngClass]="{ active: currentInd === 4 }"
         >
-          <div class="card-body d-flex flex-column h-100">
+          <div class="card-body d-flex flex-column h-100 shadow-sm">
             <div class="flow-number">05</div>
             <h5 class="flow-title card-title">Launch</h5>
             <p class="flow-description card-text flex-grow-1">
@@ -1223,16 +1264,6 @@
           [ngClass]="{ active: currentInd === 2 }"
           (click)="goToItem(2)"
         ></div>
-        <div
-          class="progress-dot"
-          [ngClass]="{ active: currentInd === 3 }"
-          (click)="goToItem(3)"
-        ></div>
-        <div
-          class="progress-dot"
-          [ngClass]="{ active: currentInd === 4 }"
-          (click)="goToItem(4)"
-        ></div>
       </div>
     </div>
   </div>
@@ -1240,28 +1271,28 @@
 
 <!-- ------------ core values --------------- -->
 <section class="py-5 core-values-section">
-  <div class="container-fluid values-container">
+  <div class="container">
     <div class="text-center mb-5">
       <div
-        class="d-inline-flex align-items-center px-3 py-2 rounded-pill font-weight-medium mb-3 core-badge"
+        class="d-inline-flex flex-nowrap align-items-center px-3 py-2 rounded-pill font-weight-medium mb-3 core-badge"
       >
-        <span class="me-2">🔷</span> Core Values + Mission & Vision
+        <span class="me-2">🔷</span> Core Values
       </div>
-      <h2>Guided by Values. Driven by Purpose.</h2>
+      <h3>Guided by Values. Driven by Purpose.</h3>
       <div class="values-underline mx-auto rounded"></div>
     </div>
 
-    <div class="row mt-5">
-      <div class="col-md-6 mb-4 mb-md-0">
+    <div class="row mt-5 align-items-stretch">
+      <div class="col-xl-6 mb-4 mb-md-0">
         <div class="mission-vision-card card h-100">
           <div class="card-body p-5 position-relative">
             <div class="circle-top-left rounded-circle"></div>
             <div class="circle-bottom-right rounded-circle"></div>
 
-            <div class="position-relative mb-5">
+            <div class="position-relative mb-2 mb-lg-5">
               <div class="d-flex align-items-center mb-3">
                 <div
-                  class="icon-circle rounded-circle d-flex align-items-center justify-content-center me-3 pulse-animation"
+                  class="icon-circle rounded-circle d-flex align-items-center justify-content-center me-2 me-lg-2 pulse-animation"
                 >
                   <svg
                     class="w-50"
@@ -1281,7 +1312,7 @@
                 <h4 class="card-title">Mission</h4>
               </div>
               <p
-                class="card-text ps-5 border-start py-2 mission-vision-text-border"
+                class="ps-5 border-start py-2 text-secondary"
               >
                 To deliver innovative, secure, and sustainable digital solutions
                 that enhance industrial performance across the globe.
@@ -1289,7 +1320,7 @@
             </div>
 
             <div class="position-relative">
-              <div class="d-flex align-items-center mb-3">
+              <div class="d-flex align-items-center mb-1 mb-lg-3">
                 <div
                   class="icon-circle rounded-circle d-flex align-items-center justify-content-center me-3 pulse-animation"
                 >
@@ -1317,7 +1348,7 @@
                 <h4 class="card-title">Vision</h4>
               </div>
               <p
-                class="card-text ps-5 border-start py-2 mission-vision-text-border"
+                class="text-secondary ps-5 border-start py-2 "
               >
                 A smarter, more connected world where technology drives
                 efficiency, safety, and environmental stewardship.
@@ -1468,106 +1499,84 @@
             </div>
 
             <div
-              class="mt-4 d-flex flex-wrap justify-content-center gap-2 keywords-container"
+              class="mt-4 d-flex flex-wrap justify-content-center gap-1 keywords-container"
             >
-              <span
-                class="px-1 px-md-3 py-1 rounded-pill font-weight-medium keyword-badge keyword-blue"
-                >sustainable solutions</span
+              <p
+                class="px-2 px-lg-3 py-1 rounded-pill  keyword-badge keyword-blue"
+                >sustainable solutions</p
               >
-              <span
-                class="px-1 px-md-3 rounded-pill font-weight-medium keyword-badge keyword-emerald"
-                >industrial innovation</span
+              <p
+                class="px-2 px-lg-3 py-1 rounded-pill  keyword-badge keyword-emerald"
+                >industrial innovation</p
               >
-              <span
-                class="px-1 px-md-3 rounded-pill font-weight-medium keyword-badge keyword-cyan"
-                >digital stewardship</span
+              <p
+                class="px-2 px-lg-3 py-1 rounded-pill  keyword-badge keyword-cyan"
+                >digital stewardship</p
               >
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-md-6">
-        <div class="card core-values-card">
+      <div class="col-xl-6 mt-3 mt-xl-0">
+        <div class="card core-values-card h-100">
           <div class="card-body p-5">
             <h3 class="card-title text-center mb-4">Core Values</h3>
-            <div class="row row-cols-1 row-cols-md-2 g-4">
-              <div class="col">
-                <div class="value-card card border-left-blue">
-                  <div class="card-body p-4 d-flex flex-column">
-                    <div class="d-flex align-items-center mb-3">
-                      <div class="value-icon fs-3 me-1 me-md-3 floating">
-                        💡
-                      </div>
-                      <h6 class="card-title mb-0 pe-1">Innovation</h6>
-                    </div>
-                    <p class="card-text flex-grow-1">
-                      We lead with creativity and curiosity to build what's
-                      next.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="value-card card border-left-indigo">
-                  <div class="card-body p-4 d-flex flex-column">
-                    <div class="d-flex align-items-center mb-3">
-                      <div
-                        class="value-icon fs-3 me-1 me-md-3 floating"
-                        style="animation-delay: 0.5s"
-                      >
-                        🤝
-                      </div>
-                      <h6 class="card-title mb-0">Integrity</h6>
-                    </div>
-                    <p class="card-text flex-grow-1">
-                      We build trust through transparency, honesty, and
-                      reliability.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="value-card card border-left-emerald">
-                  <div class="card-body p-4 d-flex flex-column">
-                    <div class="d-flex align-items-center mb-3">
-                      <div
-                        class="value-icon fs-3 me-0 me-md-3 floating"
-                        style="animation-delay: 1s"
-                      >
-                        🌱
-                      </div>
-                      <h6 class="card-title mb-0">Sustainability</h6>
-                    </div>
-                    <p class="card-text flex-grow-1">
-                      We believe in technology that respects the planet and
-                      future generations.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="value-card card border-left-cyan">
-                  <div class="card-body p-4 d-flex flex-column">
-                    <div class="d-flex align-items-center mb-3">
-                      <div
-                        class="value-icon fs-3 me-1 me-md-3 floating"
-                        style="animation-delay: 1.5s"
-                      >
-                        🎯
-                      </div>
-                      <h6 class="card-title mb-0">Customer-Centricity</h6>
-                    </div>
-                    <p class="card-text flex-grow-1">
-                      We listen, adapt, and deliver solutions tailored to your
-                      unique needs.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="mt-4 rounded p-1 p-md-4 values-in-action-container">
+            <div class="row g-4 d-flex align-items-stretch">
+  <div class="col-md-6">
+    <div class="value-card card border-left-blue h-100">
+      <div class="card-body p-4 d-flex flex-column">
+        <div class="d-flex align-items-center mb-2">
+          <div class="value-icon fs-3 me-1 me-xl-2 floating">💡</div>
+          <h6 class="mb-0 pe-1">Innovation</h6>
+        </div>
+        <small class="h6 fw-normal text-center flex-grow-1 text-secondary">
+          We lead with creativity and curiosity to build what's next.
+        </small>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="value-card card border-left-indigo h-100">
+      <div class="card-body p-4 d-flex flex-column">
+        <div class="d-flex align-items-center mb-2">
+          <div class="value-icon fs-3 me-1 me-xl-2 floating" style="animation-delay: 0.5s">🤝</div>
+          <h6 class="mb-0 pe-1">Integrity</h6>
+        </div>
+        <small class="h6 fw-normal text-center flex-grow-1 text-secondary">
+          We build trust through transparency, honesty, and reliability.
+        </small>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="value-card card border-left-emerald h-100">
+      <div class="card-body p-4 d-flex flex-column">
+        <div class="d-flex align-items-center mb-2">
+          <div class="value-icon fs-3 me-0 me-xl-2 floating" style="animation-delay: 1s">🌱</div>
+          <h6 class="mb-0 pe-1">Sustainability</h6>
+        </div>
+        <small class="h6 fw-normal text-center flex-grow-1 text-secondary">
+          We believe in technology that respects the planet and future generations.
+        </small>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="value-card card border-left-cyan h-100">
+      <div class="card-body p-4 d-flex flex-column">
+        <div class="d-flex align-items-center mb-2">
+          <div class="value-icon fs-3 me-1 me-xl-2 floating" style="animation-delay: 1.5s">🎯</div>
+          <h6 class="mb-0 pe-1">Customer-Centricity</h6>
+        </div>
+        <small class="h6 fw-normal text-center flex-grow-1 text-secondary">
+          We listen, adapt, and deliver solutions tailored to your unique needs.
+        </small>
+      </div>
+    </div>
+  </div>
+</div>
+            <div class="mt-4 rounded p-2 p-xl-4 rounded-3 values-in-action-container">
               <h4 class="card-title mb-3">Our Values in Action</h4>
               <div class="d-flex flex-column gap-3">
                 <div class="d-flex align-items-start">
@@ -1680,59 +1689,60 @@
 </section>
 
 <!-- Customer-Centricity -->
-<section class="py-5 customer-centricity-section">
+<section class="py-5  customer-centricity-section">
   <div class="container">
-    <div class="customer-centricity reveal">
+    <div class="customer-centricity">
       <div class="row align-items-center">
         <div class="col-10 col-md mx-auto">
-          <h3 class="fs-2 fw-bold mb-3 customer-centricity-title">
+          <h3 class=" fw-bold mb-3 customer-centricity-title">
             🎯 Customer-Centricity
           </h3>
-          <p class="text-secondary mb-4 customer-centricity-paragraph">
+          <p class="text-secondary mb-4 ">
             At the heart of everything we do is our commitment to our customers.
             We believe in building lasting relationships based on trust,
             understanding, and mutual success.
           </p>
-          <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
-            <div class="col">
+          <div class="row  g-4 mt-4 text-center ">
+            <div class="col-md-4 ">
               <div
-                class="card h-100 p-4 rounded-lg shadow-sm customer-feature-card border"
+                class="card h-100 p-4 rounded-xl shadow-sm customer-feature-card border"
               >
-                <h5 class="fw-semibold mb-2 customer-feature-title">
+                <h5 class=" mb-2 customer-feature-title">
                   Responsive Support
                 </h5>
-                <p class="text-sm text-muted mb-0 customer-feature-text">
+                <p class="text-sm text-muted mb-0 ">
                   We're always there when you need us, providing timely and
                   effective solutions.
                 </p>
               </div>
             </div>
-            <div class="col">
+            <div class="col-md-4">
               <div
-                class="card h-100 p-4 rounded-lg shadow-sm customer-feature-card border"
+                class="card h-100 p-4 rounded-xl shadow-sm customer-feature-card border"
               >
-                <h5 class="fw-semibold mb-2 customer-feature-title">
-                  Tailored Solutions
+                <h5 class=" mb-2 customer-feature-title">
+                   Tailored Solutions
                 </h5>
-                <p class="text-sm text-muted mb-0 customer-feature-text">
-                  We understand your unique challenges and create solutions that
+                <p class="text-sm text-muted mb-0 ">
+                 We understand your unique challenges and create solutions that
                   fit your specific needs.
                 </p>
               </div>
             </div>
-            <div class="col">
+            <div class="col-md-4">
               <div
-                class="card h-100 p-4 rounded-lg shadow-sm customer-feature-card border"
+                class="card h-100 p-4 rounded-xl shadow-sm customer-feature-card border"
               >
-                <h5 class="fw-semibold mb-2 customer-feature-title">
-                  Long-term Partnership
+                <h5 class=" mb-2 customer-feature-title">
+                 Long-term Partnership
                 </h5>
-                <p class="text-sm text-muted mb-0 customer-feature-text">
+                <p class="text-sm text-muted mb-0 ">
                   We're committed to your success beyond the initial
                   implementation.
                 </p>
               </div>
             </div>
+           
           </div>
         </div>
       </div>
@@ -1743,9 +1753,9 @@
 <!-------- why texvia-------->
 <section class="aboutTexvia">
   <div
-    class="py-5 px-3 px-sm-4 px-lg-5 mx-auto my-5 what-sets-us-apart-section reveal"
+    class="py-5 px-3 px-sm-4 px-lg-5 mx-auto my-5 what-sets-us-apart-section"
   >
-    <div class="content-wrapper">
+    <div class="container">
       <div class="row g-5 align-items-center">
         <div class="col-12 col-lg-6">
           <div class="d-flex flex-column h-100">
@@ -1753,7 +1763,7 @@
               <h2 class="fs-2 fw-bold mb-3 section-title">
                 What Sets Us Apart
               </h2>
-              <p class="fs-5 text-secondary mt-4 max-w-2xl">
+              <p class=" text-secondary mt-4">
                 Texvia combines
                 <span class="fw-semibold">world-class technical expertise</span>
                 with
@@ -1944,27 +1954,31 @@
 </section>
 
 <!-- ---------insights--------------- -->
-<div class="insights container py-5">
-    <section>
-        <div class="insights-header mb-4 ">
-            <div class="insights-pattern"></div>
+
+    <section class="insights py-5">
+        <div class="insights-header bg-danger ">
              <svg class="insights-icon d-none d-md-block" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10 3H14C19.5 3 21 4.5 21 10V14C21 19.5 19.5 21 14 21H10C4.5 21 3 19.5 3 14V10C3 4.5 4.5 3 10 3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M16.5 16.5L12.3 14.1C11.8 13.8 11.4 13.1 11.4 12.5V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M5 3L21 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            <div class="insights-header-content p-4 p-md-5">
+            <div class="insights-header-content p-4 p-md-5 d-flex flex-column justify-content-center align-items-center justify-content-md-between align-items-md-start">
                 <div class="d-inline-block px-4 py-1 bg-white bg-opacity-25 text-white rounded-pill fs-sm fw-semibold mb-3 ">🔷 8. Insights</div>
-                <h2 class="text-white">Insights & Innovation</h2>
-                <p class="text-white">
+         
+                  <h3 class="text-white">Insights & Innovation</h3>
+                <p class="text-center" >
                     Explore our latest thinking on digital transformation, automation, and sustainability.
                 </p>
+          
+                
             </div>
         </div>
 
+
  <!-- --blogs cards--- -->
- <div class="row g-5 my-4">
-    <div class="col-12 col-md-4">
+  <div class="container">
+    <div class="row g-5 my-4">
+    <div class="col-12 col-md-6 col-xl-4">
         <div class="card blog-card blue h-100" data-bs-toggle="modal" data-bs-target="#HowUOC">
             <div class="blog-image" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'200\' viewBox=\'0 0 400 200\'%3E%3Crect width=\'400\' height=\'200\' fill=\'%23dbeafe\'/%3E%3Cpath d=\'M100,100 L300,100 M200,50 L200,150\' stroke=\'%232563eb\' stroke-width=\'8\' stroke-linecap=\'round\'/%3E%3Ccircle cx=\'200\' cy=\'100\' r=\'60\' fill=\'none\' stroke=\'%232563eb\' stroke-width=\'8\'/%3E%3Ccircle cx=\'200\' cy=\'100\' r=\'40\' fill=\'none\' stroke=\'%2360a5fa\' stroke-width=\'6\'/%3E%3Ccircle cx=\'200\' cy=\'100\' r=\'20\' fill=\'%2393c5fd\' stroke=\'%2360a5fa\' stroke-width=\'4\'/%3E%3C/svg%3E');">
                 <span class="blog-tag blue">Operations</span>
@@ -1987,7 +2001,7 @@
         </div>
     </div>
 
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-6 col-xl-4">
         <div class="card blog-card green h-100" data-bs-toggle="modal" data-bs-target="#WaystoCutDowntime">
             <div class="blog-image" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'200\' viewBox=\'0 0 400 200\'%3E%3Crect width=\'400\' height=\'200\' fill=\'%23d1fae5\'/%3E%3Cpath d=\'M50,150 L100,100 L150,125 L200,75 L250,100 L300,50 L350,125\' stroke=\'%2310b981\' stroke-width=\'8\' stroke-linecap=\'round\' stroke-linejoin=\'round\' fill=\'none\'/%3E%3Ccircle cx=\'100\' cy=\'100\' r=\'10\' fill=\'%2334d399\'/%3E%3Ccircle cx=\'150\' cy=\'125\' r=\'10\' fill=\'%2334d399\'/%3E%3Ccircle cx=\'200\' cy=\'75\' r=\'10\' fill=\'%2334d399\'/%3E%3Ccircle cx=\'250\' cy=\'100\' r=\'10\' fill=\'%2334d399\'/%3E%3Ccircle cx=\'300\' cy=\'50\' r=\'10\' fill=\'%2334d399\'/%3E%3Ccircle cx=\'350\' cy=\'125\' r=\'10\' fill=\'%2334d399\'/%3E%3C/svg%3E');">
                 <span class="blog-tag green">Maintenance</span>
@@ -2010,7 +2024,7 @@
         </div>
     </div>
 
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-12 col-xl-4">
         <div class="card blog-card orange h-100" data-bs-toggle="modal" data-bs-target="#SmartManufacturing">
             <div class="blog-image" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'200\' viewBox=\'0 0 400 200\'%3E%3Crect width=\'400\' height=\'200\' fill=\'%23fef3c7\'/%3E%3Crect x=\'100\' y=\'50\' width=\'60\' height=\'100\' fill=\'%23f59e0b\' rx=\'5\'/%3E%3Crect x=\'170\' y=\'75\' width=\'60\' height=\'75\' fill=\'%23fbbf24\' rx=\'5\'/%3E%3Crect x=\'240\' y=\'25\' width=\'60\' height=\'125\' fill=\'%23f59e0b\' rx=\'5\'/%3E%3Cpath d=\'M100,150 L300,150\' stroke=\'%23d97706\' stroke-width=\'4\' stroke-linecap=\'round\'/%3E%3Ccircle cx=\'130\' cy=\'80\' r=\'10\' fill=\'%23fcd34d\'/%3E%3Ccircle cx=\'200\' cy=\'100\' r=\'10\' fill=\'%23fcd34d\'/%3E%3Ccircle cx=\'270\' cy=\'60\' r=\'10\' fill=\'%23fcd34d\'/%3E%3C/svg%3E');">
                 <span class="blog-tag orange">Manufacturing</span>
@@ -2033,6 +2047,8 @@
         </div>
     </div>
 </div>
+  </div>
+ 
 
 <div class="mt-5 text-center" data-bs-toggle="modal" data-bs-target="#allInsightsModal">
     <button class="btn view-all-btn px-4 py-3">
@@ -2375,24 +2391,24 @@
 
 
     </section>
-</div>
+
 
 <!-------------------Newsletter Section---------------------- -->
 <section class="mt-5">
-    <div class="newsletter-gradient container rounded-4 p-4 p-md-5 text-white position-relative overflow-hidden">
+    <div class="newsletter-gradient banner  p-4 p-md-5 text-white position-relative overflow-hidden">
         <div class="newsletter-shape newsletter-shape-top-right"></div>
         <div class="newsletter-shape newsletter-shape-bottom-left"></div>
 
-        <div class="position-relative z-1 d-flex flex-column flex-md-row align-items-center justify-content-between">
+        <div class="position-relative z-1 d-flex flex-column flex-md-row align-items-center justify-content-evenly">
             <div class="mb-4 mb-md-0 me-md-4">
-                <h3 class="fs-4 fs-md-3 fw-bold mb-3">Stay Ahead with Texvia Insights</h3>
-                <p class="text-blue-100 fs-5 mb-0">Subscribe to our newsletter for the latest trends, case studies, and industry insights.</p>
+                <h3 class="fw-bold mb-3">Stay Ahead with Texvia Insights</h3>
+                <p class="">Subscribe to our newsletter for the latest trends, case studies, and industry insights.</p>
             </div>
 
             <div class="w-100 w-md-auto">
                 <form class="d-flex flex-column flex-sm-row gap-3">
-                    <input type="email" class="form-control form-control-lg newsletter-input" placeholder="Your email address">
-                    <button type="submit" class="btn btn-light btn-lg fw-semibold newsletter-btn">
+                    <input type="email" class="form-control newsletter-input" placeholder="Your email address">
+                    <button type="submit" class="btn btn-light banners-btn  newsletter-btn">
                         Subscribe
                     </button>
                 </form>
