@@ -3,7 +3,9 @@ import { Component, OnInit, AfterViewInit, OnDestroy, ElementRef,ViewChild, inje
 import { NgClass } from '@angular/common';
 import { NgParticlesService, NgxParticlesModule} from '@tsparticles/angular';
 import { loadSlim } from '@tsparticles/slim';
-import {  Background, Engine, Size, ZIndex } from '@tsparticles/engine';
+import {  Background, Engine, } from '@tsparticles/engine';
+import { Router, RouterLink } from '@angular/router';
+import { interval, Subject, switchMap, takeUntil, timer } from 'rxjs';
 
 interface home{
   top:string,
@@ -14,13 +16,14 @@ interface home{
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgClass ,NgxParticlesModule],
+  imports: [NgClass ,NgxParticlesModule , RouterLink],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   // particles seervices 
   private readonly ngParticlesService = inject(NgParticlesService)
+  private readonly router = inject(Router)
   particlesOptions1:any = {
     Background:{position:{value:'absolute'} , resizeTo : true },
     fpsLimit: 120,
@@ -68,6 +71,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   ];
   currentHomeCaption:home= this.homeCaption[0];
   currentIndex:number =0;
+  isVisible = true;
+  private readonly destroy$ = new Subject<void>();
  
 
 
@@ -86,7 +91,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
            async (engine: Engine) => {
       await loadSlim(engine);   
     });
-      this.homePageCaption(); 
+      this.homePageCaption()
 
   }
   ngAfterViewInit(): void {
@@ -100,6 +105,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
         this.stopAutoSlide();
     window.removeEventListener('resize', () => this.updateVisibleItems());
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
 
@@ -109,10 +116,20 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   //home dynamic for first screen in home 
   homePageCaption():void{
-  setInterval(() => {
-    this.currentIndex =(this.currentIndex + 1) % this.homeCaption.length;
-    this.currentHomeCaption = (this.homeCaption[this.currentIndex])
-  }, 3000);
+  interval(3000).pipe(
+    switchMap( ()=>{
+      this.isVisible = false
+      // console.log('je')
+      return timer(2000)
+      
+    }),takeUntil(this.destroy$)
+  ).subscribe(() =>{
+  this.currentIndex =(this.currentIndex + 1) % this.homeCaption.length;
+  this.currentHomeCaption = (this.homeCaption[this.currentIndex])
+  this.isVisible= true 
+  // console.log('1')
+  })
+ 
   }
   //how we do code 
    updateVisibleItems() {
@@ -187,4 +204,25 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       this.autoSlideInterval = null;
     }
   }
+
+
+
+  // buttons action 
+
+// navigate to contact
+talkToExpert():void{
+  this.router.navigate(['/contact'])
+}
+
+
+
+// navigate to solutions
+goToSolution():void{
+  this.router.navigate(['/solutions'])
+}
+
+goTosolutionContent(id:string):void{
+  this.router.navigate([`/solutions` ,{Fragment : id}])
+  console.log('lj')
+}
 }

@@ -12,7 +12,7 @@
         <h1 class="hero-title text-white fw-bold mb-4">
           {{ currentHomeCaption.header }}
         </h1>
-        <h5 class="hero-description  fw-light  mb-4">
+        <h5 class="hero-description  fw-light  mb-4 w-100">
           {{ currentHomeCaption.description }}
         </h5>
       </div>
@@ -537,7 +537,7 @@
     Ready to Lead Industry 4.0? Let's Build Your Digital Roadmap.
   </h4>
   <div class="mt-2 btns d-flex flex-md-row flex-column">
- <button class="btn btn-light banners-btn d-inline-flex align-items-center">
+ <button class="btn btn-light banners-btn d-inline-flex align-items-center"  (click)="talkToExpert()">
         <span class="cta-button-text me-2">Talk to an Expert   </span>
         <svg
           class="cta-button-arrow"
@@ -1041,7 +1041,7 @@
       <p class=" mb-4 cta-text mx-auto text-white" style="max-width: 768px">
         Discover our industry use cases and see Texvia in action.
       </p>
-      <button class="btn btn-light banners-btn d-inline-flex align-items-center">
+      <button class="btn btn-light banners-btn d-inline-flex align-items-center" (click)="goToSolution()">
         <span class="cta-button-text me-2">Explore Our Solutions</span>
         <svg
           class="cta-button-arrow"
@@ -1873,9 +1873,9 @@
             </div>
 
             <div class="mt-4">
-              <a
-                href="#contact"
-                class="btn btn-primary cta-button rounded-pill fw-semibold"
+              <button
+              
+                class="btn btn-primary cta-button rounded-pill fw-semibold" (click)="talkToExpert()"
               >
                 <span>Talk to a Digital Consultant</span>
                 <span class="cta-button-icon ms-2">
@@ -1893,7 +1893,7 @@
                     />
                   </svg>
                 </span>
-              </a>
+              </button>
             </div>
           </div>
         </div>
