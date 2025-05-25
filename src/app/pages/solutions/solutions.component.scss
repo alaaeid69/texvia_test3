@@ -40,7 +40,6 @@ $form-control-bg: #f8f9fa;
 
 .details {
   .container {
-    @extend %container-style;
     margin-top: 0;
     .navs {
       position: sticky;

@@ -123,43 +123,55 @@ p { @extend %paragraph; }
     background-color: $main-color;
   }
 
-// SCSS Variables
-$grid-breakpoints: (
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px
-);
 
-$container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px,
-  xxl: 1320px
-);
+// $container-padding-x: 15px;
+// %container {
+//   width: 100%;
+//   // padding: $container-padding-x;
+//   margin-right: auto;
+//   margin-left: auto;
+// @media (min-width: 576px) {max-width: 540px;}
+// @media (min-width: 660px) {max-width: 620px;}
+// @media (min-width: 768px) {max-width: 720px;}
+// @media (min-width: 880px) {max-width: 830px;}
+// @media (min-width: 992px) {max-width: 960px; }
+// @media (min-width: 1100px) {max-width: 1050px;}
+// @media (min-width: 1200px) {max-width: 1140px;}
+// @media (min-width: 1300px) {max-width: 1230px;}
+// @media (min-width: 1400px) {max-width: 1320px;}
+// @media (min-width: 1500px) {max-width: 1410px;}
 
-$container-padding-x: 15px;
+// }
+// // SCSS for .container class
+// .container{
+// @extend %container
+// }
+$container-padding-x: 1.5rem;
 
-// SCSS for .container class
-.container {
+%container {
   width: 100%;
-  padding-right: $container-padding-x;
-  padding-left: $container-padding-x;
+  padding: $container-padding-x; // Ensure padding is applied
   margin-right: auto;
   margin-left: auto;
 
-  @each $breakpoint-name, $breakpoint-min-width in $grid-breakpoints {
-    @if map-has-key($container-max-widths, $breakpoint-name) {
-      $container-max-width-for-bp: map-get($container-max-widths, $breakpoint-name);
-
-      @media (min-width: $breakpoint-min-width) {
-        max-width: $container-max-width-for-bp;
-      }
-    }
-  }
+  @media (min-width: 576px) { max-width: 540px; padding: 1rem;;}
+  @media (min-width: 660px) { max-width: 620px; padding: 1rem;}
+  @media (min-width: 768px) { max-width: 720px; padding: 1rem;  }
+  @media (min-width: 880px) { max-width: 830px; padding: 1rem; }
+  @media (min-width: 992px) { max-width: 960px; padding: 1rem; }
+  @media (min-width: 1100px) { max-width: 1050px; padding: 1rem; }
+  @media (min-width: 1200px) { max-width: 1140px; padding: 1rem; }
+  @media (min-width: 1300px) { max-width: 1230px; padding: 1rem; }
+  @media (min-width: 1400px) { max-width: 1320px; padding: 1rem; }
+  @media (min-width: 1500px) { max-width: 1410px; padding: 1rem; }
 }
+
+// SCSS for .container class
+.container {
+  @extend %container;
+}
+
+
 
 
 
@@ -183,8 +195,8 @@ min-height: 250px ;
   }
 .banner{
 @extend %banner;
-  .banners-btn{
-    
+  
+.banners-btn{
     @extend %cta-button
   }
 
@@ -192,3 +204,31 @@ min-height: 250px ;
      color: rgba($white-color, 0.75) !important;
   }
 }
+
+
+// %container{
+//   @media (min-width: 576px) {
+//   .container {
+//     max-width: 540px;
+//   }
+// }
+
+// @media (min-width: 768px) {
+//   .container {
+//     max-width: 720px;
+//   }
+// }
+
+// @media (min-width: 992px) {
+//   .container {
+//     min-width: 960px;
+//   }
+// }
+
+// @media (min-width: 1200px) {
+//   .container {
+//     max-width: 1140px;
+//   }
+// }
+
+// }

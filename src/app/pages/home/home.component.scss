@@ -263,26 +263,26 @@
 
 
 // banner
-.banner{
-     background: linear-gradient(130deg, $secend-main-color, $main-color);
-     padding: 3rem;
+// .banner{
+//      background: linear-gradient(130deg, $secend-main-color, $main-color);
+//      padding: 3rem;
 
-  .btn-download {
-    background-color: $btn-color;
-    .cta-button-text {
-      color: $white-color;
-    }
-    .cta-button-arrow {
-      stroke: $white-color;
-    }
-    &:hover {
-        background-color:$btn-hover !important;
-        border-color: $btn-color !important;
-    }
-  }
+//   .btn-download {
+//     background-color: $btn-color;
+//     .cta-button-text {
+//       color: $white-color;
+//     }
+//     .cta-button-arrow {
+//       stroke: $white-color;
+//     }
+//     &:hover {
+//         background-color:$btn-hover !important;
+//         border-color: $btn-color !important;
+//     }
+//   }
 
 
-}
+// }
 
 // what we do 
 .solutions{
@@ -563,9 +563,10 @@
     --accent-color: #3b82f6;
     --accent-color-light: #60a5fa;
     --accent-rgb: 59, 130, 246;
-  //   &:hover{
-  //  border: #3b82f6 solid 2px ;
-  //   }
+     //border: #3b82f6 solid 1px ;
+    &:hover{
+   border: #3b82f6 solid 1px ;
+    }
 
   }
 
@@ -573,24 +574,40 @@
     --accent-color: #8b5cf6;
     --accent-color-light: #a78bfa;
     --accent-rgb: 139, 92, 246;
+     //border: #8b5cf6 solid 1px ;
+    &:hover{
+   border: #8b5cf6 solid 1px ;
+    }
   }
 
   &:nth-child(3) {
     --accent-color: #ec4899;
     --accent-color-light: #f472b6;
     --accent-rgb: 236, 72, 153;
+     //border: #ec4899 solid 1px ;
+    &:hover{
+   border: #ec4899 solid 1px ;
+    }
   }
 
   &:nth-child(4) {
     --accent-color: #f59e0b;
     --accent-color-light: #fbbf24;
     --accent-rgb: 245, 158, 11;
+     //border: #f59e0b solid 1px ;
+    &:hover{
+   border: #f59e0b solid 1px ;
+    }
   }
 
   &:nth-child(5) {
     --accent-color: #10b981;
     --accent-color-light: #34d399;
     --accent-rgb: 16, 185, 129;
+     //border: #10b981 solid 1px ;
+    &:hover{
+   border: #10b981 solid 1px ;
+    }
   }
 
   &::before {
