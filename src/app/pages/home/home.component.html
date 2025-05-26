@@ -20,6 +20,7 @@
         <button
           class="btn cta-button btn-start text-aveva-dark fw-medium py-2 py-md-3 px-3 px-md-4 rounded shadow-lg "
           aria-label="Get Started"
+          (click)="talkToExpert()"
         >
           Get Started
         </button>
@@ -93,7 +94,7 @@
 </section>
 
 <!-- Who We Are Section -->
-<section class="section-gradient py-5 ">
+<section class="section-gradient py-5  position-relative z-1">
   <div class="container mx-auto ">
     <!-- Headers -->
     <header class="text-center mb-2">
@@ -296,12 +297,12 @@
               <h6 class="text-black">Food and Beverage</h6>
             </div>
           </div>
-          <div class="industries-cards-layer p-2 shadow-sm text-center">
+          <!-- <div class="industries-cards-layer p-2 shadow-sm text-center">
             <p class="small fw-normal">
               Optimize production lines and ensure food safety with real-time
               monitoring and traceability solutions.
             </p>
-          </div>
+          </div> -->
         </div>
         <div class="col-6 col-md-4 col-lg-2 industries-cards">
           <div
@@ -325,12 +326,12 @@
               <h6 class="text-black">Life Science</h6>
             </div>
           </div>
-          <div class="industries-cards-layer p-2 shadow-sm text-center">
+          <!-- <div class="industries-cards-layer p-2 shadow-sm text-center">
             <p class="small fw-normal">
               Ensure compliance and quality control with validated systems for
               pharmaceutical and medical device manufacturing.
             </p>
-          </div>
+          </div> -->
         </div>
         <div class="col-6 col-md-4 col-lg-2 industries-cards">
           <div
@@ -352,12 +353,12 @@
               <h6 class="text-black">Energy Management</h6>
             </div>
           </div>
-          <div class="industries-cards-layer p-2 shadow-sm text-center">
+          <!-- <div class="industries-cards-layer p-2 shadow-sm text-center">
             <p class="small fw-normal">
               Reduce consumption and optimize distribution with intelligent grid
               management and demand response systems.
             </p>
-          </div>
+          </div> -->
         </div>
         <div class="col-6 col-md-4 col-lg-2 industries-cards">
           <div
@@ -381,12 +382,12 @@
               <h6 class="text-black">Smart City</h6>
             </div>
           </div>
-          <div class="industries-cards-layer p-2 shadow-sm text-center">
+          <!-- <div class="industries-cards-layer p-2 shadow-sm text-center">
             <p class="small fw-normal">
               Connect urban infrastructure for improved efficiency,
               sustainability, and citizen services..
             </p>
-          </div>
+          </div> -->
         </div>
         <div class="col-6 col-md-4 col-lg-2 industries-cards">
           <div
@@ -410,12 +411,12 @@
               <h6 class="text-black">Water/Wastewater</h6>
             </div>
           </div>
-          <div class="industries-cards-layer p-2 shadow-sm text-center">
+          <!-- <div class="industries-cards-layer p-2 shadow-sm text-center">
             <p class="small fw-normal">
               Modernize treatment facilities with automated monitoring and
               control systems for quality and efficiency..
             </p>
-          </div>
+          </div> -->
         </div>
         <div class="col-6 col-md-4 col-lg-2 industries-cards">
           <div
@@ -439,20 +440,22 @@
               <h6 class="text-black">Oil & Gas</h6>
             </div>
           </div>
-          <div class="industries-cards-layer p-2 shadow-sm text-center">
+          <!-- <div class="industries-cards-layer p-2 shadow-sm text-center">
             <p class="small fw-normal">
               Automate hazardous workflows for worker safety and implement
               predictive maintenance for critical equipment.
             </p>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
-     <div class="mession  shadow-sm">
+  </div>
+  <!-- Mession -->
+    <!-- <section class="mession bg-white  shadow-sm">
      <div class="container mt-5 pb-3">
-    <!-- <div class="mt-5 card p-4 rounded-3 border-0"> -->
-      <div class="row  mt-5 py-4 rounded-3 border-0">
-        <div class="col-md-3 mb-4  d-flex justify-content-center">
+  
+      <div class="row  bg-danger mt-5 py-4 rounded-3 border-0">
+        <div class="col-md-2 mb-4  d-flex justify-content-center">
           <svg
             viewBox="0 0 100 100"
             xmlns="http://www.w3.org/2000/svg"
@@ -489,9 +492,9 @@
             </text>
           </svg>
         </div>
-        <div class="col-md-9 mb-4">
+        <div class="col-md-10 mb-4">
           <div>
-            <h4 class="fw-semibold mb-3 text-center text-black">Our Mission</h4>
+            <h4 class="fw-semibold mb-3 text-black">Our Mission</h4>
           <p class="text-secondary text-center">
             To deliver the next generation of
             <span class="fw-semibold text-main-color"
@@ -519,12 +522,144 @@
       <span class="badge rounded-pill px-3 py-2 fw-medium">#Egypt</span>
     </div>
   
-   </div>
+   </section>   -->
+
+ <!-- <section class="mession bg-white shadow-sm">
+  <div class="mt-5 pb-3 d-flex flex-column align-items-center">
+    <div class="row  mt-5 py-4 rounded-3 border-0 w-100">
+      <div class="col-md-2 mb-4 d-flex justify-content-center align-items-center">
+        <svg
+          viewBox="0 0 100 100"
+          xmlns="http://www.w3.org/2000/svg"
+          class="mission-icon mx-auto"
+          role="img"
+          aria-label="Industry 4.0 icon"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="45"
+            fill="none"
+            stroke="#6A05A6"
+            stroke-width="2"
+          />
+          <text
+            x="50"
+            y="45"
+            text-anchor="middle"
+            fill="#6A05A6"
+            font-size="24"
+            font-weight="bold"
+          >
+            4.0
+          </text>
+          <text
+            x="50"
+            y="65"
+            text-anchor="middle"
+            fill="#6A05A6"
+            font-size="12"
+          >
+            INDUSTRY
+          </text>
+        </svg>
+      </div>
+      <div class="col-md-10 mb-4 d-flex flex-column align-items-center">
+        <div class="text-center">
+          <h4 class="fw-semibold mb-3 text-black">Our Mission</h4>
+          <p class="text-secondary">
+            To deliver the next generation of
+            <span class="fw-semibold text-main-color">Industry 4.0 solutions</span>
+            —bridging data, systems, and human insight to improve performance,
+            resilience, and sustainability.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="py-2 d-flex flex-wrap justify-content-center gap-2">
+      <span class="badge rounded-pill px-3 py-2 fw-medium">#Industry4.0</span>
+      <span class="badge rounded-pill px-3 py-2 fw-medium"
+        >#IndustrialAutomation</span
+      >
+      <span class="badge rounded-pill px-3 py-2 fw-medium"
+        >#DigitalIntegration</span
+      >
+      <span class="badge rounded-pill px-3 py-2 fw-medium"
+        >#OperationalIntelligence</span
+      >
+      <span class="badge rounded-pill px-3 py-2 fw-medium">#Ireland</span>
+      <span class="badge rounded-pill px-3 py-2 fw-medium">#UK</span>
+      <span class="badge rounded-pill px-3 py-2 fw-medium">#Egypt</span>
+    </div>
   </div>
-  <!-- Mession -->
-  
-
-
+</section> -->
+<section class="mession bg-white shadow-sm">
+  <div class="mt-5 pb-3 d-flex flex-column align-items-center">
+    <div class=" mt-5 py-4 rounded-3 border-0 d-flex flex-column align-items-center">
+      <div class="mb-4 d-flex justify-content-center align-items-center">
+        <svg
+          viewBox="0 0 100 100"
+          xmlns="http://www.w3.org/2000/svg"
+          class="mission-icon mx-auto"
+          role="img"
+          aria-label="Industry 4.0 icon"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="45"
+            fill="none"
+            stroke="#6A05A6"
+            stroke-width="2"
+          />
+          <text
+            x="50"
+            y="45"
+            text-anchor="middle"
+            fill="#6A05A6"
+            font-size="24"
+            font-weight="bold"
+          >
+            4.0
+          </text>
+          <text
+            x="50"
+            y="65"
+            text-anchor="middle"
+            fill="#6A05A6"
+            font-size="12"
+          >
+            INDUSTRY
+          </text>
+        </svg>
+      </div>
+      <div class="mb-4 text-center">
+        <h4 class="fw-semibold mb-3 text-black">Our Mission</h4>
+        <p class="text-secondary">
+          To deliver the next generation of
+          <span class="fw-semibold text-main-color">Industry 4.0 solutions</span>
+          —bridging data, systems, and human insight to improve performance,
+          resilience, and sustainability.
+        </p>
+      </div>
+    </div>
+    <div class="py-2 d-flex flex-wrap justify-content-center gap-2">
+      <span class="badge rounded-pill px-3 py-2 fw-medium">#Industry4.0</span>
+      <span class="badge rounded-pill px-3 py-2 fw-medium"
+        >#IndustrialAutomation</span
+      >
+      <span class="badge rounded-pill px-3 py-2 fw-medium"
+        >#DigitalIntegration</span
+      >
+      <span class="badge rounded-pill px-3 py-2 fw-medium"
+        >#OperationalIntelligence</span
+      >
+      <span class="badge rounded-pill px-3 py-2 fw-medium">#Ireland</span>
+      <span class="badge rounded-pill px-3 py-2 fw-medium">#UK</span>
+      <span class="badge rounded-pill px-3 py-2 fw-medium">#Egypt</span>
+    </div>
+  </div>
+</section>
 </section>
 
 
@@ -1689,7 +1824,7 @@
 </section>
 
 <!-- Customer-Centricity -->
-<section class="py-5  customer-centricity-section">
+<section class="py-5  customer-centricity-section position-relative z-1">
   <div class="container">
     <div class="customer-centricity">
       <div class="row align-items-center">
@@ -2394,12 +2529,12 @@
 
 
 <!-------------------Newsletter Section---------------------- -->
-<section class="mt-5">
+<!-- <section class="mt-5 ">
     <div class="newsletter-gradient banner  p-4 p-md-5 text-white position-relative overflow-hidden">
         <div class="newsletter-shape newsletter-shape-top-right"></div>
         <div class="newsletter-shape newsletter-shape-bottom-left"></div>
 
-        <div class="position-relative z-1 d-flex flex-column flex-md-row align-items-center justify-content-evenly">
+        <div class="position-relative z-1 d-flex flex-column flex-md-row align-items-center justify-content-evenly text-center">
             <div class="mb-4 mb-md-0 me-md-4">
                 <h3 class="fw-bold mb-3">Stay Ahead with Texvia Insights</h3>
                 <p class="">Subscribe to our newsletter for the latest trends, case studies, and industry insights.</p>
@@ -2409,6 +2544,29 @@
                 <form class="d-flex flex-column flex-sm-row gap-3">
                     <input type="email" class="form-control newsletter-input" placeholder="Your email address">
                     <button type="submit" class="btn btn-light banners-btn  newsletter-btn">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section> -->
+<section class="mt-5">
+    <div class="newsletter-gradient banner p-4 p-md-5 text-white position-relative overflow-hidden">
+        <div class="newsletter-shape newsletter-shape-top-right"></div>
+        <div class="newsletter-shape newsletter-shape-bottom-left"></div>
+
+        <div class="position-relative z-1 d-flex flex-column align-items-center text-center">
+            
+            <div class="mb-4"> 
+                <h3 class="fw-bold mb-3">Stay Ahead with Texvia Insights</h3>
+                <p class="">Subscribe to our newsletter for the latest trends, case studies, and industry insights.</p>
+            </div>
+
+            <div class="w-auto"> 
+                <form class="d-flex flex-column flex-sm-row gap-3">
+                    <input type="email" class="form-control newsletter-input" placeholder="Your email address">
+                    <button type="submit" class="btn btn-sm btn-light banners-btn newsletter-btn">
                         Subscribe
                     </button>
                 </form>

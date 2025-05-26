@@ -27,10 +27,17 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   particlesOptions1:any = {
     Background:{position:{value:'absolute'} , resizeTo : true },
     fpsLimit: 120,
-    // interactivity: {
-    //   //events: { ondblclick: { enable: true, mode: 'push' }, onHover: { enable: true, mode: 'repulse' }, resize: { enable: true}  },
-    //   //modes: { push: { quantity: 4 }, repulse: { distance: 200, duration: 0.4 } },
-    // },
+    interactivity: {
+      detectsOn: 'window',
+      events: {
+        onClick: { enable: false },
+        onHover: { enable: true, mode: 'repulse' }
+      },
+      modes: {
+        push: { quantity: 4 },
+        repulse: { distance: 200, duration: 0.4 }
+      }
+    },
     particles: {
       color: { value: '#ffffff' },
       links: { color: '#ffffff', distance: 150, enable: true, opacity: 0.5, width: .5 },
@@ -221,8 +228,12 @@ goToSolution():void{
   this.router.navigate(['/solutions'])
 }
 
-goTosolutionContent(id:string):void{
-  this.router.navigate([`/solutions` ,{Fragment : id}])
-  console.log('lj')
-}
+// goTosolutionContent(id:string):void{
+//   this.router.navigate([`/solutions` ,{Fragment : id}])
+//   console.log('lj')
+// }
+
+
+
+
 }
