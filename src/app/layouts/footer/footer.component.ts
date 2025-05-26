@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-email:string ='sales@texvia.com'
+email:string =': salesf@texvia.com'
 }

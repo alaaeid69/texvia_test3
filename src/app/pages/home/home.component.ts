@@ -6,6 +6,7 @@ import { loadSlim } from '@tsparticles/slim';
 import {  Background, Engine, } from '@tsparticles/engine';
 import { Router, RouterLink } from '@angular/router';
 import { interval, Subject, switchMap, takeUntil, timer } from 'rxjs';
+import { VerticalProgressBarComponent } from "../vertical-progress-bar/vertical-progress-bar.component";
 
 interface home{
   top:string,
@@ -16,11 +17,14 @@ interface home{
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgClass ,NgxParticlesModule , RouterLink],
+  imports: [NgClass, NgxParticlesModule, VerticalProgressBarComponent],
   templateUrl: './home.component.html',
+ 
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
+progress:number=0
+  
   // particles seervices 
   private readonly ngParticlesService = inject(NgParticlesService)
   private readonly router = inject(Router)
@@ -100,12 +104,15 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     });
       this.homePageCaption()
 
+       
+
   }
   ngAfterViewInit(): void {
    
    this.updateVisibleItems();
     this.startAutoSlide();
     window.addEventListener('resize', () => this.updateVisibleItems());
+     
   }
 
   ngOnDestroy(): void {

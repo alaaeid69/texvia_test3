@@ -9,7 +9,8 @@ import { FooterComponent } from "./layouts/footer/footer.component";
   selector: 'app-root',
   imports: [RouterOutlet, NavbarComponent, FooterComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  
 })
 export class AppComponent {
   readonly router = inject(Router)

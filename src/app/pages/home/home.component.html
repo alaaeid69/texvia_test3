@@ -1,3 +1,4 @@
+
 <!-- Home Section -->
 <section class="home-section">
   <ngx-particles id="particles1" [options]="particlesOptions1"></ngx-particles>
@@ -27,6 +28,7 @@
         <button
           class="btn cta-button btn-outline-light fw-medium py-2 py-md-3 px-3 px-md-4 rounded shadow-lg "
           aria-label="Watch Demo"
+           (click)="talkToExpert()"
         >
           Watch Demo
         </button>
@@ -93,8 +95,10 @@
   </div>
 </section>
 
+<app-vertical-progress-bar class="">
+
 <!-- Who We Are Section -->
-<section class="section-gradient py-5  position-relative z-1">
+<section class="section-gradient py-5   homepage-section" data-section-index="0" data-weight="0.4">
   <div class="container mx-auto ">
     <!-- Headers -->
     <header class="text-center mb-2">
@@ -596,7 +600,7 @@
 <section class="mession bg-white shadow-sm">
   <div class="mt-5 pb-3 d-flex flex-column align-items-center">
     <div class=" mt-5 py-4 rounded-3 border-0 d-flex flex-column align-items-center">
-      <div class="mb-4 d-flex justify-content-center align-items-center">
+      <!-- <div class="mb-4 d-flex justify-content-center align-items-center">
         <svg
           viewBox="0 0 100 100"
           xmlns="http://www.w3.org/2000/svg"
@@ -632,7 +636,7 @@
             INDUSTRY
           </text>
         </svg>
-      </div>
+      </div> -->
       <div class="mb-4 text-center">
         <h4 class="fw-semibold mb-3 text-black">Our Mission</h4>
         <p class="text-secondary">
@@ -720,7 +724,7 @@
 </div> -->
 
 <!-- -----------what we do section----------------------->
-<section class="solutions py-5  position-relative">
+<section class="solutions py-5  position-relative homepage-section" data-section-index="1" data-weight="0.4">
    <header class="text-center mb-4">
       <h2 class="fw-bold mb-2 text-black">what we do</h2>
       <div class="underline mx-auto"></div>
@@ -1199,7 +1203,7 @@
 </section>
 
 <!-- ------------How We Do------------------- -->
-<div class="how-We-Do">
+<div class="how-We-Do homepage-section" data-section-index="2" data-weight="0.4">
   <div class="container process-flow-container">
     <div class="text-center mb-5">
       <header class="mb-4">
@@ -1405,7 +1409,7 @@
 </div>
 
 <!-- ------------ core values --------------- -->
-<section class="py-5 core-values-section">
+<section class="py-5 core-values-section homepage-section" data-section-index="3" data-weight="0.4">
   <div class="container">
     <div class="text-center mb-5">
       <div
@@ -1886,7 +1890,7 @@
 </section>
 
 <!-------- why texvia-------->
-<section class="aboutTexvia">
+<section class="aboutTexvia homepage-section"  data-section-index="5" data-weight="0.4">
   <div
     class="py-5 px-3 px-sm-4 px-lg-5 mx-auto my-5 what-sets-us-apart-section"
   >
@@ -2551,7 +2555,7 @@
         </div>
     </div>
 </section> -->
-<section class="mt-5">
+<section class="mt-5" >
     <div class="newsletter-gradient banner p-4 p-md-5 text-white position-relative overflow-hidden">
         <div class="newsletter-shape newsletter-shape-top-right"></div>
         <div class="newsletter-shape newsletter-shape-bottom-left"></div>
@@ -2575,7 +2579,7 @@
     </div>
 </section>
 
-<section class="m-5">
+<section class="m-5 homepage-section" data-section-index="6" data-weight="0.4">
     <div class="text-center mb-5">
         <h2 class="fs-2 fw-bold mb-3">Featured Resources</h2>
         <p class="text-secondary-emphasis mx-auto" style="max-width: 60rem;">Download our latest whitepapers, guides, and case studies to help drive your digital transformation journey.</p>
@@ -2684,3 +2688,7 @@
 </div>
     
 </section>
+</app-vertical-progress-bar>
+<!-- <div class="container py-3">
+  <button class="btn btn-primary" (click)="progress = progress + 10">Increase Progress</button>
+</div> -->
