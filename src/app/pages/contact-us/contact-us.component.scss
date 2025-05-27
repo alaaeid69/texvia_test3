@@ -78,12 +78,12 @@ $transition-duration: 0.2s ease-in-out;
       
     }
 
-    .form-control {
+    .form-control , .form-select {
      color: $main-color;
       border-radius: $border-radius-base * 0.4;
       
     }
-    .form-control:focus {
+    .form-control:focus  , .form-select:focus{
  border-color: $main-color;
       box-shadow: 0 0 0 0.15rem lighten($main-color, 60%);;
 }

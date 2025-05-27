@@ -25,13 +25,13 @@
         >
           Get Started
         </button>
-        <button
+        <!-- <button
           class="btn cta-button btn-outline-light fw-medium py-2 py-md-3 px-3 px-md-4 rounded shadow-lg "
           aria-label="Watch Demo"
            (click)="talkToExpert()"
         >
           Watch Demo
-        </button>
+        </button> -->
       </div>
     </div>
 
@@ -142,12 +142,6 @@
               <span
                 class="location-dot bg-main-color rounded-circle me-2"
               ></span>
-              <span class="fw-medium">United Kingdom</span>
-            </div>
-            <div class="location-marker d-flex align-items-center">
-              <span
-                class="location-dot bg-main-color rounded-circle me-2"
-              ></span>
               <span class="fw-medium">Egypt</span>
             </div>
           </div>
@@ -191,17 +185,8 @@
           >
             Ireland (HQ)
           </text>
-          <circle cx="435" cy="200" r="8" fill="#6A05A6" class="map-dot" />
-          <text
-            x="435"
-            y="225"
-            text-anchor="middle"
-            fill="#6A05A6"
-            font-size="12"
-            font-weight="bold"
-          >
-            UK
-          </text>
+          
+         
           <circle cx="510" cy="250" r="8" fill="#6A05A6" class="map-dot" />
           <text
             x="510"
@@ -455,81 +440,8 @@
     </div>
   </div>
   <!-- Mession -->
-    <!-- <section class="mession bg-white  shadow-sm">
-     <div class="container mt-5 pb-3">
-  
-      <div class="row  bg-danger mt-5 py-4 rounded-3 border-0">
-        <div class="col-md-2 mb-4  d-flex justify-content-center">
-          <svg
-            viewBox="0 0 100 100"
-            xmlns="http://www.w3.org/2000/svg"
-            class="mission-icon mx-auto"
-            role="img"
-            aria-label="Industry 4.0 icon"
-          >
-            <circle
-              cx="50"
-              cy="50"
-              r="45"
-              fill="none"
-              stroke="#6A05A6"
-              stroke-width="2"
-            />
-            <text
-              x="50"
-              y="45"
-              text-anchor="middle"
-              fill="#6A05A6"
-              font-size="24"
-              font-weight="bold"
-            >
-              4.0
-            </text>
-            <text
-              x="50"
-              y="65"
-              text-anchor="middle"
-              fill="#6A05A6"
-              font-size="12"
-            >
-              INDUSTRY
-            </text>
-          </svg>
-        </div>
-        <div class="col-md-10 mb-4">
-          <div>
-            <h4 class="fw-semibold mb-3 text-black">Our Mission</h4>
-          <p class="text-secondary text-center">
-            To deliver the next generation of
-            <span class="fw-semibold text-main-color"
-              >Industry 4.0 solutions</span
-            >—bridging data, systems, and human insight to improve performance,
-            resilience, and sustainability.
-          </p>
-          </div>
-        </div>
-      </div>
-    </div>
-         <div class="py-2 d-flex flex-wrap justify-content-center gap-2">
-      <span class="badge rounded-pill px-3 py-2 fw-medium">#Industry4.0</span>
-      <span class="badge rounded-pill px-3 py-2 fw-medium"
-        >#IndustrialAutomation</span
-      >
-      <span class="badge rounded-pill px-3 py-2 fw-medium"
-        >#DigitalIntegration</span
-      >
-      <span class="badge rounded-pill px-3 py-2 fw-medium"
-        >#OperationalIntelligence</span
-      >
-      <span class="badge rounded-pill px-3 py-2 fw-medium">#Ireland</span>
-      <span class="badge rounded-pill px-3 py-2 fw-medium">#UK</span>
-      <span class="badge rounded-pill px-3 py-2 fw-medium">#Egypt</span>
-    </div>
-  
-   </section>   -->
 
- <!-- <section class="mession bg-white shadow-sm">
-  <div class="mt-5 pb-3 d-flex flex-column align-items-center">
+  <!-- <div class="mt-5 pb-3 d-flex flex-column align-items-center">
     <div class="row  mt-5 py-4 rounded-3 border-0 w-100">
       <div class="col-md-2 mb-4 d-flex justify-content-center align-items-center">
         <svg
@@ -595,8 +507,8 @@
       <span class="badge rounded-pill px-3 py-2 fw-medium">#UK</span>
       <span class="badge rounded-pill px-3 py-2 fw-medium">#Egypt</span>
     </div>
-  </div>
-</section> -->
+  </div> -->
+
 <section class="mession bg-white shadow-sm">
   <div class="mt-5 pb-3 d-flex flex-column align-items-center">
     <div class=" mt-5 py-4 rounded-3 border-0 d-flex flex-column align-items-center">
@@ -724,7 +636,7 @@
 </div> -->
 
 <!-- -----------what we do section----------------------->
-<section class="solutions py-5  position-relative homepage-section" data-section-index="1" data-weight="0.4">
+<section class="solutions py-5  position-relative homepage-section"  data-section-index="1" data-weight="0.4">
    <header class="text-center mb-4">
       <h2 class="fw-bold mb-2 text-black">what we do</h2>
       <div class="underline mx-auto"></div>
@@ -809,7 +721,7 @@
               Evaluate your organization's digital readiness and create a
               roadmap for transformation
             </p>
-            <button class="btn learn-more-btn text-white w-100">
+            <button class="btn learn-more-btn text-white w-100" [routerLink]="['/solutions']"  [fragment]="'Digital Maturity Assessment'">
               Learn More
             </button>
           </div>
@@ -863,7 +775,7 @@
               Reimagine your business processes with digital technologies and
               data-driven insights
             </p>
-            <button class="btn learn-more-btn text-white w-100">
+            <button class="btn learn-more-btn text-white w-100" [routerLink]="['/solutions']"  [fragment]="'Digital Transformation'">
               Learn More
             </button>
           </div>
@@ -935,7 +847,7 @@
               Connect your industrial assets with an intelligent platform built
               for AI and machine learning
             </p>
-            <button class="btn learn-more-btn text-white w-100">
+            <button class="btn learn-more-btn text-white w-100" [routerLink]="['/solutions']"  [fragment]="'AI-Ready IIoT Platform'">
               Learn More
             </button>
           </div>
@@ -989,7 +901,7 @@
               Optimize workflows, reduce waste, and increase uptime with
               intelligent manufacturing solutions
             </p>
-            <button class="btn learn-more-btn text-white w-100">
+            <button class="btn learn-more-btn text-white w-100" [routerLink]="['/solutions']"  [fragment]="'Smart Manufacturing'">
               Learn More
             </button>
           </div>
@@ -1052,7 +964,7 @@
               Improve safety, speed, and precision with advanced robotics and
               automation systems
             </p>
-            <button class="btn learn-more-btn text-white w-100">
+            <button class="btn learn-more-btn text-white w-100" [routerLink]="['/solutions']"  [fragment]="'Industrial Automation'">
               Learn More
             </button>
           </div>
@@ -1103,7 +1015,7 @@
               Collect, analyze, and visualize operational data with the
               industry-leading PI System
             </p>
-            <button class="btn learn-more-btn text-white w-100">
+            <button class="btn learn-more-btn text-white w-100"  [routerLink]="['/solutions']"  [fragment]="'PI System'">
               Learn More
             </button>
           </div>
@@ -1161,7 +1073,7 @@
               Transform raw data into actionable insights with real-time
               analytics and visualization tools
             </p>
-            <button class="btn learn-more-btn text-white w-100">
+            <button class="btn learn-more-btn text-white w-100" [routerLink]="['/solutions']"  [fragment]="'Real-Time Data & Analytics'">
               Learn More
             </button>
           </div>
@@ -1828,7 +1740,7 @@
 </section>
 
 <!-- Customer-Centricity -->
-<section class="py-5  customer-centricity-section position-relative z-1">
+<section class="py-5  customer-centricity-section position-relative z-1 homepage-section"  data-section-index="5" data-weight="0.4">
   <div class="container">
     <div class="customer-centricity">
       <div class="row align-items-center">
@@ -1890,7 +1802,7 @@
 </section>
 
 <!-------- why texvia-------->
-<section class="aboutTexvia homepage-section"  data-section-index="5" data-weight="0.4">
+<section class="aboutTexvia homepage-section"  data-section-index="6" data-weight="0.4">
   <div
     class="py-5 px-3 px-sm-4 px-lg-5 mx-auto my-5 what-sets-us-apart-section"
   >
@@ -2094,7 +2006,7 @@
 
 <!-- ---------insights--------------- -->
 
-    <section class="insights py-5">
+    <section class="insights py-5 homepage-section" data-section-index="7" data-weight="0.4">
         <div class="insights-header bg-danger ">
              <svg class="insights-icon d-none d-md-block" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10 3H14C19.5 3 21 4.5 21 10V14C21 19.5 19.5 21 14 21H10C4.5 21 3 19.5 3 14V10C3 4.5 4.5 3 10 3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -2533,53 +2445,33 @@
 
 
 <!-------------------Newsletter Section---------------------- -->
-<!-- <section class="mt-5 ">
-    <div class="newsletter-gradient banner  p-4 p-md-5 text-white position-relative overflow-hidden">
+
+ 
+<section class="mt-5 " >
+    <div class="newsletter-gradient   text-white position-relative overflow-hidden">
         <div class="newsletter-shape newsletter-shape-top-right"></div>
         <div class="newsletter-shape newsletter-shape-bottom-left"></div>
 
-        <div class="position-relative z-1 d-flex flex-column flex-md-row align-items-center justify-content-evenly text-center">
-            <div class="mb-4 mb-md-0 me-md-4">
-                <h3 class="fw-bold mb-3">Stay Ahead with Texvia Insights</h3>
-                <p class="">Subscribe to our newsletter for the latest trends, case studies, and industry insights.</p>
-            </div>
-
-            <div class="w-100 w-md-auto">
-                <form class="d-flex flex-column flex-sm-row gap-3">
-                    <input type="email" class="form-control newsletter-input" placeholder="Your email address">
-                    <button type="submit" class="btn btn-light banners-btn  newsletter-btn">
-                        Subscribe
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-</section> -->
-<section class="mt-5" >
-    <div class="newsletter-gradient banner p-4 p-md-5 text-white position-relative overflow-hidden">
-        <div class="newsletter-shape newsletter-shape-top-right"></div>
-        <div class="newsletter-shape newsletter-shape-bottom-left"></div>
-
-        <div class="position-relative z-1 d-flex flex-column align-items-center text-center">
+        <div class="banner p-4 p-md-5  d-flex  justify-content-center  align-items-center text-center">
             
-            <div class="mb-4"> 
+            <div> 
                 <h3 class="fw-bold mb-3">Stay Ahead with Texvia Insights</h3>
                 <p class="">Subscribe to our newsletter for the latest trends, case studies, and industry insights.</p>
             </div>
 
-            <div class="w-auto"> 
+            <!-- <div class="w-auto"> 
                 <form class="d-flex flex-column flex-sm-row gap-3">
                     <input type="email" class="form-control newsletter-input" placeholder="Your email address">
                     <button type="submit" class="btn btn-sm btn-light banners-btn newsletter-btn">
                         Subscribe
                     </button>
                 </form>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>
 
-<section class="m-5 homepage-section" data-section-index="6" data-weight="0.4">
+<section class="m-5 homepage-section" data-section-index="8" data-weight="0.4">
     <div class="text-center mb-5">
         <h2 class="fs-2 fw-bold mb-3">Featured Resources</h2>
         <p class="text-secondary-emphasis mx-auto" style="max-width: 60rem;">Download our latest whitepapers, guides, and case studies to help drive your digital transformation journey.</p>
@@ -2689,6 +2581,3 @@
     
 </section>
 </app-vertical-progress-bar>
-<!-- <div class="container py-3">
-  <button class="btn btn-primary" (click)="progress = progress + 10">Increase Progress</button>
-</div> -->

@@ -1,103 +1,11 @@
 @use '../../shared/scss-Styles/colors' as *;
 @use '../../shared/scss-Styles/sections-Header-styles' as * ;
-// .vertical-scroll-nav {
-//   /* No direct styles on the container */
 
-//   /* Vertical Line */
-//   &__line {
-//     position: absolute;
-//     top: 2rem;
-//     right: 1.25rem;
-//     bottom: 2rem;
-//     width: 1px;
-//     border-right: 1px dashed rgba(106, 5, 166, 0.3);
-//     background: none;
-//     z-index: 45;
-//     display: none;
-
-//     @media (min-width: 992px) {
-//       display: block;
-//     }
-//   }
-
-//   /* Slider */
-//   &__slider {
-//     position: absolute;
-//     right: 1.25rem;
-//     width: 4px;
-//     background: linear-gradient(to bottom, red, #5a048a); /* Darkened main color */
-//     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-//     border-radius: 0.75rem;
-//     z-index: 40;
-//     display: none;
-//     transition: top 0.3s ease, height 0.3s ease;
-
-//     @media (min-width: 992px) {
-//       display: block;
-//     }
-//   }
-
-//   /* Markers */
-//   &__marker {
-//     position: absolute;
-//     width: 1.5rem;
-//     height: 1.5rem;
-//     border-radius: 50%;
-//     color: $white-color;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     font-size: 0.8rem;
-//     font-weight: 600;
-//     cursor: pointer;
-//     transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
-//     box-shadow: 0 0 0 2px transparent;
-
-//     &.bg-secondary {
-//       background-color: rgba(108, 117, 125, 0.5) !important;
-//       border: 1px solid rgba(108, 117, 125, 0.7);
-//     }
-
-//     &.bg-primary {
-//       background-color: $main-color !important;
-//     }
-
-//     &:hover {
-//       transform: scale(1.2);
-//       box-shadow: 0 0 0 3px $main-color;
-//     }
-//   }
-// }
-
-// /* Utility classes (as provided) */
-// .w-px {
-//   width: 5px;
-// }
-
-// .w-10 {
-//   width: 2.5rem;
-//   height: 2.5rem;
-// }
-
-// .rounded-pill {
-//   transition: height 0.3s ease;
-// }
-
-// .bg-telda-gradient {
-//   background: linear-gradient(180deg, lighten($main-color , 50%), $secend-main-color); /* Optional */
-// }
-
-// .rounded-circle {
-//   transition: background-color 0.3s ease; /* Smooth color transition */
-// }
-// --main-color: #6A05A6; /* Purple */
-//   --secend-main-color: #3F1256; /* Darker Purple */
-//   --white-color: white;
   $secondary-color: #6c757d; /* Bootstrap secondary color */
 
   /* New variables for consistent positioning and sizing */
   $nav-right-offset: 1.5rem; /* Distance from the right edge of the container */
-  $line-width: 2px; /* Width of the vertical line */
+  $line-width: 5px; /* Width of the vertical line */
   $slider-width: 6px; /* Width of the active slider */
   $marker-size: 1.8rem; /* Size of the circular markers */
   $marker-font-size: 0.8rem; /* Font size inside markers */
@@ -110,7 +18,7 @@
   // Vertical Line (the static background line)
   &__line {
     position: absolute;
-    top: 2rem;
+    top: 5rem;
     right: $nav-right-offset; /* Controlled by variable */
     bottom: 2rem; /* Extends to the bottom */
     width: $line-width; /* Controlled by variable */
@@ -126,10 +34,10 @@
   // Slider (the active progress indicator)
   &__slider {
     position: absolute;
-    top: 2rem; /* Aligned with the line's start */
+    top: 5rem; /* Aligned with the line's start */
     right: $nav-right-offset; /* Controlled by variable, aligned with line */
     width: $slider-width; /* Controlled by variable, thicker than line */
-    background-image: linear-gradient(to bottom, $main-color, $secend-main-color); /* Vibrant gradient fill */
+    background: linear-gradient(to bottom, $main-color, $secend-main-color); /* Vibrant gradient fill */
     box-shadow: 0 0 8px rgba($main-color, 0.6); /* Soft glow for visibility */
     border-radius: 0.75rem; /* More pronounced rounded ends */
     z-index: 40; /* BELOW markers */

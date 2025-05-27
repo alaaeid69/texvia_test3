@@ -17,7 +17,7 @@ interface home{
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgClass, NgxParticlesModule, VerticalProgressBarComponent],
+  imports: [NgClass, NgxParticlesModule, VerticalProgressBarComponent , RouterLink],
   templateUrl: './home.component.html',
  
   styleUrls: ['./home.component.scss']
