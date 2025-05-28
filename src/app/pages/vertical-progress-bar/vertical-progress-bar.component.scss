@@ -36,7 +36,7 @@ $marker-size: 1.5rem;
     border-radius: $slider-width / 2;
     z-index: 45;
     display: none;
-    transition: top 0.2s ease-in-out, height 0.2s ease-in-out;
+    transition: top 0.3s ease-in-out, height 0.3s ease-in-out;
 
     @media (min-width: 992px) {
       display: block;
