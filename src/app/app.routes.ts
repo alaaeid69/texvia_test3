@@ -9,44 +9,50 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
+    path: 'dashboard',
+    loadComponent: () => import('./pages/dashboard/dashboard.component').then(m => m.DashboardComponent),
+    // title: 'Solutions',
+  },
+  {
     path: 'home',
     component: HomeComponent,
-    title: 'Home',
+    // title: 'Home',
   },
+
   {
     path: 'solutions',
     loadComponent: () => import('./pages/solutions/solutions.component').then(m => m.SolutionsComponent),
-    title: 'Solutions',
+    // title: 'Solutions',
   },
   {
     path: 'industries',
     loadComponent: () => import('./pages/industries/industries.component').then(m => m.IndustriesComponent),
-    title: 'Industries',
+    // title: 'Industries',
   },
   {
     path: 'courses',
     loadComponent: () => import('./pages/courses/courses.component').then(m => m.CoursesComponent),
-    title: 'Courses',
+    // title: 'Courses',
   },
   {
     path: 'services',
     loadComponent: () => import('./pages/how-we-deliver-value/how-we-deliver-value.component').then(m => m.HowWeDeliverValueComponent),
-    title: 'Services',
+    // title: 'Services',
   },
   {
     path: 'contact',
     loadComponent: () => import('./pages/contact-us/contact-us.component').then(m => m.ContactUsComponent),
-    title: 'contact  ',
+    // title: 'contact  ',
   },
   {
     path: 'login',
     loadComponent: () => import('./pages/login/login.component').then(m => m.LoginComponent),
-    title: 'Login',
+    // title: 'Login',
   },
   {
     path: 'register',
     loadComponent: () => import('./pages/register/register.component').then(m => m.RegisterComponent),
-    title: 'Register',
+    // title: 'Register',
   },
   {
     path: '**',

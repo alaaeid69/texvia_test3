@@ -1,115 +1,96 @@
 @use '../../shared/scss-Styles/colors' as *;
-@use '../../shared/scss-Styles/sections-Header-styles' as * ;
+@use '../../shared/scss-Styles/sections-Header-styles' as *;
 
-  $secondary-color: #6c757d; /* Bootstrap secondary color */
-
-  /* New variables for consistent positioning and sizing */
-  $nav-right-offset: 1.5rem; /* Distance from the right edge of the container */
-  $line-width: 5px; /* Width of the vertical line */
-  $slider-width: 6px; /* Width of the active slider */
-  $marker-size: 1.8rem; /* Size of the circular markers */
-  $marker-font-size: 0.8rem; /* Font size inside markers */
-
+$secondary-color: #6c757d;
+$nav-right-offset: 1.5rem;
+$line-width: 4px;
+$slider-width: 6px;
+$marker-size: 1.5rem;
 
 .vertical-scroll-nav {
   position: relative;
   width: 100%;
 
-  // Vertical Line (the static background line)
   &__line {
     position: absolute;
     top: 5rem;
-    right: $nav-right-offset; /* Controlled by variable */
-    bottom: 2rem; /* Extends to the bottom */
-    width: $line-width; /* Controlled by variable */
-    background-color: rgba($main-color, 0.2); /* Very subtle, transparent main color */
-    z-index: 45;
-    display: none; /* Hidden on small screens */
+    right: $nav-right-offset;
+    bottom: 2rem;
+    width: $line-width;
+    background-color: rgba($white-color, 0.1);
+    z-index: 40;
+    display: none;
 
-    @media (min-width: 992px) { /* lg breakpoint */
+    @media (min-width: 992px) {
       display: block;
     }
   }
 
-  // Slider (the active progress indicator)
   &__slider {
     position: absolute;
-    top: 5rem; /* Aligned with the line's start */
-    right: $nav-right-offset; /* Controlled by variable, aligned with line */
-    width: $slider-width; /* Controlled by variable, thicker than line */
-    background: linear-gradient(to bottom, $main-color, $secend-main-color); /* Vibrant gradient fill */
-    box-shadow: 0 0 8px rgba($main-color, 0.6); /* Soft glow for visibility */
-    border-radius: 0.75rem; /* More pronounced rounded ends */
-    z-index: 40; /* BELOW markers */
-    display: none; /* Hidden on small screens */
-    transition: top 0.4s ease-in-out, height 0.4s ease-in-out; /* Smoother, slightly longer transition */
+    top: 5rem;
+    right: $nav-right-offset;
+    width: $slider-width;
+    background-color: #e0e0e0;;
+   
+    border-radius: $slider-width / 2;
+    z-index: 45;
+    display: none;
+    transition: top 0.2s ease-in-out, height 0.2s ease-in-out;
 
-    @media (min-width: 992px) { /* lg breakpoint */
+    @media (min-width: 992px) {
       display: block;
     }
   }
 
-  // Markers (the clickable circles)
   &__marker {
     position: absolute;
-    /* Calculate right position to center marker on the line */
-    right: calc($nav-right-offset - (var(--marker-size) / 2) + ($line-width / 2));
-    width: $marker-size; /* Controlled by variable */
-    height: $marker-size; 
-    right: calc($nav-right-offset - (1/2 * $nav-right-offset));
-    border-radius: 50%; /* Perfect circle */
-    color:$white-color;
-    display: flex; /* Use flexbox to center content */
-    align-items: center;
-    justify-content: center;
-    font-size: $marker-font-size; /* Controlled by variable */
-    font-weight: 600; /* Bolder numbers */
-    cursor: pointer; /* Indicates interactivity */
-    z-index: 50; /* ABOVE the slider */
-    display: none; /* Hidden on small screens */
-
-    /* Smooth transitions for all relevant properties */
+    width: $marker-size;
+    height: $marker-size;
+    right: calc(#{$nav-right-offset} + (#{$line-width} / 2));
+    transform: translateX(50%);
+    background-clip: padding-box;
+    cursor: pointer;
+    z-index: 50;
+    display: none;
     transition: background-color 0.3s ease-in-out,
-                transform 0.2s ease-in-out,
+                transform 0.3s ease-in-out,
                 box-shadow 0.3s ease-in-out,
-                border-color 0.3s ease-in-out;
+                border-color 0.3s ease-in-out,
+                border-radius 0.3s ease-in-out;
 
-    /* Unfilled state (bg-secondary) */
-    &.bg-secondary {
-      background-color: rgba($secend-main-color, 0.4) !important; /* Muted, semi-transparent */
-      border: 1px solid rgba($secend-main-color, 0.6); /* Subtle border */
-      box-shadow: inset 0 0 0 1px rgba($white-color, 0.1); /* Inner light shadow */
+    &.is-inactive {
+      border-radius: 0.15rem;
+      background-color: rgba($secondary-color, 0.4);
+      border: 1px solid rgba($secondary-color, 0.6);
+      box-shadow: inset 0 0 0 1px rgba($white-color, 0.1);
+      transform: translateX(50%) rotate(0deg) ;
     }
 
-    /* Filled state (bg-primary) */
-    &.bg-primary {
-      background-color: $main-color !important; /* Your main color */
-      border: 1px solid $main-color; /* Solid border matching fill */
-      box-shadow: 0 0 0 3px rgba($main-color, 0.3); /* Outer glow for active state */
+    &.is-active {
+     
+      border: 1px solid darken($main-color, 10%);
+      box-shadow: 0 0 0 3px rgba($main-color, 0.3);
+      border-radius: 0.25rem;
+      transform: translateX(50%) rotate(45deg) scale(1.2);
     }
 
-    /* Hover effect */
     &:hover {
-      transform: scale(1.2); /* More pronounced pop */
-      box-shadow: 0 0 0 4px rgba($main-color, 0.4); /* Larger, more visible glow */
+      &.is-inactive {
+        border-color: rgba($main-color, 0.5);
+        
+        transform: translateX(50%) rotate(0deg) scale(1.2);
+      }
+      &.is-active {
+        box-shadow: 0 0 0 4px rgba($main-color, 0.45);
+        transform: translateX(50%) rotate(45deg) scale(1.2);
+      }
     }
 
-    @media (min-width: 992px) { /* lg breakpoint */
-      display: flex; /* Show on large screens */
+    @media (min-width: 992px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 }
-
-/* Ensure you have RGB values for your colors if using rgba() with variables */
-/* Example: */
-/* :root {
-  --main-color-rgb: 106, 5, 166;
-  --secondary-color-rgb: 108, 117, 125;
-  --white-color-rgb: 255, 255, 255;
-} */
-
-/* Utility classes (as provided by you, ensure these are available) */
-.w-px { width: $line-width; } /* Now uses the variable */
-.w-10 { width: $marker-size; } /* Now uses the variable */
-.h-10 { height: $marker-size; } /* Now uses the variable */
-.rounded-pill { border-radius: 50rem; } /* Standard Bootstrap */

@@ -1,0 +1,81 @@
+.sidebar {
+        background-color: #343a40;
+        color: #fff;
+        padding-top: 1rem;
+        min-height: 100vh; /* Full height sidebar */
+    }
+
+    .sidebar .nav-link {
+        color: #adb5bd;
+        border-radius: 0.25rem;
+        margin-bottom: 0.25rem;
+        cursor: pointer; // Added for better UX on clickable links
+    }
+
+    .sidebar .nav-link:hover,
+    .sidebar .nav-link.active {
+        color: #fff;
+        background-color: #495057;
+    }
+
+    .sidebar .nav-link .fa-fw {
+        margin-right: 0.5rem;
+    }
+
+    .sidebar-header {
+        padding: 0.5rem 1rem;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        color: #fff;
+        border-bottom: 1px solid #495057;
+    }
+
+    .main-content {
+        padding: 2rem;
+    }
+
+    .card-header { // This specific card header style
+        background-color: #007bff;
+        color: white;
+    }
+
+    .table-actions .btn {
+        margin-right: 5px;
+        margin-bottom: 5px; // Added for better spacing on small screens if buttons wrap
+    }
+     .table-actions .btn:last-child {
+        margin-right: 0;
+    }
+
+
+    .status-badge {
+        font-size: 0.8em;
+        padding: 0.4em 0.7em;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .sidebar {
+            min-height: auto; /* Adjust sidebar height for smaller screens */
+            position: static; /* In a real app with Angular router, sidebar toggling might be handled differently */
+        }
+        .main-content {
+            padding: 1rem;
+        }
+        .table-actions .btn {
+             margin-bottom: 5px; /* Ensure buttons have space when they stack */
+        }
+    }
+
+    // Ensure modals are styled correctly if Bootstrap isn't fully global
+    .modal-content.rounded {
+        border-radius: .3rem !important; // Bootstrap's default, ensure it applies
+    }
+    .modal-header.rounded-top {
+         border-top-left-radius: calc(.3rem - 1px);
+         border-top-right-radius: calc(.3rem - 1px);
+    }
+
+    .btn.rounded-pill {
+        border-radius: 50rem !important; // Bootstrap's default
+    }
