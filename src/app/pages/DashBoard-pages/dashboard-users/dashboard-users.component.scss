@@ -1,0 +1,23 @@
+ .main-content {
+        padding: 2rem;
+    }
+
+    .card-header { // This specific card header style
+        background-color: #007bff;
+        color: white;
+    }
+
+
+    .status-badge {
+        font-size: 0.8em;
+        padding: 0.4em 0.7em;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+        .main-content {
+            padding: 1rem;
+        }
+    }
+
+   

@@ -1,38 +1,46 @@
 
 <section class="navbar navbar-expand-lg fixed-top z-10 mb-2">
   <div class="container-fluid">
-    <a class="logo text-decoration-none" routerLink="/home" routerLinkActive="active">TEXVIA</a>
+    <a class="logo text-decoration-none" routerLink="/home" routerLinkActive="nav-link-active">TEXVIA</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-lg-0">
+         <li class="nav-item dropdown">
+          <a class="nav-link " href="#" id="navbarDropdown"  data-bs-toggle="dropdown" aria-expanded="false" routerLink="/dashboard/dashboard-home" routerLinkActive="nav-link-active">Dashboard</a>
+          <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+          
+            <li class="dropdown-item-text">
+              <a class="nav-link" routerLink="/dashboard/contact-submission" >Dashboard Contact submissions</a>
+            </li>
+            <li class="dropdown-item-text">
+              <a class="nav-link" routerLink="/dashboard/users" >Dashboard Users</a>
+            </li>
+             
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home" routerLinkActive="nav-link-active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/solutions" routerLinkActive="nav-link-active">Solutions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/industries" routerLinkActive="nav-link-active">Industries</a>
+        </li>
+      
          <li class="nav-item">
-          <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/solutions" routerLinkActive="active">Solutions</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/industries" routerLinkActive="active">Industries</a>
-        </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" routerLink="/courses" routerLinkActive="active">Courses</a>
-        </li> -->
-         <li class="nav-item">
-          <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact us </a>
+          <a class="nav-link" routerLink="/contact" routerLinkActive="nav-link-active">Contact us </a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+          <a class="nav-link " href="#" id="navbarDropdown"  data-bs-toggle="dropdown" aria-expanded="false">Account</a>
+          <ul class="dropdown-menu dropdown-menu2 " aria-labelledby="navbarDropdown">
+            <li class="dropdown-item-text">
+              <a class="nav-link" routerLink="/login" routerLinkActive="nav-link-active">Login</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/register" routerLinkActive="active">Register</a>
+            <li class="dropdown-item-text">
+              <a class="nav-link" routerLink="/register" routerLinkActive="nav-link-active">Register</a>
             </li>
           </ul>
         </li>

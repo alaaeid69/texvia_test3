@@ -1,19 +1,14 @@
-
-
-import { Component, OnInit, } from '@angular/core'; 
-import { Submission } from '../../core/contactSubmission/icontact-submission';
-
-
+import { Component } from '@angular/core';
+import { Submission } from '../../../core/contactSubmission/icontact-submission';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'app-dashdoard-contact-submissions',
   imports: [],
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.scss'
+  templateUrl: './dashdoard-contact-submissions.component.html',
+  styleUrl: './dashdoard-contact-submissions.component.scss'
 })
-export class DashboardComponent  implements OnInit {
-
-  submissions: Submission[] = [
+export class DashdoardContactSubmissionsComponent {
+    submissions: Submission[] = [
     {
       id: 1,
       name: 'Alice Wonderland',
@@ -106,4 +101,5 @@ export class DashboardComponent  implements OnInit {
       
     }
   }
+
 }

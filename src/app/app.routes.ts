@@ -10,8 +10,23 @@ export const routes: Routes = [
   },
   {
     path: 'dashboard',
-    loadComponent: () => import('./pages/dashboard/dashboard.component').then(m => m.DashboardComponent),
-    // title: 'Solutions',
+    loadComponent: () => import('./pages/DashBoard-pages/dashboard/dashboard.component').then(m => m.DashboardComponent),
+   children:[
+    {path: '' , redirectTo:'dashboard-home' , pathMatch:'full'},
+    {
+        path: 'dashboard-home',
+        loadComponent: () => import('./pages/DashBoard-pages/dashboard-Home/dashboard.component').then(m => m.DashboardComponent),
+      },
+      {
+        path: 'users',
+        loadComponent: () => import('./pages/DashBoard-pages/dashboard-users/dashboard-users.component').then(m => m.DashboardUsersComponent),
+      },
+      {
+        path: 'contact-submission',
+        loadComponent: () => import('./pages/DashBoard-pages/dashdoard-contact-submissions/dashdoard-contact-submissions.component').then(m => m.DashdoardContactSubmissionsComponent),
+      },
+   ]
+    
   },
   {
     path: 'home',
@@ -34,11 +49,7 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/courses/courses.component').then(m => m.CoursesComponent),
     // title: 'Courses',
   },
-  {
-    path: 'services',
-    loadComponent: () => import('./pages/how-we-deliver-value/how-we-deliver-value.component').then(m => m.HowWeDeliverValueComponent),
-    // title: 'Services',
-  },
+  
   {
     path: 'contact',
     loadComponent: () => import('./pages/contact-us/contact-us.component').then(m => m.ContactUsComponent),
