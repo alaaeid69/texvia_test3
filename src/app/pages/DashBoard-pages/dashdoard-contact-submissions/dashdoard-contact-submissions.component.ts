@@ -55,12 +55,34 @@ export class DashdoardContactSubmissionsComponent {
       status: 'New',
       statusClass: 'bg-success'
     },
-   
+   {
+      id: 4,
+      name: 'Alice Wonderland',
+      mobile:'01225756490',
+      email: 'alice@example.com',
+      title:'manager',
+      company: 'texvia',
+      region: 'cairo',
+      solutions: 'cairo',
+      industries:"smart manufactureing",
+      dateReceived: '2024-05-27 10:30 AM',
+      message: 'Hello, I would like to know more about your premium services. Please provide details.',
+      status: 'New',
+      statusClass: 'bg-success'
+    },
    
   ];
 
   selectedSubmission: Submission | null = null;
   submissionToDeleteId: number | null = null;
+
+
+  //pagnation variables
+  paginatedsubmissions:Submission [] =[]
+  currentPage: number = 1;
+  pageSize: number = 1;
+  pageSizeOptions: number[] = [5,10,15];
+  totalPages: number = 1;
 
   constructor() { }
 
@@ -71,7 +93,7 @@ export class DashdoardContactSubmissionsComponent {
   // set the submission to be viewed in th model
   viewSubmissionDetails(submission: Submission): void {
     this.selectedSubmission = submission;
-    
+    this.updatePagination()
   }
 
  
@@ -102,4 +124,36 @@ export class DashdoardContactSubmissionsComponent {
     }
   }
 
+
+  // pagentions methods 
+  updatePagination() {
+    this.totalPages = Math.ceil(this.submissions.length / this.pageSize);
+    const startIndex = (this.currentPage - 1) * this.pageSize;
+    const endIndex = startIndex + this.pageSize;
+    this.paginatedsubmissions = this.submissions.slice(startIndex, endIndex);
+  }
+
+  changePage(page: number) {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+      this.updatePagination();
+    }
+  }
+
+  onPageSizeChange(event: Event) {
+    const selectElement = event.target as HTMLSelectElement;
+    this.pageSize = +selectElement.value;
+    this.currentPage = 1; // Reset to first page
+    this.updatePagination();
+  }
+
+  getPageNumbers(): number[] {
+    const pages: number[] = [];
+    for (let i = 1; i <= this.totalPages; i++) {
+      pages.push(i);
+    }
+    return pages;
+  }
 }
+
+
