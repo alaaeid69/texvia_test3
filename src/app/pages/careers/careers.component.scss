@@ -406,7 +406,7 @@ span.timeline-step-description {
         border-radius: 0.5rem; 
         margin-bottom: 1.5rem;
         border: none; 
-        @extend .custom-shadow; 
+        box-shadow: $shadow; 
 
         &:last-child {
             margin-bottom: 0;
@@ -419,7 +419,7 @@ span.timeline-step-description {
     }
 
     .accordion-button {
-        background-color: transparent; 
+        // background-color: transparent; 
          color: black;
          font-size: 1rem;
         font-weight: 500;    

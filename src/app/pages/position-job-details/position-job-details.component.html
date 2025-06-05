@@ -1,0 +1,358 @@
+<div class="container px-4 pt-5 pb-3 mt-4">
+    <nav style="--bs-breadcrumb-divider:url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a routerLink="/home " > <span class=" small fw-medium">Home</span></a>
+            </li>
+            <li class="breadcrumb-item">
+                <a routerLink="/careers" ><span class="small fw-medium "> Careers</span> </a>
+            </li>
+            <li class="breadcrumb-item">
+                <a routerLink="/careers"  fragment="open-positions-section" ><span class="small fw-medium "> Engineering</span> </a>
+            </li>
+            <li class="breadcrumb-item active text-secondary" aria-current="page"><span class="small "> Senior Software Engineer</span></li>
+        </ol>
+    </nav>
+<!-- Back Link -->
+<a  class="back-to-jobs-btn d-inline-flex align-items-center   mb-2" routerLink="/careers"  fragment="open-positions-section" >
+    <div>
+        <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        fill="currentColor"
+        class="bi bi-arrow-left me-2 transition-transform"
+        viewBox="0 0 16 16"
+    >
+        <path fill-rule="evenodd" d="M4.3 8.3a.5.5 0 0 1 0-.4l4-4a.5.5 0 1 1 .7.7L5.5 8h9a.5.5 0 0 1 0 1h-9l3.5 3.4a.5.5 0 1 1-.7.7l-4-4z"/>
+    </svg>
+    </div>
+    <div>
+         <p class="d-inline ms-1 fw-normal">  Back to all jobs </p> 
+    </div>
+   
+   
+  
+</a>
+</div>
+
+<!-- Job Header -->
+ <div class="job-header container">
+    <div class="bg-white rounded  px-4 mb-4  card-3d">
+    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
+        <div class="d-flex flex-column flex-md-row align-items-center">
+            <div class="icon-wrapper-div rounded d-flex align-items-center justify-content-center shadow mb-4 mb-md-0 me-md-3">
+                <svg  width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#4B0082"/>
+                    <path d="M2 17L12 22L22 17" stroke="#4B0082" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="#4B0082" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div>
+                <h2 class=" mb-1 fw-bold">Senior Software Engineer</h2>
+                <p class="job-header-description fw-semibold">InnovateTech • Engineering Department</p>
+                <div class="d-flex flex-wrap gap-1 mt-3">
+                    <div class=" badge job-details px-3 py-2 "> 
+                        <i class="bi bi-geo-alt me-2 "></i> <span class="fw-normal ">Remote (US)</span> 
+                    </div>
+                    <div class="badge job-details px-3 py-2"> 
+                        <i class="bi bi-briefcase me-2"></i> <span class="fw-normal ">Full-time</span> 
+                    </div>
+                    <div class="badge job-details px-3 py-2"> 
+                        <i class="bi bi-cash-stack me-2"></i> <span class="fw-normal ">$120,000 - $150,000</span> 
+                    </div>
+                    <div class="badge job-details px-3 py-2"> 
+                        <i class="bi bi-clock me-2"></i> <span class="fw-normal ">Posted 2 days ago</span> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-3 mt-md-0 d-flex flex-column  flex-sm-row  gap-2 ">
+            <button class="btn py-2 px-4 border border-1 d-flex flex-nowrap justify-content-center align-items-center  " id="shareJobBtn">
+                <i class="bi bi-share me-2 "></i> Share
+            </button>
+            <button class="btn  " id="applyNowBtn">
+                <i class="bi bi-send me-2"></i> Apply Now
+            </button>
+        </div>
+    </div>
+</div>
+ </div>
+
+
+ <!--- job Description and apply----->
+ <div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10 col-xl-8">
+      <div class="mb-4">
+        <ul class="nav nav-tabs fw-medium" id="jobTabs" role="tablist">
+          <li class="nav-item " role="presentation">
+            <button class="nav-link  active pb-3 tab-btn" id="description-tab-btn" data-bs-toggle="tab" data-bs-target="#description-pane" type="button" role="tab" aria-controls="description-pane" aria-selected="true">
+              <i class="bi bi-file-text me-2"></i>Job Description
+            </button>
+          </li>
+          <li class="nav-item " role="presentation">
+            <button class="nav-link pb-3 tab-btn" id="apply-tab-btn" data-bs-toggle="tab" data-bs-target="#apply-pane" type="button" role="tab" aria-controls="apply-pane" aria-selected="false">
+              <i class="bi bi-send me-2"></i>Apply Now
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content bg-white border border-top-0 rounded-bottom p-4 p-md-5 depth-shadow">
+          <div class="tab-pane fade show active" id="description-pane" role="tabpanel" aria-labelledby="description-tab-btn">
+            <p class=" mb-4">
+              We're looking for an experienced Senior Software Engineer to join our growing engineering team and help build scalable, robust applications that power our platform.
+            </p>
+
+            <div class="d-flex flex-wrap gap-2 mb-4">
+              <span class="badge rounded-pill px-2 py-1 fw-normal ">JavaScript</span>
+              <span class="badge rounded-pill px-2 py-1 fw-normal ">React</span>
+              <span class="badge rounded-pill px-2 py-1 fw-normal ">Node.js</span>
+              <span class="badge rounded-pill px-2 py-1 fw-normal ">AWS</span>
+              <span class="badge rounded-pill px-2 py-1 fw-normal ">TypeScript</span>
+              <span class="badge rounded-pill px-2 py-1 fw-normal ">GraphQL</span>
+            </div>
+
+            <h4 class=" fw-medium  mb-3">About the Role</h4>
+            <p class="mb-4">
+              As a Senior Software Engineer at InnovateTech, you'll work on challenging problems and build innovative solutions that impact millions of users. You'll collaborate with cross-functional teams to design, develop, and deploy high-quality software that meets business requirements and technical standards.
+            </p>
+
+            <h4 class=" fw-medium mb-3">Responsibilities</h4>
+            <ul class="list-unstyled ps-3 mb-4 styled-list">
+              <li><i class="bi bi-check-circle-fill me-2"></i>Design, build, and maintain efficient, reusable, and reliable code</li>
+              <li><i class="bi bi-check-circle-fill me-2"></i>Collaborate with product managers, designers, and other engineers to deliver features and improvements</li>
+              <li><i class="bi bi-check-circle-fill me-2"></i>Participate in code reviews and provide constructive feedback to other developers</li>
+              <li><i class="bi bi-check-circle-fill me-2"></i>Identify and resolve performance and scalability issues</li>
+              <li><i class="bi bi-check-circle-fill me-2"></i>Mentor junior engineers and contribute to their growth</li>
+              <li><i class="bi bi-check-circle-fill me-2"></i>Stay up-to-date with emerging trends and technologies</li>
+              <li><i class="bi bi-check-circle-fill me-2"></i>Contribute to technical documentation and knowledge sharing</li>
+              <li><i class="bi bi-check-circle-fill me-2"></i>Participate in on-call rotations to support production systems</li>
+            </ul>
+
+            <h4 class=" fw-medium  mb-3">Requirements</h4>
+            <ul class="list-unstyled ps-3 mb-4 styled-list">
+              <li><i class="bi bi-dot me-2"></i>5+ years of professional software development experience</li>
+              <li><i class="bi bi-dot me-2"></i>Strong proficiency in JavaScript/TypeScript and modern frameworks (React, Angular, or Vue)</li>
+              <li><i class="bi bi-dot me-2"></i>Experience with server-side technologies (Node.js, Express)</li>
+              <li><i class="bi bi-dot me-2"></i>Familiarity with database technologies (SQL and NoSQL)</li>
+              <li><i class="bi bi-dot me-2"></i>Understanding of cloud services (AWS, GCP, or Azure)</li>
+              <li><i class="bi bi-dot me-2"></i>Experience with CI/CD pipelines and DevOps practices</li>
+              <li><i class="bi bi-dot me-2"></i>Strong problem-solving skills and attention to detail</li>
+              <li><i class="bi bi-dot me-2"></i>Excellent communication and collaboration abilities</li>
+              <li><i class="bi bi-dot me-2"></i>Bachelor's degree in Computer Science or equivalent practical experience</li>
+            </ul>
+
+            <h4 class=" fw-medium  mb-3">Nice to Have</h4>
+            <ul class="list-unstyled ps-3 mb-4 styled-list">
+              <li><i class="bi bi-plus-circle me-2"></i>Experience with GraphQL and Apollo</li>
+              <li><i class="bi bi-plus-circle me-2"></i>Knowledge of containerization technologies (Docker, Kubernetes)</li>
+              <li><i class="bi bi-plus-circle me-2"></i>Experience with microservices architecture</li>
+              <li><i class="bi bi-plus-circle me-2"></i>Contributions to open-source projects</li>
+              <li><i class="bi bi-plus-circle me-2"></i>Experience with real-time applications and WebSockets</li>
+            </ul>
+
+            <h4 class=" fw-medium  mb-3">Benefits</h4>
+            <ul class="list-unstyled ps-3 mb-4 styled-list">
+              <li><i class="bi bi-patch-check me-2"></i>Competitive salary and equity package</li>
+              <li><i class="bi bi-patch-check me-2"></i>Comprehensive health, dental, and vision insurance</li>
+              <li><i class="bi bi-patch-check me-2"></i>Flexible work arrangements (remote, hybrid)</li>
+              <li><i class="bi bi-patch-check me-2"></i>Unlimited PTO policy</li>
+              <li><i class="bi bi-patch-check me-2"></i>401(k) matching</li>
+              <li><i class="bi bi-patch-check me-2"></i>Professional development budget</li>
+              <li><i class="bi bi-patch-check me-2"></i>Home office stipend</li>
+              <li><i class="bi bi-patch-check me-2"></i>Regular team events and retreats</li>
+              <li><i class="bi bi-patch-check me-2"></i>Parental leave</li>
+              <li><i class="bi bi-patch-check me-2"></i>Mental health resources</li>
+            </ul>
+
+            <h4 class=" fw-medium  mb-3">Our Commitment to Diversity</h4>
+            <p class="small mb-4">
+              InnovateTech is an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive environment for all employees. We do not discriminate based on race, religion, color, national origin, gender, sexual orientation, age, marital status, veteran status, or disability status.
+            </p>
+
+            <div class="d-flex flex-wrap gap-3 mt-4">
+              <button class="  btn   btn-3d " id="applyNowBtn2">
+                <i class="bi bi-send me-2"></i>Apply for this Position
+              </button>
+              <button class="btn btn-outline  btn-3d" id="shareJobBtn2">
+                <i class="bi bi-share me-2"></i>Share Job
+              </button>
+              </div>
+          </div>
+
+          <div class="tab-pane fade" id="apply-pane" role="tabpanel" aria-labelledby="apply-tab-btn">
+            <div id="application-form-container">
+              <h3 class="fs-4 fw-semibold mb-4">Apply for Senior Software Engineer</h3>
+              <form id="jobApplicationForm">
+                <div class="row g-3 mb-3">
+                  <div class="col-md-6">
+                    <label for="firstName" class="form-label">First Name*</label>
+                    <input type="text" id="firstName" name="firstName" class="form-control form-control-lg" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="lastName" class="form-label">Last Name*</label>
+                    <input type="text" id="lastName" name="lastName" class="form-control form-control-lg" required>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email Address*</label>
+                  <input type="email" id="email" name="email" class="form-control form-control-lg" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="phone" class="form-label">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" class="form-control form-control-lg">
+                </div>
+
+                <div class="mb-3">
+                  <label for="location" class="form-label">Current Location</label>
+                  <input type="text" id="location" name="location" class="form-control form-control-lg">
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Resume/CV*</label>
+                  <div id="resumeUpload" class="border border-2 border-dashed rounded-3 p-4 text-center cursor-pointer card-3d-light">
+                    <i class="bi bi-cloud-arrow-up  fs-1 mb-2 float-3d-icon"></i>
+                    <span class="d-block mb-1 small bg-white">Drag and drop your resume here or <span class=" fw-bold">browse files</span></span>
+                    <span class="small bg-white"> class="text-muted small">PDF, DOCX, or TXT (Max 5MB)</span>
+                    <input type="file" id="resumeFile" name="resume" class="d-none" accept=".pdf,.docx,.doc,.txt" required>
+                  </div>
+                  <div id="resumePreview" class="d-none mt-3 p-3 bg-light border rounded-3">
+                    <div class="d-flex align-items-center justify-content-between">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-file-earmark-text text-primary fs-4 me-2 float-3d-icon"></i>
+                        <span id="fileName">resume.pdf</span>
+                      </div>
+                      <button type="button" id="removeFile" class="btn-close" aria-label="Remove file"></button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="linkedin" class="form-label">LinkedIn Profile (Optional)</label>
+                  <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile" class="form-control form-control-lg">
+                </div>
+
+                <div class="mb-3">
+                  <label for="portfolio" class="form-label">Portfolio/GitHub (Optional)</label>
+                  <input type="url" id="portfolio" name="portfolio" placeholder="https://github.com/yourusername" class="form-control form-control-lg">
+                </div>
+
+                <div class="mb-3">
+                  <label for="coverLetter" class="form-label">Why are you interested in this position? (Optional)</label>
+                  <textarea id="coverLetter" name="coverLetter" rows="4" placeholder="Tell us why you're excited about this role and what you can bring to our team..." class="form-control form-control-lg"></textarea>
+                </div>
+
+                <div class="mb-4 form-check">
+                  <input type="checkbox" id="agreeTerms" name="agreeTerms" class="form-check-input" required>
+                  <label for="agreeTerms" class="form-check-label">
+                    I agree to the <a href="#" class="">privacy policy</a> and consent to the processing of my personal data.
+                  </label>
+                </div>
+
+                <button type="submit" class="btn py-2  w-100 btn-3d d-flex align-items-center justify-content-center" id="submitApplication">
+                  <i class="bi bi-send me-2"></i>Submit Application
+                </button>
+              </form>
+            </div>
+
+            <div id="applicationSuccess" class="d-none text-center py-5 px-3 fade-in">
+              <i class="bi bi-check-circle text-success display-3 mb-4 float-3d-icon"></i>
+              <h3 class=" fw-semibold mb-3">Application Submitted Successfully!</h3>
+              <p class="text-muted mb-4 mx-auto" style="max-width: 400px;">
+                Thank you for applying for the Senior Software Engineer position. We've received your application and will review it shortly. You'll receive a confirmation email with more details.
+              </p>
+              <a href="#" class="btn btn-primary btn-lg btn-3d">
+                <i class="bi bi-search me-2"></i>Browse More Jobs
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2 col-xl-4">
+      <div class="job-sidebar card card-3d depth-shadow tilt-effect ">
+                    <div class="card-body p-4">
+                        <h3 class="fw-semibold mb-4 job-title-custom">Job Details</h3>
+                        <div class="custom-space-y-4">
+                            <div class="d-flex align-items-center">
+                                <div class="icon-bg-custom rounded-circle d-flex align-items-center justify-content-center text-main-color me-3 float-3d-effect">
+                                    <i class="bi bi-calendar"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm-custom text-muted mb-0">Date Posted</p>
+                                    <p class="fw-medium mb-0">June 15, 2023</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="icon-bg-custom rounded-circle d-flex align-items-center justify-content-center text-main-color me-3 float-3d-effect">
+                                    <i class="bi bi-geo-alt"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm-custom text-muted mb-0">Location</p>
+                                    <p class="fw-medium mb-0">Remote (US)</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="icon-bg-custom rounded-circle d-flex align-items-center justify-content-center text-main-color me-3 float-3d-effect">
+                                    <i class="bi bi-briefcase"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm-custom text-muted mb-0">Employment Type</p>
+                                    <p class="fw-medium mb-0">Full-time</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="icon-bg-custom rounded-circle d-flex align-items-center justify-content-center text-main-color me-3 float-3d-effect">
+                                    <i class="bi bi-cash-stack"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm-custom text-muted mb-0">Salary Range</p>
+                                    <p class="fw-medium mb-0">$120,000 - $150,000</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="icon-bg-custom rounded-circle d-flex align-items-center justify-content-center text-main-color me-3 float-3d-effect">
+                                    <i class="bi bi-people"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm-custom text-muted mb-0">Department</p>
+                                    <p class="fw-medium mb-0">Engineering</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="icon-bg-custom rounded-circle d-flex align-items-center justify-content-center text-main-color me-3 float-3d-effect">
+                                    <i class="bi bi-person-badge"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm-custom text-muted mb-0">Experience Level</p>
+                                    <p class="fw-medium mb-0">Senior (5+ years)</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="icon-bg-custom rounded-circle d-flex align-items-center justify-content-center text-main-color me-3 float-3d-effect">
+                                    <i class="bi bi-clock-history"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm-custom text-muted mb-0">Application Deadline</p>
+                                    <p class="fw-medium mb-0">July 15, 2023</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-2 custom-space-y-3">
+                            <button class="btn btn-main-custom w-100 py-2 px-4 d-flex align-items-center justify-content-center btn-3d-effect pulse-effect" id="applyNowBtn3">
+                                <i class="bi bi-send me-2"></i>Apply Now
+                            </button>
+                            <button class="btn btn-outline-main-custom w-100 py-2 px-4 d-flex align-items-center justify-content-center btn-3d-effect" id="saveJobBtn">
+                                <i class="bi bi-bookmark me-2"></i>Save Job
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+    
+
