@@ -1,4 +1,4 @@
- <div class="container-fluid vh-100 ">
+ <div class="container-fluid ">
         <div class="row">
             <nav id="sidebarMenu" class=" col-lg-3 col-xl-2 d-none d-lg-block bg-dark text-white vh-100 position-fixed shadow-sm sidebar-scroll overflow-y-auto mt-5">
                 <div class="position-sticky">
@@ -8,24 +8,40 @@
                     <ul class="nav flex-column p-2">
                         <li class="nav-item">
                             <a  class="nav-link nav-link-desktop " routerLink="/dashboard/dashboard-home" routerLinkActive="bg-white-50">
-                                <i class="fas fa-home fa-fw me-1"></i> <p class="d-inline">Dashboard</p> 
+                                
+                                <i class="bi bi-speedometer2 fa-fw me-1 me-xl-1"></i>
+                                <p class="d-inline">Dashboard</p> 
                             </a>
                         </li>
                         <li class="nav-item">
                             <a  class="nav-link nav-link-desktop" routerLink="/dashboard/contact-submission" routerLinkActive="bg-white-50">
-                                <i class="fas fa-envelope fa-fw me-0 me-xl-1"></i> <p class="d-inline"> Contact Submissions</p>
+                                <i class="bi  bi-envelope fa-fw me-0 me-xl-1"></i> <p class="d-inline"> Contact Submissions</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link nav-link-desktop" routerLink="/dashboard/users" routerLinkActive="bg-white-50">
-                                <i class="fas fa-users fa-fw me-1"></i><p class="d-inline">Users</p> 
+                       
+                                    <i class="bi bi-person-badge fa-fw me-1 me-xl-1"></i>
+                                <p class="d-inline">Users</p> 
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-desktop" routerLink="/dashboard/job-Management" routerLinkActive="bg-white-50">
+                                 <i class="bi bi-briefcase fa-fw me-1 me-xl-1"></i>
+                                <p class="d-inline">Job Management</p> 
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-desktop" routerLink="/dashboard/Applicant-Page" routerLinkActive="bg-white-50">
+                                  <i class="bi bi-people fa-fw me-1 me-xl-1"></i>
+                                <p class="d-inline">Applicant Page</p> 
                             </a>
                         </li>
                     </ul>
                     
                 </div>
             </nav>
-             <div class="  col-lg-9 col-xl-10 ms-sm-auto px-md-4 mt-lg-4">
+             <div class="  col-lg-9 col-xl-10 ms-sm-auto px-md-4 mt-lg-4 min-vh-100">
            <router-outlet></router-outlet>
        </div>
 
