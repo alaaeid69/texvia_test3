@@ -33,7 +33,7 @@ $marker-size: 1.5rem;
     width: $slider-width;
     background-color: #e0e0e0;;
    
-    border-radius: $slider-width / 2;
+    border-radius:calc( $slider-width / 2);
     z-index: 45;
     display: none;
     transition: top 0.3s ease-in-out, height 0.3s ease-in-out;
@@ -69,7 +69,7 @@ $marker-size: 1.5rem;
 
     &.is-active {
      
-      border: 1px solid darken($main-color, 10%);
+      border: 1px solid $main-color-darkness;
       box-shadow: 0 0 0 3px rgba($main-color, 0.3);
       border-radius: 0.25rem;
       transform: translateX(50%) rotate(45deg) scale(1.2);

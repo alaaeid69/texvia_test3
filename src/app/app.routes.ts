@@ -1,6 +1,7 @@
 import { RouterModule,  Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { NgModule } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 export const routes: Routes = [
   {
@@ -39,49 +40,49 @@ export const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    // title: 'Home',
-  },
+    data:{ title :'Home - TEXVIA'}
+    },
 
   {
     path: 'solutions',
     loadComponent: () => import('./pages/solutions/solutions.component').then(m => m.SolutionsComponent),
-    // title: 'Solutions',
+  data:{ title: 'Solutions - TEXVIA' },
   },
   {
     path: 'industries',
     loadComponent: () => import('./pages/industries/industries.component').then(m => m.IndustriesComponent),
-    // title: 'Industries',
+    data:{ title: 'Industries - TEXVIA' },
   },
    {
     path: 'careers',
     loadComponent: () => import('./pages/careers/careers.component').then(m => m.CareersComponent),
-   
-  },
+   data:{ title: 'careers - TEXVIA', }, 
+   },
    {
     path: 'job-Details',
     loadComponent: () => import('./pages/position-job-details/position-job-details.component').then(m => m.PositionJobDetailsComponent),
-   
+     data:{ title: 'job Details -TEXVIA' },
   },
   {
     path: 'courses',
     loadComponent: () => import('./pages/courses/courses.component').then(m => m.CoursesComponent),
-    // title: 'Courses',
+    //data:{ title: 'Courses',
   },
   
-  {
+ {
     path: 'contact',
     loadComponent: () => import('./pages/contact-us/contact-us.component').then(m => m.ContactUsComponent),
-    // title: 'contact  ',
+    data:{ title: 'contact - TEXVIA ' },
   },
   {
     path: 'login',
     loadComponent: () => import('./pages/login/login.component').then(m => m.LoginComponent),
-    // title: 'Login',
+    data:{ title: 'Login - TEXVIA' },
   },
   {
     path: 'register',
     loadComponent: () => import('./pages/register/register.component').then(m => m.RegisterComponent),
-    // title: 'Register',
+    data:{ title: 'Register - TEXVIA' },
   },
   {
     path: '**',

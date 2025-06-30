@@ -1,4 +1,8 @@
- // animation
+ 
+@use '../../../shared/scss-Styles/colors' as *;
+@use '../../../shared/scss-Styles/sections-Header-styles' as * ;
+
+// animation
     .fade-in {
             animation: fadeIn 0.5s ease-in-out;
         }
@@ -9,13 +13,36 @@
         }
         
  
- .main-content {
-        padding: 2rem;
+//  
+.bg-main-color{
+    background-color: $main-color;
+}
+.btn-main-color {
+            background-color: $main-color;
+            border-color: $main-color;
+             color: $white-color;
+        
+        
+        &:hover {
+           
+            background-color:  $main-color-darkness;
+            border-color: rgba($main-color, 10%);
+        }
+    }
+ // for nav routes 
+ a{
+    color:black ;
+    &:hover{
+        color: $main-color;
+    }
+ }
+ .active{
+    color: $main-color;
     }
 
-    .card-header { // This specific card header style
-        background-color: #007bff;
-        color: white;
+
+    .card-header {
+     background: linear-gradient(160deg , $main-color , $secend-main-color);
     }
 
 

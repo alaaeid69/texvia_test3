@@ -6,19 +6,19 @@
       <div
         class="col-md-8 d-flex align-items-center justify-content-start p-md-5"
       >
-        <div class="text-white">
+        <div class="text-white"> 
           <header>
             <h2 class="mb-2">TEXVIA Solutions</h2>
-            <h5 class="fw-normal">
+            <!-- <h5 class="fw-normal">
               Powering Smart Factories with Scalable Automation and Digital
               Intelligence From Automation to Autonomous
               <span class="fw-semibold">
                 Your Partner in Smart Industry Transformation</span
               >
-            </h5>
+            </h5> -->
           </header>
           <div class="line rounded-3"></div>
-          <div class="description w-100">
+          <!-- <div class="description w-100">
             <p>
               At Texvia, we partner with you to transform your operations> from
               basic control systems to fully integrated, intelligent, and
@@ -27,39 +27,36 @@
               roadmap, and execute step-by-step actions to help you reach your
               Industry 4.0 goals.
             </p>
-          </div>
-          <button class="btn">our industries</button>
+          </div> -->
+          <button class="btn" (click)="goToIndustries()">our industries</button>
         </div>
       </div>
     </div>
   </div>
+  
 </section>
 
 <div class="details">
   <div class="container">
     <!-- navs and tabs ------- -->
-    <div class="navs pt-2">
-      <ul class="nav py-2 shadow-sm" id="myTab" role="tablist">
+    <div class="navbar pt-2">
+      <ul class="nav py-2 shadow-sm" >
         <li class="nav-item">
           <a
-            class="nav-link "
-            id="Digital Maturity Assessment-tap"
-            data-bs-toggle="tab"
-            data-bs-target="#Digital Maturity Assessment"
-            type="button"
-            role="tab"
-            (click)="scrollToSection('Digital Maturity Assessment')"
+            class="nav-link"
+              [routerLink]="['/solutions']"
+             fragment="Digital-Maturity-Assessment"
+            
+            
             >Digital Maturity Assessment</a
           >
         </li>
         <li class="nav-item">
           <a
             class="nav-link"
-            data-bs-toggle="tab"
-            data-bs-target="#Digital Transformation"
-            type="button"
-            role="tab"
-            (click)="scrollToSection('Digital Transformation')"
+             [routerLink]="['/solutions']"
+             fragment="Digital-Transformation"
+            
             >Digital Transformation</a
           >
         </li>
@@ -67,65 +64,53 @@
           <a
             class="nav-link"
             data-bs-toggle="tab"
-            data-bs-target="#AI-Ready IIoT Platform"
-            type="button"
-            role="tab"
-            (click)="scrollToSection('AI-Ready IIoT Platform')"
+             [routerLink]="['/solutions']"
+             fragment="AI-Ready-IIoT-Platform"
+            
             >AI-Ready IIoT Platform
           </a>
         </li>
           <li class="nav-item">
           <a
             class="nav-link"
-            id="Smart Manufacturing-tap"
-            data-bs-toggle="tab"
-            data-bs-target="#Smart Manufacturing"
-            type="button"
-            role="tab"
-            (click)="scrollToSection('Smart Manufacturing')"
+              [routerLink]="['/solutions']"
+             fragment="Smart-Manufacturing"
+            
             >Smart Manufacturing</a
           >
         </li>
           <li class="nav-item">
           <a
             class="nav-link"
-            id="Industrial Automation-tap"
-            data-bs-toggle="tab"
-            data-bs-target="#Industrial Automation"
-            type="button"
-            role="tab"
-            (click)="scrollToSection('Industrial Automation')"
+              [routerLink]="['/solutions']"
+             fragment="Industrial-Automation"
+            
             >Industrial Automation</a
           >
         </li>
           <li class="nav-item">
           <a
             class="nav-link"
-            id="PI System-tap"
-            data-bs-toggle="tab"
-            data-bs-target="#PI System"
-            type="button"
-            role="tab"
-            (click)="scrollToSection('PI System')"
+           [routerLink]="['/solutions']"
+             fragment="PI-System"
+            
+            
             >PI System</a
           >
         </li>
           <li class="nav-item">
           <a
             class="nav-link"
-            id="Real-Time Data & Analytics-tap"
-            data-bs-toggle="tab"
-            data-bs-target="#Real-Time Data & Analytics"
-            type="button"
-            role="tab"
-            (click)="scrollToSection('Real-Time Data & Analytics')"
+             [routerLink]="['/solutions']"
+             fragment="Real-Time-Data-&-Analytics"    
             >Real-Time Data & Analytics</a
           >
         </li>
       </ul>
     </div>
+      
 
-    <div class="row solutions-cards" id="Digital Maturity Assessment">
+    <div class="row solutions-cards" id="Digital-Maturity-Assessment">
       <div class="col-md-6 description-col">
         <div class="h-100">
           <div>
@@ -171,14 +156,14 @@
       </div>
     </div>
 
-    <div class="row solutions-cards" id="Digital Transformation">
+    <div class="row solutions-cards" id="Digital-Transformation">
       <div class="col-md-6 description-col">
         <div class="h-100">
           <div>
             <h4 class="fw-semibold lh-1 mb-3">Digital Transformation</h4>
             <p class="text-muted my-3 small">
               <span class="fw-bold d-block"
-                >Understand Where You Are. Know What’s Next.</span
+                >Digitize. Optimize. Thrive.</span
               >
               This is the core of your transformation journey. We implements an
               Industry 4.0 architecture centered around a Unified Namespace
@@ -220,7 +205,7 @@
       </div>
     </div>
 
-    <div class="row solutions-cards" id="AI-Ready IIoT Platform">
+    <div class="row solutions-cards" id="AI-Ready-IIoT-Platform">
       <div class="col-md-6 description-col">
         <div class="h-100">
           <div>
@@ -268,7 +253,7 @@
       </div>
     </div>
    
- <div class="row solutions-cards" id="Smart Manufacturing">
+ <div class="row solutions-cards" id="Smart-Manufacturing">
   <div class="col-md-6 description-col">
     <div class="h-100">
       <div>
@@ -300,7 +285,7 @@
   </div>
 </div>
 
-<div class="row solutions-cards" id="Industrial Automation">
+<div class="row solutions-cards" id="Industrial-Automation">
   <div class="col-md-6 description-col">
     <div class="h-100">
       <div>
@@ -330,7 +315,7 @@
     </div>
   </div>
 </div>
-<div class="row solutions-cards" id="PI System">
+<div class="row solutions-cards" id="PI-System">
   <div class="col-md-6 description-col">
     <div class="h-100">
       <div>
@@ -362,7 +347,7 @@
   </div>
 </div>
 
-<div class="row solutions-cards" id="Real-Time Data & Analytics">
+<div class="row solutions-cards" id="Real-Time-Data-&-Analytics">
   <div class="col-md-6 description-col">
     <div class="h-100">
       <div>

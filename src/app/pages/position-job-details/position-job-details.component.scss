@@ -115,13 +115,12 @@
 .job-header
 {   
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    transform: perspective(1000px) rotateX(0) rotateY(0);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-     will-change: transform;
-    // word-spacing: 5px;
     animation: fadeIn 0.5s ease-in-out;
    &:hover{
-    box-shadow: 0 15px 30px rgba(75, 0, 130, 0.2);
+     transform: perspective(1000px) rotateX(1.5deg) rotateY(-1.5deg) scale(1.015);
+  box-shadow: 0 12px 24px rgba($main-color, 0.15), 0 8px 10px rgba($main-color, 0.1);
+  border: 1px;
+
    }
 
   .icon-wrapper-div{
@@ -246,7 +245,7 @@ h4{
    color: $white-color;
     background-color: $main-color;
   &:hover{
-    background-color: darken($main-color, 10%);
+    background-color: $main-color-darkness;
    
   }
 }
@@ -256,7 +255,6 @@ h4{
   transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
   &:hover {
     border-color: $main-color;
-    background-color: lighten(rgba($main-color, 0.08), 2%);
   }
 }
 
@@ -350,8 +348,8 @@ input::placeholder , textarea::placeholder{
   color: #fff;
   border-color: $main-color;
   &:hover {
-    background-color: lighten($main-color, 10%);
-    border-color: lighten($main-color, 10%);
+    background-color:  $main-color-lightness;
+    border-color:  $main-color-lightness;
     color: #fff;
   }
 }

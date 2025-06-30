@@ -1,5 +1,6 @@
 @use '../../shared/scss-Styles/sections-Header-styles';
 @use "../../shared/scss-Styles/colors" as *;
+@use 'sass:color';
 
 // common style in this page 
 $shadow: 0 0.7rem 1.2rem rgba(0, 0, 0, 0.075);
@@ -153,7 +154,7 @@ background-image: radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.2) 
       text-decoration: none;
 
       &:hover {
-        color: darken($main-color, 10%);
+        color:  $main-color-darkness;
       }
 
       svg {
@@ -176,8 +177,8 @@ background-image: radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.2) 
     font-weight: 500;
 
     &:hover {
-      background-color: lighten($main-color, 10%);
-      border-color: lighten($main-color, 10%);
+      background-color:  $main-color-lightness;
+      border-color:  $main-color-lightness;
     }
   }
 }

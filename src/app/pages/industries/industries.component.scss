@@ -10,18 +10,19 @@ $form-control-bg: #f8f9fa;
 
 .industry {
   .container-fluid {
-    background-image: linear-gradient(
-        110deg,
-        rgba(0, 0, 0, 0.7) 0%,
-        rgba(0, 0, 0, 0.4) 40%,
-        rgba(0, 0, 0, 0) 60%
-      ),
-      url("/images/W001-Industries-Page-22-06.jpg");
+    background-image:
+url("/images/Solutions/WhatsApp Image 2025-06-29 at 03.07.00.jpeg");
     background-position: center center;
     background-size: cover;
+    background-repeat: no-repeat;
+    // width:100vw;
     height: 70vh;
     background-color: linear;
+    position: relative;
     .col-md-8 {
+      position: absolute;
+      top:30%;
+      // left:20%;
       .line {
         width: 20%;
         height: 0.2rem;

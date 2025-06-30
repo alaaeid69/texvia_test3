@@ -1,10 +1,14 @@
 
 <!-- Home Section -->
-<section class="home-section">
+<section class="home-section" id="Home-Page-First-Screen-Section">
   <ngx-particles id="particles1" [options]="particlesOptions1"></ngx-particles>
   <div class="container  py-3 py-md-4 py-lg-5">
-    <div class="row ">
-      <div class="col-12  home-caption  ">
+     <div class="row " 
+    
+    >
+      <div class="col-12  home-caption  "
+        [ngClass]="{'visible' : isVisible}"
+      >
         <span
           class="hero-caption bg-white bg-opacity-25 text-white rounded-pill fw-medium px-2 py-1 mb-3 d-inline-block"
         >
@@ -25,13 +29,7 @@
         >
           Get Started
         </button>
-        <!-- <button
-          class="btn cta-button btn-outline-light fw-medium py-2 py-md-3 px-3 px-md-4 rounded shadow-lg "
-          aria-label="Watch Demo"
-           (click)="talkToExpert()"
-        >
-          Watch Demo
-        </button> -->
+      
       </div>
     </div>
 
@@ -42,12 +40,24 @@
         <div
           class="service-card rounded p-4 shadow float-animation h-100 d-flex flex-column"
         >
-          <h3 class="fs-6 fw-bold mb-1 text-white text-center">
-            Operational Excellence & Scalable Impact
+          <h3 class="fs-6 fw-bold mb-1 text-white text-center flex-grow-1">
+            Industrial Internet of Things (IIoT)
           </h3>
           <p class="cards-paragraph flex-grow-1">
-            Increase throughput, reduce costs, and drive measurable performance
-            across production and assets—with solutions built to grow with you.
+            Connect machines, people, and systems across your operations to unlock real-time visibility, 
+            improve traceability, enhance operational efficiency, and lay the foundation for predictive performance.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div
+          class="service-card rounded p-4 shadow float-animation h-100 d-flex flex-column"
+        >
+          <h3 class="fs-6 fw-bold mb-1 text-white text-center">AI Agents and Intelligent Automation
+          </h3>
+          <p class="cards-paragraph flex-grow-1">
+            Empower your operations with autonomous, data-driven agents that continuously optimize production,
+             detect anomalies, reduce manual intervention, and drive faster, more accurate decision-making.
           </p>
         </div>
       </div>
@@ -56,12 +66,12 @@
           class="service-card rounded p-4 shadow float-animation h-100 d-flex flex-column"
         >
           <h3 class="fs-6 fw-bold mb-1 text-white text-center flex-grow-1">
-            Real-Time Enterprise Visibility
+          Unified Namespace (UNS)
           </h3>
           <p class="cards-paragraph flex-grow-1">
-            Enable smarter, faster decisions by connecting your entire
-            organization—from the shop floor to the boardroom—with real-time
-            insights.
+            Unify all industrial data into a single, real-time source of truth to ensure seamless system integration, 
+            enable cross-functional collaboration, 
+            streamline enterprise data flow, and support event-driven intelligence.
           </p>
         </div>
       </div>
@@ -70,24 +80,11 @@
           class="service-card rounded p-4 shadow float-animation h-100 d-flex flex-column"
         >
           <h3 class="fs-6 fw-bold mb-1 text-white text-center">
-            Sustainability & Compliance at Scale
+          Composable and Modular Manufacturing Systems
           </h3>
           <p class="cards-paragraph flex-grow-1">
-            Meet global ESG targets, improve energy efficiency, and automate
-            compliance reporting with reliable, audit-ready systems.
-          </p>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div
-          class="service-card rounded p-4 shadow float-animation h-100 d-flex flex-column"
-        >
-          <h3 class="fs-6 fw-bold mb-1 text-white text-center">
-            Future-Ready Digital Infrastructure
-          </h3>
-          <p class="cards-paragraph flex-grow-1">
-            Deploy modular, secure, and future-proof platforms—ready for AI,
-            IoT, and digital twin technologies.
+            Build a flexible, scalable production environment with plug-and-play components that adapt rapidly to market demands, 
+            support faster deployment cycles, reduce engineering complexity, and evolve with new technologies.
           </p>
         </div>
       </div>
@@ -95,10 +92,10 @@
   </div>
 </section>
 
-<app-vertical-progress-bar class="">
+<app-vertical-progress-bar>
 
 <!-- Who We Are Section -->
-<section class="section-gradient py-5   homepage-section">
+<section class="section-gradient py-5   homepage-section" id="Who-We-Are-Section">
   <div class="container mx-auto ">
     <!-- Headers -->
     <header class="text-center mb-2 ">
@@ -120,7 +117,7 @@
           technology-driven company transforming mission-critical industries
           through advanced automation, digital integration, and operational
           intelligence. Headquartered in Ireland, with strategic presence in
-          Egypt and the UK, we serve sectors including Food & Beverage, Life
+          Egypt , we serve sectors including Food & Beverage, Life
           Sciences, Energy, Smart Cities, Water & Wastewater, and Oil & Gas.
         </p>
         <p class="text-secondary mb-4">
@@ -636,7 +633,7 @@
 </div> -->
 
 <!-- -----------what we do section----------------------->
-<section class="solutions py-5  position-relative homepage-section"  >
+<section class="solutions py-5  position-relative homepage-section" id="Solutions-Section" >
    <header class="text-center mb-4 ">
       <h2 class="fw-bold mb-2 text-black section-header" data-section-index="1" >what we do</h2>
       <div class="underline mx-auto"></div>
@@ -721,7 +718,7 @@
               Evaluate your organization's digital readiness and create a
               roadmap for transformation
             </p>
-            <button class="btn learn-more-btn text-white w-100" [routerLink]="['/solutions']"  [fragment]="'Digital Maturity Assessment'">
+            <button class="btn learn-more-btn text-white w-100" [routerLink]="['/solutions']"  fragment="Digital-Maturity-Assessment">
               Learn More
             </button>
           </div>
@@ -775,7 +772,7 @@
               Reimagine your business processes with digital technologies and
               data-driven insights
             </p>
-            <button class="btn learn-more-btn text-white w-100" [routerLink]="['/solutions']"  [fragment]="'Digital Transformation'">
+            <button class="btn learn-more-btn text-white w-100" [routerLink]="['/solutions']"  fragment="Digital-Transformation">
               Learn More
             </button>
           </div>
@@ -847,7 +844,7 @@
               Connect your industrial assets with an intelligent platform built
               for AI and machine learning
             </p>
-            <button class="btn learn-more-btn text-white w-100" [routerLink]="['/solutions']"  [fragment]="'AI-Ready IIoT Platform'">
+            <button class="btn learn-more-btn text-white w-100" [routerLink]="['/solutions']"  fragment="AI-Ready-IIoT-Platform">
               Learn More
             </button>
           </div>
@@ -901,7 +898,7 @@
               Optimize workflows, reduce waste, and increase uptime with
               intelligent manufacturing solutions
             </p>
-            <button class="btn learn-more-btn text-white w-100" [routerLink]="['/solutions']"  [fragment]="'Smart Manufacturing'">
+            <button class="btn learn-more-btn text-white w-100" [routerLink]="['/solutions']"  fragment="Smart-Manufacturing">
               Learn More
             </button>
           </div>
@@ -964,7 +961,7 @@
               Improve safety, speed, and precision with advanced robotics and
               automation systems
             </p>
-            <button class="btn learn-more-btn text-white w-100" [routerLink]="['/solutions']"  [fragment]="'Industrial Automation'">
+            <button class="btn learn-more-btn text-white w-100" [routerLink]="['/solutions']"  fragment="Industrial-Automation">
               Learn More
             </button>
           </div>
@@ -1015,7 +1012,7 @@
               Collect, analyze, and visualize operational data with the
               industry-leading PI System
             </p>
-            <button class="btn learn-more-btn text-white w-100"  [routerLink]="['/solutions']"  [fragment]="'PI System'">
+            <button class="btn learn-more-btn text-white w-100"  [routerLink]="['/solutions']"  fragment="PI-System">
               Learn More
             </button>
           </div>
@@ -1115,11 +1112,11 @@
 </section>
 
 <!-- ------------How We Do------------------- -->
-<div class="how-We-Do homepage-section"  >
+<div class="how-We-Do homepage-section"  id="How-We-Do-Section">
   <div class="container process-flow-container">
     <div class="text-center mb-5">
       <header class="mb-4 ">
-        <h2 class="fw-bold mb-1 text-black section-header" data-section-index="2">How we do</h2>
+        <h2 class="fw-bold mb-1 text-black section-header" data-section-index="2">How we do it </h2>
         <div class="underline mx-auto"></div>
       </header>
       <h3 class="process-title">Our Process Flow</h3>
@@ -1134,24 +1131,17 @@
           class="flow-item card mx-3"
           [ngClass]="{ active: currentInd === 0 }"
         >
-          <div class="card-body  d-flex flex-column h-100 shadow-sm">
+          <div class="card-body  d-flex flex-column  h-100 shadow-sm">
             <div class="flow-number">01</div>
             <h5 class="flow-title card-title">Discover</h5>
-            <p class="flow-description card-text flex-grow-1">
+             
+                  <p class="flow-description card-text flex-grow-1 ">
               Explore possibilities and uncover insights that will guide your
               project’s direction.
             </p>
-            <a href="#" class="flow-action mt-3"
-              >Learn more
-              <svg
-                width="16"
-                height="16"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
+             
+            
+           
           </div>
           <div class="pulse-ring"></div>
         </div>
@@ -1166,17 +1156,7 @@
               Create a strategic roadmap with clear milestones and actionable
               steps.
             </p>
-            <a href="#" class="flow-action mt-3"
-              >Learn more
-              <svg
-                width="16"
-                height="16"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
+           
           </div>
           <div class="pulse-ring"></div>
         </div>
@@ -1192,17 +1172,7 @@
               Transform concepts into tangible solutions through expert
               craftsmanship.
             </p>
-            <a href="#" class="flow-action mt-3"
-              >Learn more
-              <svg
-                width="16"
-                height="16"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
+           
           </div>
           <div class="pulse-ring"></div>
         </div>
@@ -1216,17 +1186,7 @@
             <p class="flow-description card-text flex-grow-1">
               Test and refine your solution to ensure it meets all requirements.
             </p>
-            <a href="#" class="flow-action mt-3"
-              >Learn more
-              <svg
-                width="16"
-                height="16"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
+           
           </div>
           <div class="pulse-ring"></div>
         </div>
@@ -1240,17 +1200,7 @@
             <p class="flow-description card-text flex-grow-1">
               Deploy your solution with confidence and begin making an impact.
             </p>
-            <a href="#" class="flow-action mt-3"
-              >Learn more
-              <svg
-                width="16"
-                height="16"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
+           
           </div>
           <div class="pulse-ring"></div>
         </div>
@@ -1321,7 +1271,7 @@
 </div>
 
 <!-- ------------ core values --------------- -->
-<section class="py-5 core-values-section homepage-section" >
+<section class="py-5 core-values-section homepage-section" id="Core-Values-Section" >
   <div class="container">
     <div class="text-center mb-5">
       <div
@@ -1802,7 +1752,7 @@
 </section>
 
 <!-------- why texvia-------->
-<section class="aboutTexvia homepage-section" >
+<section class="aboutTexvia homepage-section" id="Why-Texvia-Section" >
   <div
     class="py-5 px-3 px-sm-4 px-lg-5 mx-auto my-5 what-sets-us-apart-section "
   >
@@ -2006,7 +1956,7 @@
 
 <!-- ---------insights--------------- -->
 
-    <section class="insights py-5">
+    <section class="insights py-5" id="Insights-Section">
         <div class="insights-header bg-danger ">
              <svg class="insights-icon d-none d-md-block" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10 3H14C19.5 3 21 4.5 21 10V14C21 19.5 19.5 21 14 21H10C4.5 21 3 19.5 3 14V10C3 4.5 4.5 3 10 3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -2127,7 +2077,7 @@
                  <span id="modalTag" class="d-inline-block px-2 py-1 rounded-pill fw-medium ">operations</span>
               </div>
                
-                <h4 id="modalTitle" class="fs-4 fw-bold text-dark mb-2">📘 How UOCs Are Changing Operational Efficiency</h4>
+                <h5 id="modalTitle" class=" fw-bold text-dark mb-2">📘 How Unified Operations Centers Are Changing Operational Efficiency</h5>
                 <div class="d-flex align-items-center mb-3">
                     <div class="flex-shrink-0 me-3">
                         <div class="d-flex align-items-center justify-content-center bg-info-subtle rounded-circle icon-size-md">
@@ -2144,39 +2094,26 @@
                 </div>
 
                 <div class="prose-content">
-                    <p class= "small mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl. Sed euismod, nisl vel ultricies lacinia, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.</p>
-                    <p class= "small mb-2">Proin ac quam et lectus vestibulum blandit. Nunc maximus nibh at placerat tincidunt. Nam sem lacus, ornare non ante sed, ultricies fringilla massa. Ut congue, elit non tempus elementum, sem risus tincidunt diam, vitae sodales diam ipsum vitae purus.</p>
+                    <small class= "fw-semibold mb-2">In an era where agility, visibility, and control are essential to remain competitive, Unified Operations Centers (UOCs) are rapidly transforming how industrial organizations operate. These centralized hubs offer a complete, real-time view of processes, assets, and performance across the enterprise, enabling faster decision-making and greater operational resilience.</small>
+                    <p class= "small mb-2">Unified Operations Centers combine Information Technology (IT) and Operational Technology (OT) systems into one integrated platform. This convergence allows teams across departments to access consistent, accurate data and work collaboratively to resolve issues, optimize processes, and drive continuous improvement.</p>
+                     <p class="small mb-2">The impact of this integration is significant. With real-time visibility, businesses can react quickly to disruptions, identify inefficiencies, and monitor performance across sites. In fact, data-driven decision-making enabled by UOCs can improve response times by up to 65%, dramatically enhancing productivity and minimizing downtime.</p>
+                     <p class="small mb-2">Yet, technology alone is not enough. For a Unified Operations Center to deliver its full value, companies must prioritize change management. Adoption requires more than new systems; it demands a cultural shift. Teams need to trust the data, embrace new workflows, and align with strategic goals. When done correctly, the return on investment can be substantial</p>
+                
                     <h4 class="fs-5 fw-bold mt-4 mb-3">Key Takeaways</h4>
                     <ul class="ps-4 mb-4">
-                        <li class="mb-1">Unified Operations Centers provide real-time visibility across all operations</li>
-                        <li class="mb-1">Integration of IT and OT systems is crucial for success</li>
-                        <li class="mb-1">Data-driven decision making improves response times by up to 65%</li>
-                        <li class="mb-1">Change management is essential for adoption and ROI</li>
+                        <li class="mb-1"> <span class="fw-semibold"> Unified Operations Centers</span> provide real-time visibility across all operations</li>
+                        <li class="mb-1"> <span class="fw-semibold">IT and OT integration</span> is essential to achieving digital transformation</li>
+                        <li class="mb-1"><span class="fw-semibold">Data-driven decisions</span> improve response times by up to 65 percent </li>
+                        <li class="mb-1"><span class="fw-semibold">Change management</span> is critical to adoption and long-term success</li>
                     </ul>
-                    <p class="mb-3">Curabitur luctus, magna vitae commodo semper, sem sapien tincidunt eros, vel finibus ipsum mauris eget metus. Nullam tincidunt ultrices placerat. Suspendisse ac metus vitae dolor interdum blandit. Morbi at nisi nec dolor feugiat semper.</p>
+                   
                     <blockquote class="blockquote-custom border-start border-info ps-3 fst-italic my-3">
-                        "The future of industrial operations lies in connected, intelligent systems that can predict and prevent issues before they impact production."
+                       "The future of industrial operations lies in connected, intelligent systems that can predict and prevent issues before they impact production."
                     </blockquote>
-                    <p class="">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse potenti. Sed vel ex a est congue commodo. Cras et massa eu nulla elementum lobortis. Praesent sit amet dolor dui.</p>
+                    <p class="">As industries become increasingly complex, those who adopt intelligent, connected solutions like Unified Operations Centers will gain a decisive edge. They will not only operate more efficiently but also future-proof their organizations against disruption and change.</p>
                 </div>
 
-                <div class="mt-3 pt-2 border-top border-light-subtle">
-                    <h5 class="fw-bold mb-3">Related Articles</h5>
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <a href="#" class="text-decoration-none text-dark d-block p-3 border border-light-subtle rounded-3 link-hover-bg-light">
-                                <h6 class="fw-medium mb-1">The Future of Industrial Automation</h6>
-                                <small class="text-muted small mb-0">5 min read</small>
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="#" class="text-decoration-none text-dark d-block p-3  border border-light-subtle rounded-3 link-hover-bg-light">
-                                <h6 class="fw-medium mb-1">Building Resilient Supply Chains</h6>
-                                <small class="text-muted small mb-0">7 min read</small>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+              
             </div>
         </div>
     </div>
@@ -2491,14 +2428,7 @@
                 <div class="card-body p-4">
                     <h5 class=" mb-2 ">Digital Transformation Roadmap</h5>
                     <h6 class="fw-light small mb-3">A comprehensive guide to planning and executing your digital transformation strategy.</h6>
-                    <a href="#" class="text-primary text-decoration-none fw-medium d-flex align-items-center small">
-                        Download PDF
-                        <svg class=" ms-1" width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 15L12 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M9 12L12 15L15 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M7 21H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
+                    
                 </div>
             </div>
         </div>
@@ -2515,14 +2445,7 @@
                 <div class="card-body p-4">
                     <h5 class=" mb-2">Industry 4.0 Case Study</h5>
                     <h6 class="fw-light small mb-3">How a leading manufacturer achieved 35% efficiency gains through smart factory implementation.</h6>
-                    <a href="#" class="text-success text-decoration-none fw-medium d-flex align-items-center small">
-                        Download PDF
-                        <svg class=" ms-1" width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 15L12 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M9 12L12 15L15 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M7 21H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
+                    
                 </div>
             </div>
         </div>
@@ -2539,14 +2462,7 @@
                 <div class="card-body p-4">
                     <h5 class=" mb-2 fs-5">Data Visualization Guide</h5>
                     <h6 class="fw-light small mb-3">Best practices for creating actionable dashboards that drive better business decisions.</h6>
-                    <a href="#" class="text-purple text-decoration-none fw-medium d-flex align-items-center small">
-                        Download PDF
-                        <svg class=" ms-1" width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 15L12 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M9 12L12 15L15 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M7 21H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
+                    
                 </div>
             </div>
         </div>
@@ -2564,14 +2480,7 @@
                 <div class="card-body p-4">
                     <h5 class=" mb-2">Sustainability Report</h5>
                     <h6 class="fw-light small mb-3">How digital technologies are enabling more sustainable industrial operations and reducing carbon footprints.</h6>
-                    <a href="#" class="text-warning text-decoration-none fw-medium d-flex align-items-center small">
-                        Download PDF
-                        <svg class=" ms-1" width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 15L12 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M9 12L12 15L15 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M7 21H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
+                    
                 </div>
             </div>
         </div>

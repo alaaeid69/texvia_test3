@@ -1,12 +1,13 @@
 
-import { Component, OnInit, AfterViewInit, OnDestroy, ElementRef,ViewChild, inject } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy, ElementRef,ViewChild, inject, ChangeDetectorRef } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { NgParticlesService, NgxParticlesModule} from '@tsparticles/angular';
 import { loadSlim } from '@tsparticles/slim';
 import {  Background, Engine, } from '@tsparticles/engine';
 import { Router, RouterLink } from '@angular/router';
-import { interval, Subject, switchMap, takeUntil, timer } from 'rxjs';
+import { concatMap, interval, Subject, switchMap, takeUntil, timer } from 'rxjs';
 import { VerticalProgressBarComponent } from "../vertical-progress-bar/vertical-progress-bar.component";
+import { TagManagerService } from '../../core/services/Tag-Manager/tag-manager.service';
 
 interface home{
   top:string,
@@ -25,9 +26,28 @@ interface home{
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 progress:number=0
   
-  // particles seervices 
+  // services
   private readonly ngParticlesService = inject(NgParticlesService)
   private readonly router = inject(Router)
+private cdr = inject(ChangeDetectorRef)
+  // for tracking time that use spend on sections for google analytics
+  private tagManagerService = inject(TagManagerService)
+  private observers: IntersectionObserver[] = [];
+  private sectionTimes: { [key: string]: number } = {
+        'Home-Page-First-Screen-Section' : 0,
+         'Who-We-Are-Section': 0,
+         'Solutions-Section': 0,
+         'How-We-Do-Section': 0,
+         'Core-Values-Section': 0,
+         'Why-Texvia-Section':0 ,
+         'Insights-Section': 0
+       };
+       private sectionStartTimes: { [key: string]: number } = {};
+
+
+
+
+  // particles liberary
   particlesOptions1:any = {
     Background:{position:{value:'absolute'} , resizeTo : true },
     fpsLimit: 120,
@@ -72,19 +92,20 @@ progress:number=0
     detectRetina: true,
   };
 
-  //first screen home text
+  // first screen home text dynamic 
   homeCaption: home[] = [
-    {top:'💡 Your Digital Transformation Partner' , header:'From Data to Decisions — Smarter Industry Starts Here', description:'We help industrial enterprises improve efficiency, gain real-time visibility, and future-proof their operations through digital transformation, automation, and connected technologies'},
-    {top:'🚀 Operational Intelligence Delivered' ,  header:'Digitize. Connect. Transform', description:'Empower your operations with integrated platforms for automation, real-time monitoring, and industrial analytics—designed to scale with your digital innovation goals.'},
-    {top:'⚙️ Built for Industry 4.0' ,              header:'Connected Operations for a Connected World.', description:'We design and implement secure, scalable, and intelligent solutions that support Industry 4.0 strategies—from edge connectivity to advanced manufacturing systems.'},
-    {top:'🌱 Digital + Sustainable by Design' ,      header:'Drive Efficiency. Deliver Impact', description:'Support your ESG initiatives and reduce operational waste with energy-efficient technologies, smart data insights, and sustainable industrial solutions.'},
-    {top:'📊 Real-Time Intelligence' , header:'Turn Complexity into Clarity.', description:'Unify your industrial data, workflows, and teams with real-time insights that drive faster decisions and better execution across operations.'},
+    {top:'Your Digital Transformation Partner' , header:'From Data to Decisions — Smarter Industry Starts Here', description:'We help industrial enterprises improve efficiency, gain real-time visibility, and future-proof their operations through digital transformation, automation, and connected technologies'},
+    {top:'Operational Intelligence Delivered' ,  header:'Digitize. Connect. Transform', description:'Empower your operations with integrated platforms for automation, real-time monitoring, and industrial analytics—designed to scale with your digital innovation goals.'},
+    {top:'Built for Industry 4.0' ,              header:'Connected Operations for a Connected World.', description:'We design and implement secure, scalable, and intelligent solutions that support Industry 4.0 strategies—from edge connectivity to advanced manufacturing systems.'},
+    {top:'Digital + Sustainable by Design' ,      header:'Drive Efficiency. Deliver Impact', description:'Support your ESG initiatives and reduce operational waste with energy-efficient technologies, smart data insights, and sustainable industrial solutions.'},
+    {top:'Real-Time Intelligence' , header:'Turn Complexity into Clarity.', description:'Unify your industrial data, workflows, and teams with real-time insights that drive faster decisions and better execution across operations.'},
   ];
   currentHomeCaption:home= this.homeCaption[0];
   currentIndex:number =0;
   isVisible = true;
   private readonly destroy$ = new Subject<void>();
  
+
 
 
   @ViewChild('flowTrack') flowTrack!: ElementRef;
@@ -104,7 +125,8 @@ progress:number=0
     });
       this.homePageCaption()
 
-       
+      
+ 
 
   }
   ngAfterViewInit(): void {
@@ -113,15 +135,12 @@ progress:number=0
     this.startAutoSlide();
     window.addEventListener('resize', () => this.updateVisibleItems());
      
+    //tracking section function
+      this.trackingSectionTime()
+
   }
 
-  ngOnDestroy(): void {
-
-        this.stopAutoSlide();
-    window.removeEventListener('resize', () => this.updateVisibleItems());
-    this.destroy$.next();
-    this.destroy$.complete();
-  }
+ 
 
 
   
@@ -130,19 +149,27 @@ progress:number=0
 
   //home dynamic for first screen in home 
   homePageCaption():void{
-  interval(3000).pipe(
-    switchMap( ()=>{
-      this.isVisible = false
-      // console.log('je')
-      return timer(2000)
-      
-    }),takeUntil(this.destroy$)
-  ).subscribe(() =>{
-  this.currentIndex =(this.currentIndex + 1) % this.homeCaption.length;
-  this.currentHomeCaption = (this.homeCaption[this.currentIndex])
-  this.isVisible= true 
-  // console.log('1')
-  })
+ interval(11000).pipe( 
+      concatMap(() =>
+
+      timer(10000).pipe(
+          concatMap(() => {
+            this.isVisible = false; 
+            this.cdr.detectChanges();
+            return timer(1000); 
+          }),
+          concatMap(() => {
+            this.currentIndex = (this.currentIndex + 1) % this.homeCaption.length;
+            this.currentHomeCaption = this.homeCaption[this.currentIndex];
+            this.isVisible = true; 
+            
+            this.cdr.detectChanges();
+            return timer(0); 
+          })
+        )
+      ),
+      takeUntil(this.destroy$)
+    ).subscribe();
  
   }
   //how we do code 
@@ -219,6 +246,48 @@ progress:number=0
     }
   }
 
+  // end of how we are code 
+
+
+// tracking sections time code for google analytics
+trackingSectionTime():void{
+  ['Home-Page-First-Screen-Section' , 'Who-We-Are-Section' ,  'Solutions-Section','How-We-Do-Section'
+    ,'Core-Values-Section' ,'Why-Texvia-Section', 'Insights-Section'
+  ].forEach(sectionId =>{
+    const element = document.getElementById(sectionId)
+    if(element){
+      const observer = new IntersectionObserver(
+        (entries) => {
+               entries.forEach(entry => {
+                 if (entry.isIntersecting) {
+                   this.sectionStartTimes[sectionId] = Date.now();
+                 } else if (this.sectionStartTimes[sectionId]) {
+                   const timeSpent = (Date.now() - this.sectionStartTimes[sectionId]) / 1000; // Seconds
+                   this.sectionTimes[sectionId] += timeSpent;
+                   this.tagManagerService.trackSectionView(sectionId, timeSpent, this.router.url);
+                   delete this.sectionStartTimes[sectionId];
+                 }
+               });
+             },
+             { threshold: 0.5 } // Trigger when 50% of section is visible
+           );
+           observer.observe(element);
+           this.observers.push(observer);
+         }
+       });
+     }
+
+ endOfSectionTime():void{
+   this.observers.forEach(observer => observer.disconnect());
+    ['Home-Page-First-Screen-Section' , 'Who-We-Are-Section' ,  'Solutions-Section','How-We-Do-Section'
+    ,'Core-Values-Section' ,'Why-Texvia-Section', 'Insights-Section'
+  ].forEach(sectionId => {
+         if (this.sectionTimes[sectionId] > 0) {
+           this.tagManagerService.trackSectionView(sectionId, this.sectionTimes[sectionId], this.router.url);
+         }
+       });
+ }    
+
 
 
   // buttons action 
@@ -235,11 +304,17 @@ goToSolution():void{
   this.router.navigate(['/solutions'])
 }
 
-// goTosolutionContent(id:string):void{
-//   this.router.navigate([`/solutions` ,{Fragment : id}])
-//   console.log('lj')
-// }
+// ng destroy
+ ngOnDestroy(): void {
 
+    this.stopAutoSlide();
+    window.removeEventListener('resize', () => this.updateVisibleItems());
+    this.destroy$.next();
+    this.destroy$.complete();
+
+    //destroy section function
+    this.endOfSectionTime()
+  }
 
 
 

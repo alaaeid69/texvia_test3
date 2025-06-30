@@ -10,18 +10,10 @@
             businesses to thrive in the digital age.
           </p>
           <div class="d-flex gap-3">
-            <a href="#" class="text-muted icon-link text-decoration-none">
+            <a  class="text-muted icon-link text-decoration-none">
               <i class="fab fa-linkedin-in"></i>
             </a>
-            <a href="#" class="text-muted icon-link text-decoration-none">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="text-muted icon-link text-decoration-none">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="text-muted icon-link text-decoration-none">
-              <i class="fab fa-instagram"></i>
-            </a>
+            
           </div>
           <div class="mt-2">
      
@@ -45,39 +37,52 @@
           <ul class="list-unstyled">
             <li>
               <a
-                href="#solutions"
+               routerLink="/solutions"
+               fragment="Smart-Manufacturing"
                 class="text-muted text-decoration-none link-hover"
                 >Smart Manufacturing</a
               >
             </li>
             <li>
               <a
-                href="#solutions"
+                routerLink="/solutions"
+                fragment="Industrial-Automation"
                 class="text-muted text-decoration-none link-hover"
                 >Industrial Automation</a
               >
             </li>
             <li>
               <a
-                href="#solutions"
+                routerLink="/solutions"
+                fragment="Digital-Transformation"
                 class="text-muted text-decoration-none link-hover"
                 >Digital Transformation</a
               >
             </li>
             <li>
               <a
-                href="#solutions"
+                routerLink="/solutions"
+                fragment="Digital-Maturity-Assessment"
                 class="text-muted text-decoration-none link-hover"
-                >Unified Operation Center</a
+                >Digital Maturity Assessment</a
               >
             </li>
             <li>
               <a
-                href="#solutions"
+                routerLink="/solutions"
+                fragment="AI-Ready-IIoT-Platform"
                 class="text-muted text-decoration-none link-hover"
-                >IOT Platforms</a
+                >AI-Ready IIoT Platform</a
               >
             </li>
+            <!-- <li>
+              <a
+                routerLink="/solutions"
+                fragment="PI System"
+                class="text-muted text-decoration-none link-hover"
+                >PI System</a
+              >
+            </li> -->
           </ul>
         </div>
   
@@ -85,27 +90,33 @@
           <h5 class="h5 mb-4">Company</h5>
           <ul class="list-unstyled">
             <li>
-              <a href="#about" class="text-muted text-decoration-none link-hover"
+              <a 
+              routerLink="/home"
+              fragment="Who-We-Are-Section"
+               class="text-muted text-decoration-none link-hover"
                 >About Us</a
               >
             </li>
+        
             <li>
-              <a href="#" class="text-muted text-decoration-none link-hover"
-                >Our Team</a
-              >
-            </li>
-            <li>
-              <a href="#" class="text-muted text-decoration-none link-hover"
+              <a 
+              routerLink="/careers"
+               class="text-muted text-decoration-none link-hover"
                 >Careers</a
               >
             </li>
             <li>
-              <a href="#" class="text-muted text-decoration-none link-hover"
+              <a  
+              [routerLink]="['/home']"
+              fragment="Insights-Section"
+              class="text-muted text-decoration-none link-hover"
                 >News & Insights</a
               >
             </li>
             <li>
-              <a href="#contact" class="text-muted text-decoration-none link-hover"
+              <a 
+              routerLink="/contact"
+               class="text-muted text-decoration-none link-hover"
                 >Contact</a
               >
             </li>
@@ -139,13 +150,13 @@
           &copy; 2023 TEXVIA. All rights reserved.
         </p>
         <div class="d-flex gap-3">
-          <a href="#" class="text-muted small text-decoration-none link-hover"
+          <a  class="text-muted small text-decoration-none link-hover"
             >Privacy Policy</a
           >
-          <a href="#" class="text-muted small text-decoration-none link-hover"
+          <a  class="text-muted small text-decoration-none link-hover"
             >Terms of Service</a
           >
-          <a href="#" class="text-muted small text-decoration-none link-hover"
+          <a  class="text-muted small text-decoration-none link-hover"
             >Cookie Policy</a
           >
         </div>

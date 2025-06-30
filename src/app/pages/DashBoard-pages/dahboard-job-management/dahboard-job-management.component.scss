@@ -41,7 +41,7 @@
         
         &:hover {
            
-            background-color: darken($main-color, 10%);
+            background-color: $main-color-darkness;
             border-color: rgba($main-color, 10%);
         }
     }
@@ -54,6 +54,18 @@
             border-color: $main-color;
         }
     }
+       
+ // for nav routes 
+ a{
+    color:black ;
+    &:hover{
+        color: $main-color;
+    }
+ }
+ .active{
+    color: $main-color;
+    }
+
 
         
         /* Card styles */

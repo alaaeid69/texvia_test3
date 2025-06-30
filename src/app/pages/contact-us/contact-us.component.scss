@@ -1,5 +1,6 @@
 @use '../../shared/scss-Styles/colors' as *;
 @use '../../shared/scss-Styles/sections-Header-styles' as * ;
+@use 'sass:color';
  .container{
    width: 100%;
   
@@ -25,7 +26,7 @@ $transition-duration: 0.2s ease-in-out;
 
 .digital-banner {
   width: 100%;
-  background: linear-gradient(120deg, $main-color, lighten($main-color, 10%));
+  background: linear-gradient(120deg, $main-color,  $main-color-lightness);
   color: #f8f9fa;
   text-align: center;
   position: relative;
@@ -79,13 +80,13 @@ $transition-duration: 0.2s ease-in-out;
     }
 
     .form-control , .form-select {
-     color: $main-color;
+    //  color: $main-color;
       border-radius: $border-radius-base * 0.4;
       
     }
     .form-control:focus  , .form-select:focus{
  border-color: $main-color;
-      box-shadow: 0 0 0 0.15rem lighten($main-color, 60%);;
+      box-shadow: 0 0 0 0.15rem  color.adjust($main-color , $lightness: 60%);
 }
 
     .btn-custom {
@@ -108,7 +109,7 @@ $transition-duration: 0.2s ease-in-out;
       }
 
       &:hover {
-        background-color: darken($btn-hover, 8%);
+        background-color: color.adjust($btn-hover , $lightness: -8%);
       }
     }
   }

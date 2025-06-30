@@ -104,7 +104,7 @@
               }
 
               &.active {
-                background-color: lighten($main-color, 5%);
+                background-color: $main-color-lightness;
                 color: $white-color;
               }
             }

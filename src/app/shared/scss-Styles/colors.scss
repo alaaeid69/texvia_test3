@@ -1,3 +1,5 @@
+ @use 'sass:color';
+
 $main-color :#6A05A6;// -----------------main colors ---------------------------------------
 
 $secend-main-color:#3F1256;
@@ -44,3 +46,7 @@ $gray-300: #dee2e6;   // For default border color (e.g., nav links)
 $gray-600: #6c757d;   // For descriptions, subtitle, posted date
 $gray-700: #495057;   // For skill tag text, inactive nav link text
 $gray-900: #212529; 
+
+// //  main-color ligntness  and darkness
+ $main-color-lightness :color.adjust($main-color, $lightness: 10%);
+ $main-color-darkness:color.adjust($main-color , $lightness: -10%) 
