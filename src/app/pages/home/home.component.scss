@@ -252,48 +252,41 @@
 
   }
   .mession{
-  
   .industry-graphic,
   .mission-icon {
     width: 6rem;
     height: 6rem;
   }
-
-
   .badge {
     background-color: rgba($main-color, .2) !important;
     color: $main-color !important;
   }
 
+  //  i used this to make h4 in center of page 
+ h4{
+  position: relative;
+  width: fit-content;
+  left:35%;
+  
+  @media (min-width:567px) {
+    left: 41% ; 
+  }
+  @media (min-width:710px) and (max-width:767px) {
+    left:41%;
+  }
+  @media (min-width:768px) {
+    left:31%;}
+  @media (min-width:992px) {
+    left:32%;
+   }
+  @media (min-width:1200px) {
+    left:34%;
+  }
+ }
   
 }
 
 }
-
-
-
-// banner
-// .banner{
-//      background: linear-gradient(130deg, $secend-main-color, $main-color);
-//      padding: 3rem;
-
-//   .btn-download {
-//     background-color: $btn-color;
-//     .cta-button-text {
-//       color: $white-color;
-//     }
-//     .cta-button-arrow {
-//       stroke: $white-color;
-//     }
-//     &:hover {
-//         background-color:$btn-hover !important;
-//         border-color: $btn-color !important;
-//     }
-//   }
-
-
-// }
-
 // what we do 
 .solutions{
   
@@ -529,7 +522,6 @@
 }
 
 //How we do 
-
 .how-We-Do{
 .process-flow-container {
   padding: $section-padding;
@@ -872,14 +864,6 @@
         color: $main-color;
       }
     }
-
-    // .mission-vision-text-border {
-    //   border-left: 1px solid $main-color;
-    //   padding-left: 1rem;
-    //   padding-top: 0.5rem;
-    //   padding-bottom: 0.5rem;
-    // }
-
     .keywords-container {
       display: flex;
       flex-wrap: wrap;

@@ -8,8 +8,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-lg-0">
          <li class="nav-item dropdown">
-          <a class="nav-link " href="#" id="navbarDropdown"  data-bs-toggle="dropdown" aria-expanded="false" routerLink="/dashboard/dashboard-home" routerLinkActive="nav-link-active">Dashboard</a>
-          <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+          <a  class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton1"
+          role="button" data-bs-toggle="dropdown" aria-expanded="false"
+          routerLink="/dashboard/dashboard-home" routerLinkActive="nav-link-active">Dashboard</a>
+
+          <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
           
             <li class="dropdown-item-text">
               <a class="nav-link" routerLink="/dashboard/contact-submission" >Dashboard Contact submissions</a>
@@ -28,6 +31,59 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/home" routerLinkActive="nav-link-active">Home</a>
         </li>
+      
+       <!-- <li class="nav-item dropdown dropdown-mega  ">
+          <a class="nav-link dropdown-toggle" href="#" id="solutionsMegaMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false" routerLink="/solutions" routerLinkActive="nav-link-active" >
+            Solutions
+          </a>
+          <div class="dropdown-menu" aria-labelledby="solutionsMegaMenu">
+            <div class="container py-4">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="solution-item">
+                        <h5><a href="#">Data Centers</a></h5>
+                        <p>Reliable and efficient solutions for data centers of all sizes.</p>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="solution-item">
+                        <h5><a href="#">Commercial Real Estate</a></h5>
+                        <p>Smart building solutions that increase value and sustainability.</p>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="solution-item">
+                        <h5><a href="#">Energy and Grids</a></h5>
+                        <p>Future-proof your grid with our advanced management tech.</p>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="solution-item">
+                        <h5><a href="#">Cloud & Service Providers</a></h5>
+                        <p>Scalable infrastructure for the world's leading cloud providers.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 sidebar-links">
+                  <h5>By Industry</h5>
+                  <ul class="list-unstyled">
+                    <li><a href="#" class="dropdown-item-mega">Automotive</a></li>
+                    <li><a href="#" class="dropdown-item-mega">Healthcare</a></li>
+                    <li><a href="#" class="dropdown-item-mega">Food and Beverage</a></li>
+                    <li><a href="#" class="dropdown-item-mega">Water and Wastewater</a></li>
+                    <li><a href="#" class="dropdown-item-mega">Minerals and Mining</a></li>
+                  </ul>
+                  <hr>
+                  <a href="#" class="btn btn-success w-100">See All Solutions</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link" routerLink="/solutions" routerLinkActive="nav-link-active">Solutions</a>
         </li>
@@ -35,7 +91,7 @@
           <a class="nav-link" routerLink="/industries" routerLinkActive="nav-link-active">Industries</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/careers" routerLinkActive="nav-link-active">careers</a>
+          <a class="nav-link" routerLink="/careers" routerLinkActive="nav-link-active">Careers</a>
         </li>
          <li class="nav-item">
           <a class="nav-link" routerLink="/contact" routerLinkActive="nav-link-active">Contact us </a>

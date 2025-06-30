@@ -114,6 +114,84 @@
               min-width: 10rem;
             }
         }
+
+        &.dropdown-mega {
+          .dropdown-menu {
+            padding: 0;
+            border: none;
+            border-radius: 0;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            width: 100%;
+            left: 0;
+            right: 0;
+            margin-top: 0;
+          }
+        
+          @media (min-width: 992px) {
+            position: static;
+          }
+        
+          h5 {
+            color: #008859;
+            font-weight: bold;
+            margin-bottom: 1rem;
+          }
+        }
+        
+        .dropdown-item-mega {
+          display: block;
+          width: 100%;
+          padding: 0.5rem 1rem;
+          clear: both;
+          font-weight: 400;
+          color: #212529;
+          text-align: inherit;
+          white-space: nowrap;
+          background-color: transparent;
+          border: 0;
+          text-decoration: none;
+        
+          &:hover,
+          &:focus {
+            color: #1e2125;
+            background-color: #e9ecef;
+          }
+        }
+        
+        
+        /* --- NEW SCSS for the 'Solutions' Layout --- */
+        .sidebar-links {
+          border-left: 1px solid #dee2e6;
+          padding-left: 1.5rem;
+        
+          @media (max-width: 991.98px) {
+            border-left: none;
+            padding-left: 0;
+            margin-top: 2rem;
+          }
+        }
+        
+        .solution-item {
+          h5 {
+            margin-bottom: 0.25rem;
+        
+            a {
+              text-decoration: none;
+              font-size: 1.1rem;
+              color: #212529;
+              font-weight: bold;
+        
+              &:hover {
+                color: #005a3c;
+              }
+            }
+          }
+        
+          p {
+            font-size: 0.9rem;
+            color: #6c757d;
+          }
+        }
       }
     }
   }
