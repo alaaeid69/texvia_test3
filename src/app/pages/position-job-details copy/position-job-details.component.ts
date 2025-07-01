@@ -1,6 +1,7 @@
 import { Component} from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import {  NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-position-job-details',

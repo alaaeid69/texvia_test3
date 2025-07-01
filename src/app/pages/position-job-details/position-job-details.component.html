@@ -80,7 +80,7 @@
     <!--  in this part i use ng-bootstrap liberery for navigation between taps  -->
     <div class="col-lg-10 col-xl-8">
       <div class="mb-4">
-        <ul ngbNav #nav="ngbNav" [(activeId)]="activeTab" class=" nav-tabs fw-medium" id="jobTabs" role="tablist"  >
+         <ul ngbNav #nav="ngbNav" [(activeId)]="activeTab" class=" nav-tabs fw-medium" id="jobTabs" role="tablist"  >
           <li class="nav-item " role="presentation" [ngbNavItem]="1">
             <button ngbNavLink >
               <i class="bi bi-file-text me-2" ></i>Job Description
@@ -291,7 +291,7 @@ We are seeking a skilled Automation Engineer with a minimum of 5 years of experi
           </div>
             </ng-template>
           </li>
-        </ul>
+        </ul> -->
        
       <div class="tab-content bg-white border border-top-0 rounded-bottom p-4 p-md-5 depth-shadow" [ngbNavOutlet]="nav"></div>
 

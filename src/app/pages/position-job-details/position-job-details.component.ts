@@ -1,10 +1,11 @@
 import { Component} from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import {  NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-position-job-details',
-  imports: [NgbNavModule , RouterLink],
+  imports: [ NgbNavModule, RouterLink],
   templateUrl: './position-job-details.component.html',
   styleUrl: './position-job-details.component.scss'
 })
