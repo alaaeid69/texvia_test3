@@ -48,6 +48,11 @@
             display: block;
             margin-top: 0;
           }
+          // .show{
+          //   display: block;
+          // }
+
+          
 
           .dropdown-toggle {
             color: black;
@@ -132,8 +137,6 @@
           }
         
           h5 {
-            color: #008859;
-            font-weight: bold;
             margin-bottom: 1rem;
           }
         }
@@ -171,29 +174,40 @@
           }
         }
         
-        .solution-item {
-          h5 {
+       
+  .col-md-6{
+    &:hover{
+      color: $main-color;
+    }
+
+     .solution-item {
+         
+          h6 {
             margin-bottom: 0.25rem;
         
             a {
               text-decoration: none;
-              font-size: 1.1rem;
+              cursor: pointer;
+              
               color: #212529;
-              font-weight: bold;
-        
-              &:hover {
-                color: #005a3c;
+               &:hover{
+                color: $main-color;
               }
+            
+            
             }
+             
           }
         
           p {
-            font-size: 0.9rem;
+           
             color: #6c757d;
           }
+          
         }
       }
     }
+  }
   }
 
   @media (max-width: 576px) {

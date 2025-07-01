@@ -251,40 +251,45 @@
     }
 
   }
-  .mession{
+ 
+.mession{
   .industry-graphic,
   .mission-icon {
     width: 6rem;
     height: 6rem;
+    margin-bottom: .3rem;
   }
   .badge {
     background-color: rgba($main-color, .2) !important;
     color: $main-color !important;
   }
+.mission-title {
+        text-align: center;
+    }
 
-  //  i used this to make h4 in center of page 
- h4{
-  position: relative;
-  width: fit-content;
-  left:35%;
-  
-  @media (min-width:567px) {
-    left: 41% ; 
+    .mission-text {
+        text-align: center;
+    }
+
   }
-  @media (min-width:710px) and (max-width:767px) {
-    left:41%;
-  }
-  @media (min-width:768px) {
-    left:31%;}
-  @media (min-width:992px) {
-    left:32%;
-   }
-  @media (min-width:1200px) {
-    left:34%;
-  }
- }
-  
-}
+    @media (min-width: 768px) {
+        .mission-container {
+            position: relative; 
+            padding-top: 2.5rem !important;
+        }
+
+        .mission-title {
+            position: absolute;
+            top: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%
+        }
+
+        .mission-text {
+         text-align: left !important;
+        }
+    }
 
 }
 // what we do 

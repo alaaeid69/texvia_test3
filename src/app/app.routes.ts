@@ -59,8 +59,13 @@ export const routes: Routes = [
    data:{ title: 'careers - TEXVIA', }, 
    },
    {
-    path: 'job-Details',
+    path: 'Automation-job-Details',
     loadComponent: () => import('./pages/position-job-details/position-job-details.component').then(m => m.PositionJobDetailsComponent),
+     data:{ title: 'job Details -TEXVIA' },
+  },
+  {
+    path: 'MES-Engineer-job-Details',
+    loadComponent: () => import('./pages/position-job-details copy/position-job-details.component').then(m => m.PositionJobDetailsComponent),
      data:{ title: 'job Details -TEXVIA' },
   },
   {

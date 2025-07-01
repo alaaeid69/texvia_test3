@@ -149,24 +149,22 @@ private cdr = inject(ChangeDetectorRef)
 
   //home dynamic for first screen in home 
   homePageCaption():void{
- interval(11000).pipe( 
-      concatMap(() =>
-
-      timer(10000).pipe(
-          concatMap(() => {
-            this.isVisible = false; 
-            this.cdr.detectChanges();
-            return timer(1000); 
-          }),
-          concatMap(() => {
-            this.currentIndex = (this.currentIndex + 1) % this.homeCaption.length;
-            this.currentHomeCaption = this.homeCaption[this.currentIndex];
-            this.isVisible = true; 
-            
-            this.cdr.detectChanges();
-            return timer(0); 
-          })
-        )
+ timer(2000, 8000).pipe(
+ concatMap(() =>
+      timer(7000).pipe(
+        concatMap(() => {
+          this.isVisible = false;
+          this.cdr.detectChanges();
+          return timer(1000);
+        }),
+        concatMap(() => {
+          this.currentIndex = (this.currentIndex + 1) % this.homeCaption.length;
+          this.currentHomeCaption = this.homeCaption[this.currentIndex];
+          this.isVisible = true;
+          this.cdr.detectChanges();
+          return timer(0);
+        })
+      ) 
       ),
       takeUntil(this.destroy$)
     ).subscribe();

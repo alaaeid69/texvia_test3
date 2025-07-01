@@ -15,7 +15,7 @@
         <div
           class="d-flex flex-column flex-sm-row justify-content-center gap-3"
         >
-          <button class="first-btn btn btn-light fw-medium py-3 px-4 rounded">
+          <button class="first-btn btn btn-light fw-medium py-3 px-4 rounded" [routerLink]="['/careers']" fragment="open-positions-section">
             View Open Positions
           </button>
           <button
@@ -135,7 +135,7 @@
 </div>
 
 <!------ open postions-----------  -->
-<section class="open-positions-section py-3 py-md-5" id="open-positions-section">
+<section class="open-positions-section py-3 py-md-5 " id="open-positions-section" style="height: 100vh;">
   <div class="container">
     <div class="text-center mb-2 section-heading">
       <h2 class="section-title mb-3">Open Positions</h2>
@@ -233,7 +233,7 @@
         aria-labelledby="all-tab"
       >
         <div class="row g-4">
-          <!-- Job Card 1: Engineering -->
+          <!-- Job Cards: Engineering -->
           <div class="col-md-6">
             <div class="card job-card">
               <div class="card-body">
@@ -241,7 +241,7 @@
                   class="d-flex justify-content-between align-items-start mb-3"
                 >
                   <div>
-                    <h4 class="mb-1">Senior Software Engineer</h4>
+                    <h4 class="mb-1">Automation Engineer</h4>
                     <p class="job-department fw-semibold mb-0">
                       Engineering • Full-time
                     </p>
@@ -251,21 +251,21 @@
                   >
                 </div>
                 <p class="job-description mb-4">
-                  We're looking for an experienced software engineer to join our
-                  team and help build scalable, robust applications.
+                 We're looking for a skilled Automation Engineer to join our team and drive the development of smart, 
+                 efficient, and scalable automation solutions across industrial environments.
                 </p>
                 <div class="d-flex flex-wrap gap-2 mb-4">
                   <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
-                    >JavaScript</span
+                    >PLC Programming</span
                   >
                   <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
-                    >React</span
+                    >SCADA Systems</span
                   >
                   <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
-                    >Node.js</span
+                    >Industrial Networking</span
                   >
                   <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
-                    >AWS</span
+                    >Industry 4.0 / IIoT</span
                   >
                 </div>
                 <div
@@ -275,7 +275,7 @@
                   
                     class="view-details-btn d-flex align-items-center gap-1"
                     role="button"
-                    (click)="goToPositionDtails()"
+                    (click)="goToPositionAutomationDtails()"
                   >
                     View Details
                     <svg
@@ -292,104 +292,43 @@
                       />
                     </svg>
                   </a>
-                  <span class="posted-date">Posted 2 days ago</span>
+                  <!-- <span class="posted-date">Posted 2 days ago</span> -->
                 </div>
               </div>
             </div>
           </div>
-
-          <!-- Job Card 2: Design -->
-          <div class="col-md-6">
+            <div class="col-md-6">
             <div class="card job-card">
               <div class="card-body">
                 <div
                   class="d-flex justify-content-between align-items-start mb-3"
                 >
                   <div>
-                    <h4 class="mb-1">UX/UI Designer</h4>
+                    <h4 class="mb-1">MES Engineer</h4>
                     <p class="job-department fw-semibold mb-0">
-                      Design • Full-time
+                     Engineering • Full-time
                     </p>
                   </div>
                   <span class="badge job-location-type rounded-pill px-3 py-2"
-                    >Hybrid</span
+                    >Remote</span
                   >
                 </div>
                 <p class="job-description mb-4">
-                  Join our design team to create beautiful, intuitive interfaces
-                  that delight our users and solve complex problems.
+                We're looking for a talented MES Engineer to join our team and support the design, development, 
+                and deployment of Manufacturing Execution Systems that optimize production and enable digital transformation.
                 </p>
                 <div class="d-flex flex-wrap gap-2 mb-4">
                   <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
-                    >Figma</span
+                    >AVEVA MES / Wonderware</span
                   >
                   <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
-                    >User Research</span
+                    >SQL / .NET / Scripting</span
                   >
                   <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
-                    >Prototyping</span
-                  >
-                </div>
-                <div
-                  class="d-flex justify-content-between align-items-center mt-auto"
-                >
-                  <a
-                   
-                    class="view-details-btn d-flex align-items-center gap-1"
-                      role="button"
-                    (click)="goToPositionDtails()"
-                  >
-                    View Details
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-chevron-right"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                      />
-                    </svg>
-                  </a>
-                  <span class="posted-date">Posted 1 week ago</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Job Card 3: Marketing -->
-          <div class="col-md-6">
-            <div class="card job-card">
-              <div class="card-body">
-                <div
-                  class="d-flex justify-content-between align-items-start mb-3"
-                >
-                  <div>
-                    <h4 class="mb-1">Digital Marketing Specialist</h4>
-                    <p class="job-department fw-semibold mb-0">
-                      Marketing • Full-time
-                    </p>
-                  </div>
-                  <span class="badge job-location-type rounded-pill px-3 py-2"
-                    >On-site</span
-                  >
-                </div>
-                <p class="job-description mb-4">
-                  Drive our digital marketing efforts to increase brand
-                  awareness and generate quality leads for our business.
-                </p>
-                <div class="d-flex flex-wrap gap-2 mb-4">
-                  <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
-                    >SEO</span
+                    >Manufacturing Process Knowledge</span
                   >
                   <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
-                    >Content Marketing</span
-                  >
-                  <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
-                    >Analytics</span
+                    >Industrial Automation Integration</span
                   >
                 </div>
                 <div
@@ -398,8 +337,8 @@
                   <a
                   
                     class="view-details-btn d-flex align-items-center gap-1"
-                      role="button"
-                    (click)="goToPositionDtails()"
+                    role="button"
+                    (click)="goToPositionMesEngineerDetail()"
                   >
                     View Details
                     <svg
@@ -416,73 +355,12 @@
                       />
                     </svg>
                   </a>
-                  <span class="posted-date">Posted 3 days ago</span>
+                  <!-- <span class="posted-date">Posted 2 days ago</span> -->
                 </div>
               </div>
             </div>
           </div>
-
-          <!-- Job Card 4: Sales -->
-          <div class="col-md-6">
-            <div class="card job-card">
-              <div class="card-body">
-                <div
-                  class="d-flex justify-content-between align-items-start mb-3"
-                >
-                  <div>
-                    <h4 class="mb-1">Account Executive</h4>
-                    <p class="job-department fw-semibold mb-0">
-                      Sales • Full-time
-                    </p>
-                  </div>
-                  <span class="badge job-location-type rounded-pill px-3 py-2"
-                    >Remote</span
-                  >
-                </div>
-                <p class="job-description mb-4">
-                  Build and maintain relationships with clients while driving
-                  revenue growth through strategic sales initiatives.
-                </p>
-                <div class="d-flex flex-wrap gap-2 mb-4">
-                  <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
-                    >B2B Sales</span
-                  >
-                  <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
-                    >CRM</span
-                  >
-                  <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
-                    >Negotiation</span
-                  >
-                </div>
-                <div
-                  class="d-flex justify-content-between align-items-center mt-auto"
-                >
-                  <a
-                   
-                    class="view-details-btn d-flex align-items-center gap-1"
-                      role="button"
-                    (click)="goToPositionDtails()"
-                  >
-                    View Details
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-chevron-right"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                      />
-                    </svg>
-                  </a>
-                  <span class="posted-date">Posted 5 days ago</span>
-                </div>
-              </div>
-            </div>
-          </div>
+         
         </div>
       </div>
 
@@ -502,7 +380,7 @@
                   class="d-flex justify-content-between align-items-start mb-3"
                 >
                   <div>
-                    <h4 class="mb-1">Senior Software Engineer</h4>
+                    <h4 class="mb-1">Automation Engineer</h4>
                     <p class="job-department fw-semibold mb-0">
                       Engineering • Full-time
                     </p>
@@ -512,21 +390,21 @@
                   >
                 </div>
                 <p class="job-description mb-4">
-                  We're looking for an experienced software engineer to join our
-                  team and help build scalable, robust applications.
+                 We're looking for a skilled Automation Engineer to join our team and drive the development of smart, 
+                 efficient, and scalable automation solutions across industrial environments.
                 </p>
                 <div class="d-flex flex-wrap gap-2 mb-4">
                   <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
-                    >JavaScript</span
+                    >PLC Programming</span
                   >
                   <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
-                    >React</span
+                    >SCADA Systems</span
                   >
                   <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
-                    >Node.js</span
+                    >Industrial Networking</span
                   >
                   <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
-                    >AWS</span
+                    >Industry 4.0 / IIoT</span
                   >
                 </div>
                 <div
@@ -535,8 +413,8 @@
                   <a
                   
                     class="view-details-btn d-flex align-items-center gap-1"
-                      role="button"
-                    (click)="goToPositionDtails()"
+                    role="button"
+                    (click)="goToPositionAutomationDtails()"
                   >
                     View Details
                     <svg
@@ -553,7 +431,70 @@
                       />
                     </svg>
                   </a>
-                  <span class="posted-date">Posted 2 days ago</span>
+                  <!-- <span class="posted-date">Posted 2 days ago</span> -->
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="col-md-6">
+            <div class="card job-card">
+              <div class="card-body">
+                <div
+                  class="d-flex justify-content-between align-items-start mb-3"
+                >
+                  <div>
+                    <h4 class="mb-1">MES Engineer</h4>
+                    <p class="job-department fw-semibold mb-0">
+                     Engineering • Full-time
+                    </p>
+                  </div>
+                  <span class="badge job-location-type rounded-pill px-3 py-2"
+                    >Remote</span
+                  >
+                </div>
+                <p class="job-description mb-4">
+                We're looking for a talented MES Engineer to join our team and support the design, development, 
+                and deployment of Manufacturing Execution Systems that optimize production and enable digital transformation.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mb-4">
+                  <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
+                    >AVEVA MES / Wonderware</span
+                  >
+                  <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
+                    >SQL / .NET / Scripting</span
+                  >
+                  <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
+                    >Manufacturing Process Knowledge</span
+                  >
+                  <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
+                    >Industrial Automation Integration</span
+                  >
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-auto"
+                >
+                  <a
+                  
+                    class="view-details-btn d-flex align-items-center gap-1"
+                    role="button"
+                    (click)="goToPositionMesEngineerDetail()"
+                  >
+                    View Details
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-chevron-right"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                      />
+                    </svg>
+                  </a>
+                  <!-- <span class="posted-date">Posted 2 days ago</span> -->
                 </div>
               </div>
             </div>
@@ -569,67 +510,6 @@
         aria-labelledby="design-tab"
       >
         <div class="row g-4">
-          <!-- Job Card 2: Design -->
-          <div class="col-md-6">
-            <div class="card job-card">
-              <div class="card-body">
-                <div
-                  class="d-flex justify-content-between align-items-start mb-3"
-                >
-                  <div>
-                    <h4 class="mb-1">UX/UI Designer</h4>
-                    <p class="job-department fw-semibold mb-0">
-                      Design • Full-time
-                    </p>
-                  </div>
-                  <span class="badge job-location-type rounded-pill px-3 py-2"
-                    >Hybrid</span
-                  >
-                </div>
-                <p class="job-description mb-4">
-                  Join our design team to create beautiful, intuitive interfaces
-                  that delight our users and solve complex problems.
-                </p>
-                <div class="d-flex flex-wrap gap-2 mb-4">
-                  <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
-                    >Figma</span
-                  >
-                  <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
-                    >User Research</span
-                  >
-                  <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
-                    >Prototyping</span
-                  >
-                </div>
-                <div
-                  class="d-flex justify-content-between align-items-center mt-auto"
-                >
-                  <a
-                   
-                    class="view-details-btn d-flex align-items-center gap-1"
-                      role="button"
-                    (click)="goToPositionDtails()"
-                  >
-                    View Details
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-chevron-right"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                      />
-                    </svg>
-                  </a>
-                  <span class="posted-date">Posted 1 week ago</span>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -642,66 +522,7 @@
       >
         <div class="row g-4">
           <!-- Job Card 3: Marketing -->
-          <div class="col-md-6">
-            <div class="card job-card">
-              <div class="card-body">
-                <div
-                  class="d-flex justify-content-between align-items-start mb-3"
-                >
-                  <div>
-                    <h4 class="mb-1">Digital Marketing Specialist</h4>
-                    <p class="job-department fw-semibold mb-0">
-                      Marketing • Full-time
-                    </p>
-                  </div>
-                  <span class="badge job-location-type rounded-pill px-3 py-2"
-                    >On-site</span
-                  >
-                </div>
-                <p class="job-description mb-4">
-                  Drive our digital marketing efforts to increase brand
-                  awareness and generate quality leads for our business.
-                </p>
-                <div class="d-flex flex-wrap gap-2 mb-4">
-                  <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
-                    >SEO</span
-                  >
-                  <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
-                    >Content Marketing</span
-                  >
-                  <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
-                    >Analytics</span
-                  >
-                </div>
-                <div
-                  class="d-flex justify-content-between align-items-center mt-auto"
-                >
-                  <a
-                   
-                    class="view-details-btn d-flex align-items-center gap-1"
-                      role="button"
-                    (click)="goToPositionDtails()"
-                  >
-                    View Details
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-chevron-right"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                      />
-                    </svg>
-                  </a>
-                  <span class="posted-date">Posted 3 days ago</span>
-                </div>
-              </div>
-            </div>
-          </div>
+        
         </div>
       </div>
 
@@ -714,79 +535,17 @@
       >
         <div class="row g-4">
           <!-- Job Card 4: Sales -->
-          <div class="col-md-6">
-            <div class="card job-card">
-              <div class="card-body">
-                <div
-                  class="d-flex justify-content-between align-items-start mb-3"
-                >
-                  <div>
-                    <h4 class="mb-1">Account Executive</h4>
-                    <p class="job-department fw-semibold mb-0">
-                      Sales • Full-time
-                    </p>
-                  </div>
-                  <span class="badge job-location-type rounded-pill px-3 py-2"
-                    >Remote</span
-                  >
-                </div>
-                <p class="job-description mb-4">
-                  Build and maintain relationships with clients while driving
-                  revenue growth through strategic sales initiatives.
-                </p>
-                <div class="d-flex flex-wrap gap-2 mb-4">
-                  <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
-                    >B2B Sales</span
-                  >
-                  <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
-                    >CRM</span
-                  >
-                  <span class="badge skill-tag rounded-pill px-2 py-1 fw-light"
-                    >Negotiation</span
-                  >
-                </div>
-                <div
-                  class="d-flex justify-content-between align-items-center mt-auto"
-                >
-                  <a
-                   
-                    class="view-details-btn d-flex align-items-center gap-1"
-                      role="button"
-                    (click)="goToPositionDtails()"
-                  >
-                    View Details
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-chevron-right"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                      />
-                    </svg>
-                  </a>
-                  <span class="posted-date">Posted 5 days ago</span>
-                </div>
-              </div>
-            </div>
-          </div>
+       
         </div>
       </div>
     </div>
     <!-- End Tab Content -->
 
-    <div class="text-center mt-5">
-      <button class="btn view-all-btn rounded">View All Positions</button>
-    </div>
   </div>
 </section>
 
 <!-- Employee Testimonials Section -->
-<section class="employee-testimonials-section  py-3 py-md-5">
+ <!-- <section class="employee-testimonials-section  py-3 py-md-5">
   <div class="container">
     <div class="text-center mb-2 section-heading">
       <h2 class="mb-3">Meet Our Team</h2>
@@ -796,7 +555,7 @@
     </div>
 
     <div class="row g-4 g-lg-5">
-      <!-- Testimonial 1 -->
+    
       <div class="col-md-6 col-lg-4">
         <div class="testimonial-card">
           <div class="d-flex align-items-center testimonial-author">
@@ -818,7 +577,7 @@
         </div>
       </div>
 
-      <!-- Testimonial 2 -->
+     
       <div class="col-md-6 col-lg-4">
         <div class="testimonial-card">
           <div class="d-flex align-items-center testimonial-author">
@@ -840,7 +599,7 @@
         </div>
       </div>
 
-      <!-- Testimonial 3 -->
+     
       <div class="col-md-6 col-lg-4">
         <div class="testimonial-card">
           <div class="d-flex align-items-center testimonial-author">
@@ -863,7 +622,7 @@
       </div>
     </div>
   </div>
-</section>
+</section>  -->
 
 <!-- process of hiring  -->
 <section class="process-of-hiring  bg-white  py-3 py-md-5">
@@ -1096,19 +855,20 @@
       <div class="text-center">
         <h2 class="fw-bold mb-3">Ready to Join Our Team?</h2>
         <h5 class="fw-normal mx-auto mb-5">
-         We're always looking for talented individuals who are passionate about making a difference. Check out our open positions or send us your resume.
+         We're always looking for talented individuals who are passionate about making a difference. 
+         <!-- Check out our open positions or send us your resume. -->
         </h5>
         <div
           class="d-flex flex-column flex-sm-row justify-content-center gap-3"
         >
-          <button class="first-btn btn btn-light fw-medium py-3 px-4 rounded">
+          <!-- <button class="first-btn btn btn-light fw-medium py-3 px-4 rounded">
             View Open Positions
           </button>
           <button
             class="second-btn btn btn-outline-light fw-medium py-3 px-4 rounded"
           >
             Submit Your Resume
-          </button>
+          </button> -->
         </div>
       </div>
     </div>
