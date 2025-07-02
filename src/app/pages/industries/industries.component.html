@@ -28,7 +28,8 @@
             data-bs-target="#Food-Beverage"
             type="button"
             role="tab"
-            (click)="scrollToSection('Food-Beverage')"
+            [routerLink]="['/industries']"
+            fragment="Food-Beverage"
             >Food & Beverage</a
           >
         </li>
@@ -39,7 +40,8 @@
             data-bs-target="#LifeSciences-Pharmaceuticals"
             type="button"
             role="tab"
-            (click)="scrollToSection('LifeSciences-Pharmaceuticals')"
+             [routerLink]="['/industries']"
+             fragment="LifeSciences-Pharmaceuticals"
             >Life Sciences & Pharmaceuticals</a
           >
         </li>
@@ -50,7 +52,8 @@
             data-bs-target="#Water-Wastewater"
             type="button"
             role="tab"
-            (click)="scrollToSection('Water-Wastewater')"
+             [routerLink]="['/industries']"
+             fragment="Water-Wastewater"
           >
             Water & Wastewater
           </a>
@@ -63,14 +66,15 @@
             data-bs-target="#Smart Cities"
             type="button"
             role="tab"
-            (click)="scrollToSection('Smart Cities')"
+             [routerLink]="['/industries']"
+             fragment="Smart-Cities"
             >Smart Cities</a
           >
         </li>
       </ul>
     </div>
 
-    <div class="row solutions-cards" id="Food-Beverage">
+    <div class="row industry-cards" id="Food-Beverage">
       <div class="col-md-6 description-col">
         <div class="h-100">
           <div>
@@ -112,7 +116,7 @@
       </div>
     </div>
 
-    <div class="row solutions-cards" id="LifeSciences-Pharmaceuticals">
+    <div class="row industry-cards" id="LifeSciences-Pharmaceuticals">
       <div class="col-md-6 description-col">
         <div class="h-100">
           <div>
@@ -155,7 +159,7 @@
       </div>
     </div>
 
-    <div class="row solutions-cards" id="Water-Wastewater">
+    <div class="row industry-cards" id="Water-Wastewater">
       <div class="col-md-6 description-col">
         <div class="h-100">
           <div>
@@ -194,7 +198,7 @@
       </div>
     </div>
 
-    <div class="row solutions-cards" id="Smart Cities">
+    <div class="row industry-cards" id="Smart-Cities">
       <div class="col-md-6 description-col">
         <div class="h-100">
           <div>

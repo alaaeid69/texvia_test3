@@ -48,9 +48,12 @@ url("/images/industries/WhatsApp Image 2025-06-29 at 03.07.00 (1).jpeg");
         };
         line-height: 1.3rem;
         color: rgb(102, 108, 112);
+        &:hover , &.active{
+          color: $main-color;
+        }
       }
     }
-    .solutions-cards {
+    .industry-cards {
       margin: 5rem 0 ;
  h4{
   color: $main-color;
