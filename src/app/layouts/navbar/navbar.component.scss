@@ -1,3 +1,4 @@
+
 @use "../../shared/scss-Styles/sections-Header-styles" as *;
 @use "../../shared/scss-Styles/colors" as *;
 
@@ -6,6 +7,7 @@
   transition: background-color 0.3s ease;
   height: 3rem !important;
   box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
 
   .container-fluid {
     background-color: $white-color;
@@ -43,6 +45,7 @@
         
         &.dropdown {
           position: relative;
+          z-index: 9998;
           // &:hover .dropdown-menu {
           //   display: block;
           //   margin-top: 0;
@@ -210,6 +213,7 @@
  
      .solution-item {
            cursor: pointer;
+           z-index: 9998;
           .h6{
             
         
@@ -249,7 +253,12 @@
     }
   }
   }
+
+}
 @media (max-width: 991.98px) {
+  .navbar{
+    z-index: 9999;
+  }
   .navbar-toggler {
     border: none;
     background: transparent;
@@ -264,6 +273,7 @@
     .navbar-toggler-icon {
       background-image: none;
       position: relative;
+      z-index: 9999;
       width: 24px;
       height: 2px;
       background-color: $main-color;
@@ -289,17 +299,7 @@
     }
   }
 
-  .navbar-toggler:not(.collapsed) {
-    .navbar-toggler-icon {
-      background-color: transparent;
-      &::before {
-        transform: translateY(8px) rotate(45deg);
-      }
-      &::after {
-        transform: translateY(-8px) rotate(-45deg);
-      }
-    }
-  }
+  
 
   .navbar-collapse {
     position: fixed;
@@ -356,6 +356,7 @@
       }
     }
 
+  
     .dropdown-menu {
       position: static !important;
       width: 100% !important;
@@ -389,14 +390,17 @@
     .dropdown-mega {
       .sidebar-links,
       #solutions-drop-down .item-arrow,
-      #solutions-drop-down hr {
+      #solutions-drop-down hr 
+        {
         display: none !important;
+
       }
 
       #solutions-drop-down {
         border: none;
         .dropdown-solution-content a {
           text-decoration: none;
+         
           small {
             font-size: 0.9rem; /* Consistent small font size for solution items */
             font-weight: 400;
@@ -408,12 +412,14 @@
             }
           }
         }
-        .dropdown-solution-content .solution-item {
-          display: block !important;
-        }
+      .dropdown-solution-content .solution-item {
+        display: block !important;
+      
+      }
       }
     }
   }
+
 }
 
 @media (max-width: 576px) {
@@ -424,5 +430,4 @@
   .navbar-brand {
     font-size: 1.2rem;
   }
-}
 }
