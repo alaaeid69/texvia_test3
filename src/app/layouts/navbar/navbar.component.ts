@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, ElementRef, HostListener, inject } from '@angular/core';
+import { Component, ElementRef, HostListener, inject, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import {  RouterLink, RouterLinkActive } from '@angular/router';
 
@@ -21,7 +21,7 @@ export class NavbarComponent {
 
    private elementRef = inject(ElementRef);
    private sanitizer = inject(DomSanitizer)
-  isDropdownOpen = false;
+
 
   // all of this coe for solution dropdown
   solution:solutions[] = [
@@ -142,29 +142,62 @@ export class NavbarComponent {
     }
   ];
 
-  selectedSolution = this.solution[0]; // Default selection
+  isDropdownOpen:{ [key: string]: boolean }  = {
+    dashboard: false,
+    solutions: false,
+    account: false
+  };
 
-  toggleDropdown(event: Event): void {
+  @ViewChild('dropdown') dropdown: ElementRef | undefined;
+  @ViewChild('dropdown1') dropdown1: ElementRef | undefined;
+  @ViewChild('dropdown2') dropdown2: ElementRef | undefined;
+
+   selectedSolution = this.solution[0]; // Default selection
+
+  toggleDropdown(dropdownId: string, event: Event): void {
     event.stopPropagation();
-    this.isDropdownOpen = !this.isDropdownOpen;
-
+    console.log(`Toggling ${dropdownId} dropdown, open:`, !this.isDropdownOpen[dropdownId]);
+    
+    // Close all other dropdowns
+    for (const key in this.isDropdownOpen) {
+      if (key !== dropdownId) {
+        this.isDropdownOpen[key] = false;
+      }
+    }
+    
+    // Toggle the clicked dropdown
+    this.isDropdownOpen[dropdownId] = !this.isDropdownOpen[dropdownId];
   }
 
-  selectSolution(solution: any): void {
+  preventClose(event: Event): void {
+    event.stopPropagation();
+    console.log('Prevented close, clicked element:', event.target);
+  }
+
+  selectSolution(solution: any, event: Event): void {
+    event.stopPropagation();
+    console.log('Selected solution:', solution.title, 'event:', event.target);
     this.selectedSolution = solution;
-     this.isDropdownOpen = false;
   }
 
-  //get save svg rendering 
-  getSvgSafe(icon :string) :SafeHtml{
+  getSvgSafe(icon: string): SafeHtml {
     return this.sanitizer.bypassSecurityTrustHtml(icon);
   }
-
-  @HostListener('document:click', ['$event'])
+@HostListener('document:click', ['$event'])
   closeDropdown(event: Event): void {
-    if (!this.elementRef.nativeElement.contains(event.target)) {
-      this.isDropdownOpen = false;
-      this.selectedSolution=this.solution[0]
+    if (
+      this.dropdown && !this.dropdown.nativeElement.contains(event.target) &&
+      this.dropdown1 && !this.dropdown1.nativeElement.contains(event.target) &&
+      this.dropdown2 && !this.dropdown2.nativeElement.contains(event.target)
+    ) {
+      console.log('Closing all dropdowns, clicked element:', event.target);
+      this.isDropdownOpen = {
+        dashboard: false,
+        solutions: false,
+        account: false
+      };
+    } else {
+      console.log('Click inside dropdown, not closing:', event.target);
     }
   }
 

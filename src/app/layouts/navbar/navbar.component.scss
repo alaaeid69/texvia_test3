@@ -43,20 +43,15 @@
         
         &.dropdown {
           position: relative;
-
-          &:hover .dropdown-menu {
-            display: block;
-            margin-top: 0;
-          }
-          // .show{
+          // &:hover .dropdown-menu {
           //   display: block;
+          //   margin-top: 0;
           // }
-
           
-
           .dropdown-toggle {
             color: black;
             position: relative;
+            
 
             &::after {
               border-top-color: black;
@@ -96,6 +91,8 @@
             box-shadow: 0 0.5rem 1rem rgba($black-color, 0.15);
             min-width: 18rem;
             display: none;
+  
+             
 
             .dropdown-item-text {
               color: $white-color;
@@ -150,6 +147,9 @@
             left: 0;
             right: 0;
             margin-top: 0;
+            position: absolute;
+            top: 100%; 
+             z-index: 1000;
           }
         
           @media (min-width: 992px) {
@@ -180,6 +180,11 @@
             background-color: #e9ecef;
           }
         }
+
+        // this for drop down menu show
+       .dropdown-menu.show{
+            display: block;
+          } 
         
         
         /* --- NEW SCSS for the 'Solutions' Layout --- */
@@ -198,17 +203,19 @@
   .col-12{
     &:hover{
       color: $main-color;
+    }
+    &.active{
       background-color: rgba(128, 128, 128 , .1);
     }
-
+ 
      .solution-item {
-         
+           cursor: pointer;
           .h6{
             
         
             a {
               text-decoration: none;
-              cursor: pointer;
+             
               
               color: #212529;
                &:hover{
@@ -242,20 +249,180 @@
     }
   }
   }
+@media (max-width: 991.98px) {
+  .navbar-toggler {
+    border: none;
+    background: transparent;
+    z-index: 1100;
+    padding: 0.15rem;
 
-  @media (max-width: 576px) {
-    .container-fluid {
-      width: 100%;
+    &:focus {
+      box-shadow: none;
+      outline: none;
     }
 
-    .navbar-brand {
-      font-size: 1.25rem;
+    .navbar-toggler-icon {
+      background-image: none;
+      position: relative;
+      width: 24px;
+      height: 2px;
+      background-color: $main-color;
+      display: block;
+      transition: all 0.2s ease-in-out;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $main-color;
+        transition: all 0.3s ease-in-out;
+      }
+      &::before {
+        top: -8px;
+      }
+      &::after {
+        top: 8px;
+      }
+    }
+  }
+
+  .navbar-toggler:not(.collapsed) {
+    .navbar-toggler-icon {
+      background-color: transparent;
+      &::before {
+        transform: translateY(8px) rotate(45deg);
+      }
+      &::after {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+  }
+
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80vw;
+    max-width: 350px;
+    height: 100vh;
+    background-color: rgba($white-color, 0.98);
+    backdrop-filter: blur(12px);
+    z-index: 1050;
+    padding: 4rem 1.5rem 2rem 1.5rem;
+
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+
+    &.show {
+      transform: translateX(0);
     }
 
-    .navbar-toggler {
-      padding: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow-y: auto;
+  }
+
+  .navbar-nav {
+    width: 100%;
+    text-align: left;
+    margin-top: 1rem;
+
+    .nav-item {
+      margin-bottom: 0.3rem;
+      border-bottom: 1px solid rgba($main-color, 0.1);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .nav-link {
+        padding: 1rem 0;
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: #34495e;
+
+        &:hover,
+        &.nav-link-active {
+          background-color: transparent;
+          color: $main-color;
+          transform: translateX(5px);
+          transition: color 0.3s, transform 0.3s;
+        }
+      }
+    }
+
+    .dropdown-menu {
+      position: static !important;
+      width: 100% !important;
+      float: none !important;
+      box-shadow: none !important;
+      border: none !important;
+      background-color: transparent !important;
+      padding-left: 1rem;
+      margin-top: 0;
+      border-radius: 0;
+
+      .dropdown-item-text {
+        padding: 0;
+        &::before {
+          display: none;
+        }
+        .nav-link {
+          font-size: 0.9rem; /* Smaller font size for all dropdown links */
+          font-weight: 400;
+          color: #555;
+          padding: 0.5rem 0;
+          transform: none;
+
+          &:hover {
+            color: $main-color;
+          }
+        }
+      }
+    }
+
+    .dropdown-mega {
+      .sidebar-links,
+      #solutions-drop-down .item-arrow,
+      #solutions-drop-down hr {
+        display: none !important;
+      }
+
+      #solutions-drop-down {
+        border: none;
+        .dropdown-solution-content a {
+          text-decoration: none;
+          small {
+            font-size: 0.9rem; /* Consistent small font size for solution items */
+            font-weight: 400;
+            color: #34495e;
+            display: block;
+            padding: 0.5rem 1rem;
+            &:hover {
+              color: $main-color;
+            }
+          }
+        }
+        .dropdown-solution-content .solution-item {
+          display: block !important;
+        }
+      }
     }
   }
 }
 
+@media (max-width: 576px) {
+  .container-fluid {
+    width: 100%;
+  }
 
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+}
+}
