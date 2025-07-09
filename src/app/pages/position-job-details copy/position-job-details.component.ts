@@ -1,6 +1,7 @@
-import { Component} from '@angular/core';
+import { Component, inject} from '@angular/core';
 import { RouterLink } from '@angular/router';
 import {  NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -11,7 +12,7 @@ import {  NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 })
 export class PositionJobDetailsComponent {
 
-
+private readonly toastrService = inject(ToastrService)
 
   // switch between taps 
 activeTab:number =1;
@@ -27,8 +28,10 @@ copiedEmail: string = '';
 copyEmail() {
     this.copiedEmail = this.email; 
     navigator.clipboard.writeText(this.email).then(() => {
+      this.toastrService.success('copied the email successed ')
     }).catch(err => {
-      console.error('Failed to copy email: ', err);
+      // console.error('Failed to copy email: ', err);
+      this.toastrService.error('copied the email Failed ')
     });
   }
 

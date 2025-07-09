@@ -1,16 +1,16 @@
-
 export interface Submission {
-  id: number;
-  name: string;
+  id: number,
+  name: string,
   mobile:string,
-  email: string;
-  title:string;
-  company:string
-  region: string;
+  email: string,
+  title:string,
+  company:string,
+  region: string,
+  dateReceived: Date,
   solutions:string,
   industries:string,
-  dateReceived: string;
-  message: string;
-  status: 'New' | 'Read' | 'Replied';
-  statusClass: string;
+  message: string,
+  isRead:boolean
+
 }
+

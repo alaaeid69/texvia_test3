@@ -156,7 +156,6 @@ export class NavbarComponent {
 
   toggleDropdown(dropdownId: string, event: Event): void {
     event.stopPropagation();
-    console.log(`Toggling ${dropdownId} dropdown, open:`, !this.isDropdownOpen[dropdownId]);
     
     // Close all other dropdowns
     for (const key in this.isDropdownOpen) {
@@ -171,12 +170,10 @@ export class NavbarComponent {
 
   preventClose(event: Event): void {
     event.stopPropagation();
-    console.log('Prevented close, clicked element:', event.target);
   }
 
   selectSolution(solution: any, event: Event): void {
     event.stopPropagation();
-    console.log('Selected solution:', solution.title, 'event:', event.target);
     this.selectedSolution = solution;
   }
 
@@ -190,14 +187,12 @@ export class NavbarComponent {
       this.dropdown1 && !this.dropdown1.nativeElement.contains(event.target) &&
       this.dropdown2 && !this.dropdown2.nativeElement.contains(event.target)
     ) {
-      console.log('Closing all dropdowns, clicked element:', event.target);
       this.isDropdownOpen = {
         dashboard: false,
         solutions: false,
         account: false
       };
     } else {
-      console.log('Click inside dropdown, not closing:', event.target);
     }
   }
 

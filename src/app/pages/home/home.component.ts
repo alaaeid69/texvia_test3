@@ -3,7 +3,7 @@ import { Component, OnInit, AfterViewInit, OnDestroy, ElementRef,ViewChild, inje
 import { NgClass } from '@angular/common';
 import { NgParticlesService, NgxParticlesModule} from '@tsparticles/angular';
 import { loadSlim } from '@tsparticles/slim';
-import {  Background, Engine, } from '@tsparticles/engine';
+import {   Engine, } from '@tsparticles/engine';
 import { Router, RouterLink } from '@angular/router';
 import { concatMap, interval, Subject, switchMap, takeUntil, timer } from 'rxjs';
 import { VerticalProgressBarComponent } from "../vertical-progress-bar/vertical-progress-bar.component";
@@ -170,7 +170,7 @@ private cdr = inject(ChangeDetectorRef)
     ).subscribe();
  
   }
-  //how we do code 
+  //how we do section slide code 
    updateVisibleItems() {
     const width = window.innerWidth;
     if (width < 768) {

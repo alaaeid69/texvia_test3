@@ -12,7 +12,7 @@
                     </ol>
                 </nav>
             </div>
-            <button class="btn btn-main-color " data-bs-toggle="modal" data-bs-target="#createJobModal">
+            <button class="btn btn-main-color " data-bs-toggle="modal" data-bs-target="#addAdminModal">
                 <i class="bi bi-plus-lg me-2"></i>Add New Admin 
             </button>
         </div>
@@ -145,3 +145,65 @@
         
             </div>
 </main>
+
+
+  <!-- Add Admin Modal -->
+    <div class="modal fade" id="addAdminModal" tabindex="-1" aria-labelledby="addAdminModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addAdminModalLabel"><i class="fas fa-user-shield me-2"></i>Create New Admin</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <!-- Form for adding a new admin -->
+                    <form id="addAdminForm" class="needs-validation" novalidate>
+                        
+                        <!-- Name Field -->
+                        <div class="mb-3">
+                            <label for="adminName" class="form-label">Full Name</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input type="text" class="form-control" id="adminName" placeholder="e.g., John Doe" required>
+                                <div class="invalid-feedback">
+                                    Please enter the admin's full name.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Email Field -->
+                        <div class="mb-3">
+                            <label for="adminEmail" class="form-label">Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                <input type="email" class="form-control" id="adminEmail" placeholder="admin@example.com" required>
+                                <div class="invalid-feedback">
+                                    Please enter a valid email address.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Password Field -->
+                        <div class="mb-3">
+                            <label for="adminPassword" class="form-label">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                <input type="password" class="form-control" id="adminPassword" placeholder="Enter a strong password" required minlength="8">
+                                <div class="invalid-feedback">
+                                    Password must be at least 8 characters long.
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" form="addAdminForm" class="btn save-admin-btn">
+                        <i class="fas fa-save me-2"></i> Save Admin
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+

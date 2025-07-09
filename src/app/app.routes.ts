@@ -24,7 +24,7 @@ export const routes: Routes = [
       },
       {
         path: 'contact-submission',
-        loadComponent: () => import('./pages/DashBoard-pages/dashdoard-contact-submissions/dashdoard-contact-submissions.component').then(m => m.DashdoardContactSubmissionsComponent),
+        loadComponent: () => import('./pages/DashBoard-pages/dashdoard-contact-submissions/dashdoard-contact-submissions.component').then(m => m.DashdoardContactSubmissionsComponent ),
       },
        {
         path: 'job-Management',
